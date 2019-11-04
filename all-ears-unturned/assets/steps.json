@@ -1,0 +1,79 @@
+[
+  {
+    "NPC": "Dying Exile",
+    "subjects": [
+      "Introduction"
+    ]
+  },
+
+  {
+    "destination": "Lioneye's Watch"
+  },
+
+  {
+    "NPC": "Nessa",
+    "subjects": [
+      "Introduction",
+      "Luoneye's Watch"
+    ]
+  },
+
+  {
+    "NPC": "Bestel",
+    "subjects": [
+      "Introduction",
+      "Nessa",
+      "Drowned Dead"
+    ]
+  },
+
+  {
+    "NPC": "Tarkleigh",
+    "subjects": [
+      "Introduction",
+      "Lioneye's Watch",
+      "Drowned Dead",
+      "Bestel",
+      "Nessa",
+      "Letters of Exile"
+    ]
+  },
+
+  {
+    "NPC": "Nessa",
+    "subjects": [
+      "Tarkleigh",
+      "Bestel"
+    ]
+  },
+
+  {
+    "NPC": "Bestel",
+    "subjects": [
+      "Tarkleigh"
+    ]
+  },
+
+  {
+    "NPC": "Navali",
+    "subjects": [
+      "Introduction",
+      "Wraeclast",
+      "Yama the White",
+      "Karui Gods"
+    ]
+  },
+
+  {
+    "destination": "The Coast"
+  },
+
+  {
+    "destination": "The Tidal Island"
+  },
+
+  {
+    "event": "Obtain the Medicine Chest"
+  }
+
+]

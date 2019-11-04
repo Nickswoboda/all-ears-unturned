@@ -7,7 +7,10 @@
 #include <imgui_impl_opengl3.h>
 #include <imgui_impl_glfw.h>
 
+#include <json.hpp>
+
 #include <iostream>
+#include <fstream>
 
 Application::Application()
 {
@@ -34,7 +37,6 @@ Application::Application()
 	ImGui::StyleColorsDark();
 	ImGui_ImplGlfw_InitForOpenGL(window_, true);
 	ImGui_ImplOpenGL3_Init("#version 410");
-
 }
 
 Application::~Application()
@@ -52,9 +54,7 @@ void Application::Run()
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 
-		ImGui::Begin("Test");
-		ImGui::Text("Test");
-		ImGui::End();
+		step_manager_.Render();
 
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -62,4 +62,15 @@ void Application::Run()
 		glfwSwapBuffers(window_);
 		glfwPollEvents();
 	}
+}
+
+void Application::LoadSaveInfo()
+{
+	std::ifstream save_file("assets/jsons/save-info.json");
+	if (!save_file.is_open()) {
+		return;
+	}
+
+	nlohmann::json save_json = nlohmann::json::parse(save_file);
+	log_file_path_ = save_json["log path"];
 }
