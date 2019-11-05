@@ -20,7 +20,6 @@ public:
 	NpcStep(const std::string& npc, const std::vector<std::string>& dialogs);
 	void Render() override;
 
-private:
 	std::string npc_;
 	std::vector<Dialog> dialogs_;
 };
@@ -31,7 +30,6 @@ public:
 	TravelStep(const std::string& destination);
 	void Render() override;
 
-private:
 	std::string destination_;
 };
 
@@ -41,7 +39,6 @@ public:
 	EventStep(const std::string& event);
 	void Render() override;
 
-private:
 	std::string event_;
 	bool completed_ = false;
 };

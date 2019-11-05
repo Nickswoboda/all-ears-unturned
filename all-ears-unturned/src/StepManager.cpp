@@ -58,6 +58,15 @@ void StepManager::Render()
 void StepManager::IncrementStep()
 {
 	if ((current_step_ + 1) < steps_.size()) {
+
+		//reset dialog checkboxes
+		auto npc_step = dynamic_cast<NpcStep*>(steps_[current_step_].get());
+		if (npc_step != nullptr) {
+			for (auto& dialog : npc_step->dialogs_) {
+				dialog.completed = false;
+			}
+		}
+
 		++current_step_;
 	}
 	else {
@@ -73,4 +82,42 @@ void StepManager::DecrementStep()
 	else {
 		std::cout << "AT THE BEGINNING OF STEPS";
 	}
+}
+
+std::string StepManager::GetDestination()
+{
+	auto travel_step = dynamic_cast<TravelStep*>(steps_[current_step_].get());
+	if (travel_step != nullptr) {
+		return travel_step->destination_;
+	}
+
+	return "";
+}
+
+bool StepManager::StepIsComplete()
+{
+	auto npc_step = dynamic_cast<NpcStep*>(steps_[current_step_].get());
+	if (npc_step != nullptr) {
+		bool all_dialog_complete = true;
+
+		for (const auto& dialog : npc_step->dialogs_) {
+			if (!dialog.completed) {
+				all_dialog_complete = false;
+				break;
+			}
+		}
+		if (all_dialog_complete) {
+			return true;
+		}
+	}
+
+	auto event_step = dynamic_cast<EventStep*>(steps_[current_step_].get());
+	if (event_step != nullptr) {
+
+		if (event_step->completed_) {
+			event_step->completed_ = false;
+			return true;
+		}
+	}
+	return false;
 }

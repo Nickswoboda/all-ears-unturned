@@ -13,7 +13,9 @@ public:
 	void IncrementStep();
 	void DecrementStep();
 
-private:
+	std::string GetDestination();
+	bool StepIsComplete();
+
 	std::vector<std::unique_ptr<Step>> steps_;
 	int current_step_ = 0;
 };

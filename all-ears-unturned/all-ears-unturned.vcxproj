@@ -147,6 +147,7 @@
     <ClCompile Include="dependencies\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="dependencies\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\LogParser.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Step.cpp" />
     <ClCompile Include="src\StepManager.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="dependencies\imgui\imstb_textedit.h" />
     <ClInclude Include="dependencies\imgui\imstb_truetype.h" />
     <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\LogParser.h" />
     <ClInclude Include="src\Step.h" />
     <ClInclude Include="src\StepManager.h" />
   </ItemGroup>

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "StepManager.h"
+#include "LogParser.h"
 
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
@@ -14,12 +15,17 @@ public:
 	~Application();
 
 	void Run();
-	void LoadSaveInfo();
+	void Update();
+
+	void Save();
+	void Load();
 
 private:
 	GLFWwindow* window_;
 	std::string log_file_path_;
+
 	StepManager step_manager_;
+	LogParser log_parser_;
 
 	//step manager
 	// -steps

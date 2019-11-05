@@ -10,6 +10,7 @@
 #include <json.hpp>
 
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 
 Application::Application()
@@ -37,10 +38,13 @@ Application::Application()
 	ImGui::StyleColorsDark();
 	ImGui_ImplGlfw_InitForOpenGL(window_, true);
 	ImGui_ImplOpenGL3_Init("#version 410");
+
+	Load();
 }
 
 Application::~Application()
 {
+	Save();
 	glfwTerminate();
 }
 
@@ -48,6 +52,8 @@ void Application::Run()
 {
 	while (!glfwWindowShouldClose(window_))
 	{
+		Update();
+
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		ImGui_ImplOpenGL3_NewFrame();
@@ -64,13 +70,38 @@ void Application::Run()
 	}
 }
 
-void Application::LoadSaveInfo()
+void Application::Update()
 {
-	std::ifstream save_file("assets/jsons/save-info.json");
+	if (step_manager_.StepIsComplete()) {
+		step_manager_.IncrementStep();
+	}
+
+	if (step_manager_.GetDestination() != "") {
+		if (log_parser_.HasEnteredLocation(step_manager_.GetDestination())) {
+			step_manager_.IncrementStep();
+		}
+	}
+}
+
+
+void Application::Save()
+{
+	nlohmann::json json;
+	json["log path"] = log_parser_.log_file_path_;
+	json["current step"] = step_manager_.current_step_;
+
+	std::ofstream file("assets/jsons/save-info.json");
+	file << std::setw(4) << json << std::endl;
+}
+
+void Application::Load()
+{
+	std::ifstream save_file("assets/save-info.json");
 	if (!save_file.is_open()) {
 		return;
 	}
 
 	nlohmann::json save_json = nlohmann::json::parse(save_file);
-	log_file_path_ = save_json["log path"];
+	log_parser_.log_file_path_ = save_json["log path"];
+	step_manager_.current_step_ = save_json["current step"];
 }
