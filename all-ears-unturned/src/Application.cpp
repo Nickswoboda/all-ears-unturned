@@ -40,6 +40,10 @@ Application::Application()
 	ImGui_ImplOpenGL3_Init("#version 410");
 
 	Load();
+
+	if (log_parser_.log_file_path_.empty()) {
+		file_dialog_ = std::make_unique<FileDialog>();
+	}
 }
 
 Application::~Application()
@@ -52,15 +56,29 @@ void Application::Run()
 {
 	while (!glfwWindowShouldClose(window_))
 	{
-		Update();
-
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 
-		step_manager_.Render();
+		if (file_dialog_) {
+			file_dialog_->Render();
+			if (!file_dialog_->selected_path_.empty()) {
+				log_parser_.log_file_path_ = file_dialog_->selected_path_;
+				file_dialog_.release();
+			}
+		}
+		else {
+			static int frames = 0;
+			if (frames > 10) {
+				frames -= 10;
+				Update();
+			}
+			++frames;
+
+			step_manager_.Render();
+		}
 
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -90,8 +108,9 @@ void Application::Save()
 	json["log path"] = log_parser_.log_file_path_;
 	json["current step"] = step_manager_.current_step_;
 
-	std::ofstream file("assets/jsons/save-info.json");
+	std::ofstream file("assets/save-info.json");
 	file << std::setw(4) << json << std::endl;
+	file.close();
 }
 
 void Application::Load()
@@ -102,6 +121,7 @@ void Application::Load()
 	}
 
 	nlohmann::json save_json = nlohmann::json::parse(save_file);
+	save_file.close();
 	log_parser_.log_file_path_ = save_json["log path"];
 	step_manager_.current_step_ = save_json["current step"];
 }

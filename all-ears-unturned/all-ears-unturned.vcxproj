@@ -78,6 +78,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)dependencies\nlohmann;$(ProjectDir)dependencies\imgui;$(ProjectDir)dependencies\GLAD\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -93,6 +94,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)dependencies\nlohmann;$(ProjectDir)dependencies\imgui;$(ProjectDir)dependencies\GLAD\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -110,6 +112,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)dependencies\nlohmann;$(ProjectDir)dependencies\imgui;$(ProjectDir)dependencies\GLAD\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,6 +132,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)dependencies\nlohmann;$(ProjectDir)dependencies\imgui;$(ProjectDir)dependencies\GLAD\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,6 +151,7 @@
     <ClCompile Include="dependencies\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="dependencies\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\FileDialog.cpp" />
     <ClCompile Include="src\LogParser.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Step.cpp" />
@@ -163,6 +168,7 @@
     <ClInclude Include="dependencies\imgui\imstb_textedit.h" />
     <ClInclude Include="dependencies\imgui\imstb_truetype.h" />
     <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\FileDialog.h" />
     <ClInclude Include="src\LogParser.h" />
     <ClInclude Include="src\Step.h" />
     <ClInclude Include="src\StepManager.h" />

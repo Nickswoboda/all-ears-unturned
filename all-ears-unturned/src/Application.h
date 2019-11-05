@@ -2,6 +2,7 @@
 
 #include "StepManager.h"
 #include "LogParser.h"
+#include "FileDialog.h"
 
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
@@ -26,6 +27,7 @@ private:
 
 	StepManager step_manager_;
 	LogParser log_parser_;
+	std::unique_ptr<FileDialog> file_dialog_;
 
 	//step manager
 	// -steps
