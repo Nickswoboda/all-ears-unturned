@@ -13,17 +13,24 @@
 #include <iomanip>
 #include <fstream>
 
-Application::Application()
+Application::Application(int width, int height)
+	:window_width_(width), window_height_(height)
 {
 	if (!glfwInit()) {
 		std::cout << "Could not initialize GLFW";
 	}
 
-	window_ = glfwCreateWindow(640, 480, "All Ears Unturned", NULL, NULL);
+	glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
+	glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, GLFW_TRUE);
+	glfwWindowHint(GLFW_FLOATING, GLFW_TRUE);
+
+	window_ = glfwCreateWindow(window_width_, window_height_, "All Ears Unturned", NULL, NULL);
 	if (!window_){
 		glfwTerminate();
 		std::cout << "Could not create window";
 	}
+
+	glfwSetWindowPos(window_, window_x_, window_y_);
 
 	glfwMakeContextCurrent(window_);
 
@@ -35,7 +42,6 @@ Application::Application()
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
-	ImGui::StyleColorsDark();
 	ImGui_ImplGlfw_InitForOpenGL(window_, true);
 	ImGui_ImplOpenGL3_Init("#version 410");
 
@@ -44,6 +50,8 @@ Application::Application()
 	if (log_parser_.log_file_path_.empty()) {
 		file_dialog_ = std::make_unique<FileDialog>();
 	}
+
+	SetImGuiStyle();
 }
 
 Application::~Application()
@@ -54,7 +62,7 @@ Application::~Application()
 
 void Application::Run()
 {
-	while (!glfwWindowShouldClose(window_))
+	while (!glfwWindowShouldClose(window_) && running_)
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
 
@@ -77,7 +85,22 @@ void Application::Run()
 			}
 			++frames;
 
+			glfwGetWindowSize(window_, &window_width_, &window_height_);
+			ImGui::SetNextWindowPos({ 0.0f, 0.0f }, ImGuiCond_Once);
+			ImGui::SetNextWindowSize({ (float)window_width_, (float)window_height_ }, ImGuiCond_Always);
+			ImGui::Begin("All Ears Unturned", &running_,
+				ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
+
+			ImVec2 pos = ImGui::GetWindowPos();
+			window_x_ += pos.x;
+			window_y_ += pos.y;
+			ImGui::SetWindowPos({0.0f, 0.0f});
+
+			ImGui::Separator();
+
 			step_manager_.Render();
+
+			ImGui::End();
 		}
 
 		ImGui::Render();
@@ -85,6 +108,8 @@ void Application::Run()
 
 		glfwSwapBuffers(window_);
 		glfwPollEvents();
+
+		glfwSetWindowPos(window_, window_x_, window_y_);
 	}
 }
 
@@ -124,4 +149,20 @@ void Application::Load()
 	save_file.close();
 	log_parser_.log_file_path_ = save_json["log path"];
 	step_manager_.current_step_ = save_json["current step"];
+}
+
+void Application::SetImGuiStyle()
+{
+	ImGuiStyle* style = &ImGui::GetStyle();
+
+	style->WindowPadding = ImVec2(2, 2);
+
+	style->WindowRounding = 0.0f;
+	style->Colors[ImGuiCol_TitleBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.2f);
+	style->Colors[ImGuiCol_TitleBgActive] = ImVec4(0.0f, 0.0f, 0.0f, 0.8f);
+	style->Colors[ImGuiCol_WindowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.8f);
+	//style->Colors[ImGuiCol_Button] = ImVec4(0.2f, 0.2f, 0.2f, 1.0f);
+
+	style->Colors[ImGuiCol_WindowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.8f);
+
 }

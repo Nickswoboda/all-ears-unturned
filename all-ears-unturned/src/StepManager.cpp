@@ -39,8 +39,6 @@ StepManager::StepManager()
 
 void StepManager::Render()
 {
-	ImGui::Begin("Steps");
-
 	steps_[current_step_]->Render();
 
 	ImGui::SetCursorPos({ 10, 175 });
@@ -51,8 +49,6 @@ void StepManager::Render()
 	if (ImGui::Button("Next")) {
 		IncrementStep();
 	}
-
-	ImGui::End();
 }
 
 void StepManager::IncrementStep()

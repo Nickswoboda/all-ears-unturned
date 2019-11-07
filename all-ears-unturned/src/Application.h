@@ -12,7 +12,7 @@
 class Application
 {
 public:
-	Application();
+	Application(int width, int height);
 	~Application();
 
 	void Run();
@@ -21,9 +21,15 @@ public:
 	void Save();
 	void Load();
 
+	void SetImGuiStyle();
+
 private:
 	GLFWwindow* window_;
-	std::string log_file_path_;
+	bool running_ = true;
+	int window_x_ = 400;
+	int window_y_ = 400;
+	int window_width_;
+	int window_height_;
 
 	StepManager step_manager_;
 	LogParser log_parser_;

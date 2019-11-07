@@ -3,7 +3,7 @@
 int main(void)
 {
 
-	Application app;
+	Application app(300, 200);
 	app.Run();
 
 	return 0;
