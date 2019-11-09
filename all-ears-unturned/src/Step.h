@@ -22,6 +22,7 @@ public:
 
 	std::string npc_;
 	std::vector<Dialog> dialogs_;
+	std::string display_text_;
 };
 
 class TravelStep : public Step

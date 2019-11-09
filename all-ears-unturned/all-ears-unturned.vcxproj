@@ -156,6 +156,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Step.cpp" />
     <ClCompile Include="src\StepManager.cpp" />
+    <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dependencies\GLAD\include\glad\glad.h" />
@@ -172,6 +173,7 @@
     <ClInclude Include="src\LogParser.h" />
     <ClInclude Include="src\Step.h" />
     <ClInclude Include="src\StepManager.h" />
+    <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

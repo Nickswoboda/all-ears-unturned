@@ -15,13 +15,15 @@ FileDialog::FileDialog()
 
 void FileDialog::Render()
 {
-	ImGui::Begin("File System");
+	
+	ImGui::Text("Select the Path of Exile client Log");
 	ImGui::Text(current_file_path_.c_str());
 
 	std::filesystem::path path = current_file_path_;
 	if (!std::filesystem::exists(path)) {
 		std::cout << "file path does not exist";
 	}
+
 	for (auto& p : std::filesystem::directory_iterator(path, std::filesystem::directory_options::skip_permission_denied)) {
 		if (p.is_directory()) {
 			if (ImGui::Button(p.path().u8string().c_str())) {
@@ -42,6 +44,5 @@ void FileDialog::Render()
 			prev_paths_.pop();
 		}
 	}
-	ImGui::End();
 }
 

@@ -41,7 +41,7 @@ void StepManager::Render()
 {
 	steps_[current_step_]->Render();
 
-	ImGui::SetCursorPos({ 10, 175 });
+	ImGui::Separator();
 	if (ImGui::Button("Prev")) {
 		DecrementStep();
 	}
