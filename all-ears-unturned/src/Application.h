@@ -23,7 +23,7 @@ public:
 	~Application();
 
 	void Run();
-	void Update();
+	void CheckStepCompletion();
 
 	void Save();
 	void Load();
@@ -31,19 +31,19 @@ public:
 	void SetImGuiStyle();
 	void RenderSettingsMenu();
 
+	void PushState(State state);
+	void PopState();
+
 private:
 	bool running_ = true;
 	bool moveable_ = false;
 	int font_size_= 16;
 	bool font_size_changed_ = false;
 
-	std::vector<ImFont*> fonts_;
-
 	Window window_;
 	StepManager step_manager_;
 	LogParser log_parser_;
 	std::unique_ptr<FileDialog> file_dialog_;
 
-	State state_ = State::ALL_EARS;
-
+	std::stack<State> state_stack_;
 };

@@ -6,8 +6,10 @@ class Window
 {
 public:
 	Window(int width, int height);
-	
-	void Update();
+
+	void Move(int x, int y);
+	void ResizeHeight(int height);
+	void UpdateSize();
 
 	GLFWwindow* glfw_window_ = nullptr;
 	int x_pos_ = 0;

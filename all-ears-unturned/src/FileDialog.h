@@ -7,10 +7,11 @@ class FileDialog
 {
 public:
 
-	FileDialog();
+	FileDialog(int width);
 
 	void Render();
 
+	int width_;
 	std::string current_file_path_ = "/";
 	std::string selected_path_;
 	std::stack<std::string> prev_paths_;

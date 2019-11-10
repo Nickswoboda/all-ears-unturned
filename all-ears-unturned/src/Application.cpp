@@ -20,15 +20,14 @@ Application::Application(int width, int height)
 		std::cout << "could not load GLAD";
 	}
 
+	Load();
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
-	fonts_.push_back(io.Fonts->AddFontFromFileTTF("assets/fonts/Roboto-Medium.ttf", 16));
+	io.Fonts->AddFontFromFileTTF("assets/fonts/Roboto-Medium.ttf", font_size_);
 
 	ImGui_ImplGlfw_InitForOpenGL(window_.glfw_window_, true);
 	ImGui_ImplOpenGL3_Init("#version 410");
-
-	Load();
 
 	SetImGuiStyle();
 }
@@ -50,17 +49,15 @@ void Application::Run()
 		ImGui::NewFrame();
 
 		ImGui::SetNextWindowSize({ (float)window_.width_, (float)window_.height_ });
+		
 		if (moveable_) {
 			ImGui::Begin("All Ears Unturned", &running_,
 				ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
 
 			ImVec2 pos = ImGui::GetWindowPos();
 			if (pos.x != 0.0f || pos.y != 0.0f) {
-				window_.x_pos_ += pos.x;
-				window_.y_pos_ += pos.y;
 				ImGui::SetWindowPos({ 0.0f, 0.0f });
-				window_.Update();
-				std::cout << "window moved" << '\n';
+				window_.Move(pos.x, pos.y);
 			}
 		}
 		else {
@@ -72,25 +69,22 @@ void Application::Run()
 
 		static int frames = 0;
 
-		switch (state_) {
+		switch (state_stack_.top()) {
 			case State::FILE_DIALOG:
 				file_dialog_->Render();
 				if (!file_dialog_->selected_path_.empty()) {
-					log_parser_.log_file_path_ = file_dialog_->selected_path_;
-					file_dialog_.release();
-					state_ = State::ALL_EARS;
+					PopState();
 				}
 				break;
 
 			case State::ALL_EARS:
 				if (frames > 10) {
 					frames -= 10;
-					Update();
+					CheckStepCompletion();
 				}
 				++frames;
 				
 				step_manager_.Render();
-
 				break;
 
 			case State::SETTINGS:
@@ -99,14 +93,13 @@ void Application::Run()
 		}
 
 		ImGui::Separator();
-		if (ImGui::Button("Settings")) {
-			state_ = State::SETTINGS;
+		if (state_stack_.top() != State::SETTINGS) {
+			if (ImGui::Button("Settings")) {
+				PushState(State::SETTINGS);
+			}
 		}
-
 		if (window_.height_ != ImGui::GetCursorPosY()) {
-			window_.height_ = ImGui::GetCursorPosY();
-			window_.Update();
-			std::cout << "window size changed" << '\n';
+			window_.ResizeHeight(ImGui::GetCursorPosY());
 		}
 
 		ImGui::End();
@@ -118,9 +111,10 @@ void Application::Run()
 		glfwPollEvents();
 
 
-		//only if font changed in setting menu
+		//Must change font between Render() and NewFrame()
 		if (font_size_changed_) {
 			font_size_changed_ = false;
+
 			ImGuiIO& io = ImGui::GetIO();
 			delete io.Fonts;
 			io.Fonts = new ImFontAtlas();
@@ -130,7 +124,7 @@ void Application::Run()
 	}
 }
 
-void Application::Update()
+void Application::CheckStepCompletion()
 {
 	if (step_manager_.StepIsComplete()) {
 		step_manager_.IncrementStep();
@@ -151,6 +145,9 @@ void Application::Save()
 	json["current step"] = step_manager_.current_step_;
 	json["window x"] = window_.x_pos_;
 	json["window y"] = window_.y_pos_;
+	json["window width"] = window_.width_;
+	json["font size"] = font_size_;
+
 
 	std::ofstream file("assets/save-info.json");
 	file << std::setw(4) << json << std::endl;
@@ -161,20 +158,25 @@ void Application::Load()
 {
 	std::ifstream save_file("assets/save-info.json");
 	if (!save_file.is_open()) {
+		PushState(State::FILE_DIALOG);
 		return;
 	}
 
-	nlohmann::json save_json = nlohmann::json::parse(save_file);
+	nlohmann::json json = nlohmann::json::parse(save_file);
 	save_file.close();
 
-	log_parser_.log_file_path_ = save_json["log path"];
+	log_parser_.log_file_path_ = json["log path"];
+	step_manager_.current_step_ = json["current step"];
+	window_.Move(json["window x"], json["window y"]);
+	window_.width_ = (json["window width"]);
+	font_size_ = json["font size"];
+
 	if (log_parser_.log_file_path_ == "") {
-		state_ = State::FILE_DIALOG;
-		file_dialog_ = std::make_unique<FileDialog>();
+		PushState(State::FILE_DIALOG);
 	}
-	step_manager_.current_step_ = save_json["current step"];
-	window_.x_pos_ = save_json["window x"];
-	window_.y_pos_ = save_json["window y"];
+	else {
+		PushState(State::ALL_EARS);
+	}
 }
 
 void Application::SetImGuiStyle()
@@ -199,7 +201,11 @@ void Application::RenderSettingsMenu()
 		font_size_changed_ = true;
 	}
 	if (ImGui::DragInt("window width", &window_.width_, 1.0f, 100, 1000)) {
-		window_.Update();
+		window_.UpdateSize();
+
+		if (file_dialog_ != nullptr) {
+			file_dialog_->width_ = window_.width_;
+		}
 	}
 
 	if (ImGui::Button("movable")) {
@@ -212,6 +218,24 @@ void Application::RenderSettingsMenu()
 	}
 
 	if (ImGui::Button("Return")) {
-		state_ = State::ALL_EARS;
+		PopState();
 	}
+}
+
+void Application::PushState(State state)
+{
+	state_stack_.push(state);
+
+	if (state == State::FILE_DIALOG) {
+		file_dialog_ = std::make_unique<FileDialog>(window_.height_);
+	}
+}
+
+void Application::PopState()
+{
+	if (state_stack_.top() == State::FILE_DIALOG) {
+		file_dialog_.release();
+	}
+
+	state_stack_.pop();
 }

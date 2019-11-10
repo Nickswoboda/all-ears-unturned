@@ -23,9 +23,21 @@ Window::Window(int width, int height)
 	glfwMakeContextCurrent(glfw_window_);
 }
 
-void Window::Update()
+void Window::Move(int x, int y)
 {
+	x_pos_ += x;
+	y_pos_ += y;
 	glfwSetWindowPos(glfw_window_, x_pos_, y_pos_);
+}
+
+void Window::ResizeHeight(int height)
+{
+	height_ = height;
+	glfwSetWindowSize(glfw_window_, width_, height_);
+}
+
+void Window::UpdateSize()
+{
 	glfwSetWindowSize(glfw_window_, width_, height_);
 }
 
