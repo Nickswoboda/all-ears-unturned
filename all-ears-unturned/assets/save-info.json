@@ -1,8 +1,9 @@
 {
-    "current step": 2,
-    "font size": 21,
+    "current step": 0,
+    "font size": 16,
     "log path": "",
-    "window width": 611,
-    "window x": 818,
-    "window y": 400
+    "show progress": true,
+    "window width": 500,
+    "window x": 833,
+    "window y": 69
 }

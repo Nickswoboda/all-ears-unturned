@@ -39,6 +39,7 @@ private:
 	bool moveable_ = false;
 	int font_size_= 16;
 	bool font_size_changed_ = false;
+	bool show_progress_ = false;
 
 	Window window_;
 	StepManager step_manager_;

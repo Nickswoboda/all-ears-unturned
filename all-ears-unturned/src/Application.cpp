@@ -73,6 +73,7 @@ void Application::Run()
 			case State::FILE_DIALOG:
 				file_dialog_->Render();
 				if (!file_dialog_->selected_path_.empty()) {
+					log_parser_.log_file_path_ = file_dialog_->selected_path_;
 					PopState();
 				}
 				break;
@@ -83,6 +84,11 @@ void Application::Run()
 					CheckStepCompletion();
 				}
 				++frames;
+
+				if (show_progress_) {
+					ImGui::ProgressBar((float)step_manager_.current_step_ / step_manager_.steps_.size());
+					ImGui::Separator();
+				}
 				
 				step_manager_.Render();
 				break;
@@ -147,6 +153,7 @@ void Application::Save()
 	json["window y"] = window_.y_pos_;
 	json["window width"] = window_.width_;
 	json["font size"] = font_size_;
+	json["show progress"] = show_progress_;
 
 
 	std::ofstream file("assets/save-info.json");
@@ -156,6 +163,8 @@ void Application::Save()
 
 void Application::Load()
 {
+	PushState(State::ALL_EARS);
+
 	std::ifstream save_file("assets/save-info.json");
 	if (!save_file.is_open()) {
 		PushState(State::FILE_DIALOG);
@@ -165,17 +174,16 @@ void Application::Load()
 	nlohmann::json json = nlohmann::json::parse(save_file);
 	save_file.close();
 
+
 	log_parser_.log_file_path_ = json["log path"];
 	step_manager_.current_step_ = json["current step"];
 	window_.Move(json["window x"], json["window y"]);
 	window_.width_ = (json["window width"]);
 	font_size_ = json["font size"];
+	show_progress_ = json["show progress"];
 
 	if (log_parser_.log_file_path_ == "") {
 		PushState(State::FILE_DIALOG);
-	}
-	else {
-		PushState(State::ALL_EARS);
 	}
 }
 
@@ -208,18 +216,13 @@ void Application::RenderSettingsMenu()
 		}
 	}
 
-	if (ImGui::Button("movable")) {
-		if (moveable_) {
-			moveable_ = false;
-		}
-		else {
-			moveable_ = true;
-		}
-	}
+	ImGui::Checkbox("Movable", &moveable_);
+	ImGui::Checkbox("Show Progress", &show_progress_);
 
 	if (ImGui::Button("Return")) {
 		PopState();
 	}
+
 }
 
 void Application::PushState(State state)
@@ -227,7 +230,7 @@ void Application::PushState(State state)
 	state_stack_.push(state);
 
 	if (state == State::FILE_DIALOG) {
-		file_dialog_ = std::make_unique<FileDialog>(window_.height_);
+		file_dialog_ = std::make_unique<FileDialog>(window_.width_);
 	}
 }
 

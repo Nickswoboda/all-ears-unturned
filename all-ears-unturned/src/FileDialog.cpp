@@ -28,13 +28,13 @@ void FileDialog::Render()
 	ImGui::BeginChildFrame(1, { width_ - 10.0f, 500 });
 	for (auto& p : std::filesystem::directory_iterator(path, std::filesystem::directory_options::skip_permission_denied)) {
 		if (p.is_directory()) {
-			if (ImGui::Button(p.path().u8string().c_str())) {
+			if (ImGui::Button(p.path().filename().u8string().c_str())) {
 				prev_paths_.push(current_file_path_);
 				current_file_path_ = p.path().u8string();
 			}
 		}
 		else if (p.path().extension() == ".txt") {
-			if (ImGui::Button(p.path().string().c_str())) {
+			if (ImGui::Button(p.path().filename().string().c_str())) {
 				selected_path_ = p.path().u8string();
 			}
 		}
