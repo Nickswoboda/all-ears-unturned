@@ -1,9 +1,9 @@
 {
-    "current step": 0,
-    "font size": 16,
-    "log path": "",
+    "current step": 8,
+    "font size": 11,
+    "log path": "C:\\AMD\\logs\\Client.txt",
     "show progress": true,
-    "window width": 500,
-    "window x": 833,
-    "window y": 69
+    "window width": 194,
+    "window x": 1684,
+    "window y": 460
 }

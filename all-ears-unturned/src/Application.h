@@ -16,7 +16,8 @@ public:
 		FILE_DIALOG,
 		ALL_EARS,
 		NO_STONE_UNTURNED,
-		SETTINGS
+		SETTINGS,
+		LOAD_DATA_ERROR
 	};
 
 	Application(int width, int height);
@@ -30,6 +31,7 @@ public:
 
 	void SetImGuiStyle();
 	void RenderSettingsMenu();
+	void RenderReadSaveFileError();
 
 	void PushState(State state);
 	void PopState();

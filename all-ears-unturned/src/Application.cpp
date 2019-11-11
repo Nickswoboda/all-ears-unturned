@@ -70,10 +70,13 @@ void Application::Run()
 		static int frames = 0;
 
 		switch (state_stack_.top()) {
+			case State::LOAD_DATA_ERROR:
+				RenderReadSaveFileError();
+				break;
 			case State::FILE_DIALOG:
 				file_dialog_->Render();
-				if (!file_dialog_->selected_path_.empty()) {
-					log_parser_.log_file_path_ = file_dialog_->selected_path_;
+				if (file_dialog_->done_) {
+					log_parser_.log_file_path_ = file_dialog_->full_log_path_;
 					PopState();
 				}
 				break;
@@ -172,18 +175,27 @@ void Application::Load()
 	}
 
 	nlohmann::json json = nlohmann::json::parse(save_file);
+
 	save_file.close();
 
+	
+	if (json.count("log path") && json.count("current step") && json.count("window x") &&
+		json.count("window y") && json.count("window width") && json.count("font size") &&
+		json.count("show progress")) {
 
-	log_parser_.log_file_path_ = json["log path"];
-	step_manager_.current_step_ = json["current step"];
-	window_.Move(json["window x"], json["window y"]);
-	window_.width_ = (json["window width"]);
-	font_size_ = json["font size"];
-	show_progress_ = json["show progress"];
+		log_parser_.log_file_path_ = json["log path"];
+		step_manager_.current_step_ = json["current step"];
+		window_.Move(json["window x"], json["window y"]);
+		window_.width_ = (json["window width"]);
+		font_size_ = json["font size"];
+		show_progress_ = json["show progress"];
 
-	if (log_parser_.log_file_path_ == "") {
-		PushState(State::FILE_DIALOG);
+		if (log_parser_.log_file_path_ == "") {
+			PushState(State::FILE_DIALOG);
+		}
+	}
+	else {
+		PushState(State::LOAD_DATA_ERROR);
 	}
 }
 
@@ -219,10 +231,26 @@ void Application::RenderSettingsMenu()
 	ImGui::Checkbox("Movable", &moveable_);
 	ImGui::Checkbox("Show Progress", &show_progress_);
 
+	ImGui::TextWrapped("Current Log Folder:");
+	ImGui::TextWrapped(log_parser_.log_file_path_.c_str());
+	if (ImGui::Button("Change Folder Path")) {
+		PushState(State::FILE_DIALOG);
+	}
+
 	if (ImGui::Button("Return")) {
 		PopState();
 	}
 
+}
+
+void Application::RenderReadSaveFileError()
+{
+	ImGui::Text("Unable to Read Save File");
+
+	if (ImGui::Button("OK")) {
+		PopState();
+		PushState(State::FILE_DIALOG);
+	}
 }
 
 void Application::PushState(State state)
