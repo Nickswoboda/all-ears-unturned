@@ -14,6 +14,7 @@ public:
 	struct Dialog
 	{
 		std::string name;
+		std::string id;
 		bool completed = false;
 	};
 
