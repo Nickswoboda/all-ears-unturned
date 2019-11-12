@@ -4,10 +4,10 @@
 
 #include <vector>
 #include <memory>
-class StepManager
+class AllEarsManager
 {
 public:
-	StepManager();
+	AllEarsManager();
 
 	void Render();
 	void IncrementStep();
@@ -17,5 +17,5 @@ public:
 	bool StepIsComplete();
 
 	std::vector<std::unique_ptr<Step>> steps_;
-	int current_step_ = 0;
+	int current_step_ = 1;
 };

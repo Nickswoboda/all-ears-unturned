@@ -154,8 +154,9 @@
     <ClCompile Include="src\FileDialog.cpp" />
     <ClCompile Include="src\LogParser.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\NoStoneManager.cpp" />
     <ClCompile Include="src\Step.cpp" />
-    <ClCompile Include="src\StepManager.cpp" />
+    <ClCompile Include="src\AllEarsManager.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -171,8 +172,9 @@
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\FileDialog.h" />
     <ClInclude Include="src\LogParser.h" />
+    <ClInclude Include="src\NoStoneManager.h" />
     <ClInclude Include="src\Step.h" />
-    <ClInclude Include="src\StepManager.h" />
+    <ClInclude Include="src\AllEarsManager.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

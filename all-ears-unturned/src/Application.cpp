@@ -89,11 +89,15 @@ void Application::Run()
 				++frames;
 
 				if (show_progress_) {
-					ImGui::ProgressBar((float)step_manager_.current_step_ / step_manager_.steps_.size());
+					ImGui::ProgressBar((float)all_ears_manager_.current_step_ / all_ears_manager_.steps_.size());
 					ImGui::Separator();
 				}
 				
-				step_manager_.Render();
+				all_ears_manager_.Render();
+				break;
+
+			case State::NO_STONE_UNTURNED:
+				no_stone_manager_.Render();
 				break;
 
 			case State::SETTINGS:
@@ -135,13 +139,13 @@ void Application::Run()
 
 void Application::CheckStepCompletion()
 {
-	if (step_manager_.StepIsComplete()) {
-		step_manager_.IncrementStep();
+	if (all_ears_manager_.StepIsComplete()) {
+		all_ears_manager_.IncrementStep();
 	}
 
-	if (step_manager_.GetDestination() != "") {
-		if (log_parser_.HasEnteredLocation(step_manager_.GetDestination())) {
-			step_manager_.IncrementStep();
+	if (all_ears_manager_.GetDestination() != "") {
+		if (log_parser_.HasEnteredLocation(all_ears_manager_.GetDestination())) {
+			all_ears_manager_.IncrementStep();
 		}
 	}
 }
@@ -151,7 +155,7 @@ void Application::Save()
 {
 	nlohmann::json json;
 	json["log path"] = log_parser_.log_file_path_;
-	json["current step"] = step_manager_.current_step_;
+	json["current step"] = all_ears_manager_.current_step_;
 	json["window x"] = window_.x_pos_;
 	json["window y"] = window_.y_pos_;
 	json["window width"] = window_.width_;
@@ -166,7 +170,7 @@ void Application::Save()
 
 void Application::Load()
 {
-	PushState(State::ALL_EARS);
+	PushState(State::NO_STONE_UNTURNED);
 
 	std::ifstream save_file("assets/save-info.json");
 	if (!save_file.is_open()) {
@@ -184,7 +188,7 @@ void Application::Load()
 		json.count("show progress")) {
 
 		log_parser_.log_file_path_ = json["log path"];
-		step_manager_.current_step_ = json["current step"];
+		all_ears_manager_.current_step_ = json["current step"];
 		window_.Move(json["window x"], json["window y"]);
 		window_.width_ = (json["window width"]);
 		font_size_ = json["font size"];
@@ -227,6 +231,18 @@ void Application::RenderSettingsMenu()
 			file_dialog_->width_ = window_.width_;
 		}
 	}
+
+	ImGui::PushButtonRepeat(true);
+	if (ImGui::Button("-")) {
+		all_ears_manager_.DecrementStep();
+	}
+	ImGui::SameLine();
+	if (ImGui::Button("+")) {
+		all_ears_manager_.IncrementStep();
+	}
+	ImGui::PopButtonRepeat();
+	ImGui::SameLine();
+	ImGui::Text("Current Step: %d", all_ears_manager_.current_step_ + 1);
 
 	ImGui::Checkbox("Movable", &moveable_);
 	ImGui::Checkbox("Show Progress", &show_progress_);

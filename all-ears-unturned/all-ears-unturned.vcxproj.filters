@@ -45,9 +45,6 @@
     <ClCompile Include="src\Step.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\StepManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\LogParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -55,6 +52,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AllEarsManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NoStoneManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,9 +92,6 @@
     <ClInclude Include="src\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\StepManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Step.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -102,6 +102,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AllEarsManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NoStoneManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

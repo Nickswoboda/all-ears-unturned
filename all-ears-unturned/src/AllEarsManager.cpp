@@ -1,4 +1,4 @@
-#include "StepManager.h"
+#include "AllEarsManager.h"
 
 #include "Step.h"
 
@@ -7,7 +7,7 @@
 
 #include <fstream>
 
-StepManager::StepManager()
+AllEarsManager::AllEarsManager()
 {
 	std::ifstream file("assets/steps.json");
 
@@ -37,21 +37,24 @@ StepManager::StepManager()
 	}
 }
 
-void StepManager::Render()
+void AllEarsManager::Render()
 {
 	steps_[current_step_]->Render();
 
 	ImGui::Separator();
-	if (ImGui::Button("Prev")) {
+
+	if (ImGui::ArrowButton("##left", ImGuiDir_Left)) {
 		DecrementStep();
 	}
-	ImGui::SameLine(50);
-	if (ImGui::Button("Next")) {
+	ImGui::SameLine();
+	ImGui::Text("Step: %d / %d", current_step_ + 1, steps_.size());
+	ImGui::SameLine();
+	if (ImGui::ArrowButton("##right", ImGuiDir_Right)) {
 		IncrementStep();
 	}
 }
 
-void StepManager::IncrementStep()
+void AllEarsManager::IncrementStep()
 {
 	if ((current_step_ + 1) < steps_.size()) {
 
@@ -70,7 +73,7 @@ void StepManager::IncrementStep()
 	}
 }
 
-void StepManager::DecrementStep()
+void AllEarsManager::DecrementStep()
 {
 	if (current_step_ > 0) {
 		--current_step_;
@@ -80,7 +83,7 @@ void StepManager::DecrementStep()
 	}
 }
 
-std::string StepManager::GetDestination()
+std::string AllEarsManager::GetDestination()
 {
 	auto travel_step = dynamic_cast<TravelStep*>(steps_[current_step_].get());
 	if (travel_step != nullptr) {
@@ -90,7 +93,7 @@ std::string StepManager::GetDestination()
 	return "";
 }
 
-bool StepManager::StepIsComplete()
+bool AllEarsManager::StepIsComplete()
 {
 	auto npc_step = dynamic_cast<NpcStep*>(steps_[current_step_].get());
 	if (npc_step != nullptr) {

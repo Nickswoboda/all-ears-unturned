@@ -1,7 +1,8 @@
 #pragma once
 
 #include "Window.h"
-#include "StepManager.h"
+#include "AllEarsManager.h"
+#include "NoStoneManager.h"
 #include "LogParser.h"
 #include "FileDialog.h"
 
@@ -44,7 +45,8 @@ private:
 	bool show_progress_ = false;
 
 	Window window_;
-	StepManager step_manager_;
+	AllEarsManager all_ears_manager_;
+	NoStoneManager no_stone_manager_;
 	LogParser log_parser_;
 	std::unique_ptr<FileDialog> file_dialog_;
 
