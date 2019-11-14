@@ -169,6 +169,7 @@
     <ClInclude Include="dependencies\imgui\imstb_rectpack.h" />
     <ClInclude Include="dependencies\imgui\imstb_textedit.h" />
     <ClInclude Include="dependencies\imgui\imstb_truetype.h" />
+    <ClInclude Include="src\ActLore.h" />
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\FileDialog.h" />
     <ClInclude Include="src\LogParser.h" />
