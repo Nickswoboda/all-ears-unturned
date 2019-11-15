@@ -68,6 +68,11 @@ void Application::Run()
 		ImGui::Separator();
 
 		static int frames = 0;
+		if (frames > 10) {
+			frames -= 10;
+			CheckStepCompletion();
+		}
+		++frames;
 
 		switch (state_stack_.top()) {
 			case State::LOAD_DATA_ERROR:
@@ -82,12 +87,6 @@ void Application::Run()
 				break;
 
 			case State::ALL_EARS:
-				if (frames > 10) {
-					frames -= 10;
-					CheckStepCompletion();
-				}
-				++frames;
-
 				if (show_progress_) {
 					ImGui::ProgressBar((float)all_ears_manager_.current_step_ / all_ears_manager_.steps_.size());
 					ImGui::Separator();
@@ -144,8 +143,15 @@ void Application::CheckStepCompletion()
 	}
 
 	if (all_ears_manager_.GetDestination() != "") {
-		if (log_parser_.HasEnteredLocation(all_ears_manager_.GetDestination())) {
+		if (all_ears_manager_.GetDestination() == log_parser_.GetLocation()) {
 			all_ears_manager_.IncrementStep();
+		}
+	}
+
+	if (state_stack_.top() == State::NO_STONE_UNTURNED) {
+		auto location = log_parser_.GetLocation();
+		if (location != "") {
+			no_stone_manager_.ChangeLocation(location);
 		}
 	}
 }

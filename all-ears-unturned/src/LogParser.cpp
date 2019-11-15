@@ -16,7 +16,7 @@ void LogParser::Init()
 	}
 }
 
-bool LogParser::HasEnteredLocation(const std::string& location)
+std::string LogParser::GetLocation()
 {
 	std::ifstream file(log_file_path_, std::ios::in);
 
@@ -38,11 +38,8 @@ bool LogParser::HasEnteredLocation(const std::string& location)
 		for (int i = pos + 17; i < log_text.length() - 2; i++) {
 			zone += log_text[i];
 		}
-
-		if (zone == location) {
-			return true;
-		}
+		return zone;
 	}
 
-	return false;
+	return "";
 }

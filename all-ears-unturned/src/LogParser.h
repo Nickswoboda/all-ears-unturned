@@ -7,7 +7,7 @@ class LogParser
 public:
 	void Init();
 
-	bool HasEnteredLocation(const std::string& location);
+	std::string GetLocation();
 
 	std::string log_file_path_;
 	std::streamoff end_of_log_ = 0;

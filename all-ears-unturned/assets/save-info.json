@@ -1,9 +1,9 @@
 {
     "current step": 4,
-    "font size": 23,
-    "log path": "C:\\AMD\\logs\\Client.txt",
+    "font size": 16,
+    "log path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile\\logs\\Client.txt",
     "show progress": false,
-    "window width": 666,
-    "window x": 822,
-    "window y": 469
+    "window width": 253,
+    "window x": 1627,
+    "window y": 331
 }

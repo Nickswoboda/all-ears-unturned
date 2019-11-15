@@ -52,6 +52,19 @@ void NoStoneManager::Render()
 	}
 }
 
+void NoStoneManager::ChangeLocation(const std::string& location)
+{
+	for (int i = 0; i < acts_.size(); ++i) {
+		for (int j = 0; j < acts_[i].locations_.size(); ++j) {
+			if (acts_[i].locations_[j] == location) {
+				current_act_ = i;
+				current_location_ = j;
+				return;
+			}
+		}
+	}
+}
+
 void NoStoneManager::LoadData()
 {
 	std::ifstream file("assets/no-stone-unturned.json");
@@ -63,20 +76,21 @@ void NoStoneManager::LoadData()
 
 	file.close();
 
-	int index = 0;
 	for (const auto& act : json.items()) {
-		acts_[index].name_ = act.key();
+
+		auto new_act = ActLore();
+		new_act.name_ = act.key();
 
 		for (const auto& location : act.value()) {
 			std::string key = location.begin().key();
-			acts_[index].locations_.push_back(key);
+			new_act.locations_.push_back(key);
 			std::vector<std::string> lore_temp;
 			for (const auto& lore : location[key]) {
 				lore_temp.push_back(lore);
 			}
-			acts_[index].lore_.push_back(lore_temp);
+			new_act.lore_.push_back(lore_temp);
 		}
 
-		++index;
+		acts_.push_back(new_act);
 	}
 }
