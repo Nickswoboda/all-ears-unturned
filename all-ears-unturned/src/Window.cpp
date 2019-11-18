@@ -1,6 +1,8 @@
 #include "Window.h"
 #include <iostream>
 
+GLFWwindow* Window::glfw_window_ = nullptr;
+
 Window::Window(int width, int height)
 	:width_(width), height_(height)
 {
@@ -21,6 +23,14 @@ Window::Window(int width, int height)
 	glfwSetWindowPos(glfw_window_, x_pos_, y_pos_);
 
 	glfwMakeContextCurrent(glfw_window_);
+}
+
+bool Window::IsFocused()
+{
+	if (glfwGetWindowAttrib(glfw_window_, GLFW_FOCUSED)) {
+		return true;
+	}
+	return false;
 }
 
 void Window::Move(int x, int y)

@@ -7,11 +7,13 @@ class Window
 public:
 	Window(int width, int height);
 
+	static bool IsFocused();
+
 	void Move(int x, int y);
 	void ResizeHeight(int height);
 	void UpdateSize();
 
-	GLFWwindow* glfw_window_ = nullptr;
+	static GLFWwindow* glfw_window_;
 	int x_pos_ = 0;
 	int y_pos_ = 0;
 	int width_ = 0;

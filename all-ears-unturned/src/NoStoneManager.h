@@ -6,9 +6,10 @@
 class NoStoneManager
 {
 public:
+
 	NoStoneManager();
 
-	void LoadData();
+	void LoadData(std::vector<int> completed_lore);
 	void Render();
 
 	void ChangeLocation(const std::string& location);

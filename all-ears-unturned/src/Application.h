@@ -15,8 +15,7 @@ public:
 
 	enum class State {
 		FILE_DIALOG,
-		ALL_EARS,
-		NO_STONE_UNTURNED,
+		GUIDE,
 		SETTINGS,
 		LOAD_DATA_ERROR
 	};
@@ -43,6 +42,8 @@ private:
 	int font_size_= 16;
 	bool font_size_changed_ = false;
 	bool show_progress_ = false;
+	bool all_ears_enabled_ = true;
+	bool no_stone_unturned_enabled_ = true;
 
 	Window window_;
 	AllEarsManager all_ears_manager_;

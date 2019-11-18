@@ -1,9 +1,16 @@
 {
-    "current step": 4,
+    "all ears enabled": true,
+    "completed lore": [
+        18,
+        20,
+        22
+    ],
+    "current step": 1,
     "font size": 16,
     "log path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile\\logs\\Client.txt",
+    "no stone unturned enabled": true,
     "show progress": false,
-    "window width": 253,
-    "window x": 1627,
-    "window y": 331
+    "window width": 500,
+    "window x": 848,
+    "window y": 472
 }

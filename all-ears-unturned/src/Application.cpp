@@ -86,17 +86,16 @@ void Application::Run()
 				}
 				break;
 
-			case State::ALL_EARS:
-				if (show_progress_) {
-					ImGui::ProgressBar((float)all_ears_manager_.current_step_ / all_ears_manager_.steps_.size());
+			case State::GUIDE:
+				
+				if (all_ears_enabled_) {
+					all_ears_manager_.Render();
 					ImGui::Separator();
 				}
 				
-				all_ears_manager_.Render();
-				break;
-
-			case State::NO_STONE_UNTURNED:
-				no_stone_manager_.Render();
+				if (no_stone_unturned_enabled_) {
+					no_stone_manager_.Render();
+				}
 				break;
 
 			case State::SETTINGS:
@@ -134,6 +133,7 @@ void Application::Run()
 			ImGui_ImplOpenGL3_CreateFontsTexture();
 		}
 	}
+
 }
 
 void Application::CheckStepCompletion()
@@ -148,7 +148,7 @@ void Application::CheckStepCompletion()
 		}
 	}
 
-	if (state_stack_.top() == State::NO_STONE_UNTURNED) {
+	if (state_stack_.top() == State::GUIDE) {
 		auto location = log_parser_.GetLocation();
 		if (location != "") {
 			no_stone_manager_.ChangeLocation(location);
@@ -167,6 +167,23 @@ void Application::Save()
 	json["window width"] = window_.width_;
 	json["font size"] = font_size_;
 	json["show progress"] = show_progress_;
+	json["all ears enabled"] = all_ears_enabled_;
+	json["no stone unturned enabled"] = no_stone_unturned_enabled_;
+
+	std::vector<int> completed_lore;
+	int id = 0;
+	for (const auto& act : no_stone_manager_.acts_) {
+		for (int i = 0; i < act.locations_.size(); ++i) {
+			for (const auto& lore_item : act.lore_[i]) {
+				if (lore_item.completed) {
+					completed_lore.push_back(id);
+				}
+
+				++id;
+			}
+		}
+	}
+	json["completed lore"] = completed_lore;
 
 
 	std::ofstream file("assets/save-info.json");
@@ -176,7 +193,7 @@ void Application::Save()
 
 void Application::Load()
 {
-	PushState(State::NO_STONE_UNTURNED);
+	PushState(State::GUIDE);
 
 	std::ifstream save_file("assets/save-info.json");
 	if (!save_file.is_open()) {
@@ -191,7 +208,7 @@ void Application::Load()
 	
 	if (json.count("log path") && json.count("current step") && json.count("window x") &&
 		json.count("window y") && json.count("window width") && json.count("font size") &&
-		json.count("show progress")) {
+		json.count("show progress") && json.count("no stone unturned enabled") && json.count("all ears enabled")) {
 
 		log_parser_.log_file_path_ = json["log path"];
 		all_ears_manager_.current_step_ = json["current step"];
@@ -199,6 +216,8 @@ void Application::Load()
 		window_.width_ = (json["window width"]);
 		font_size_ = json["font size"];
 		show_progress_ = json["show progress"];
+		all_ears_enabled_ = json["all ears enabled"];
+		no_stone_unturned_enabled_ = json["no stone unturned enabled"];
 
 		if (log_parser_.log_file_path_ == "") {
 			PushState(State::FILE_DIALOG);
@@ -207,6 +226,8 @@ void Application::Load()
 	else {
 		PushState(State::LOAD_DATA_ERROR);
 	}
+
+	no_stone_manager_.LoadData(json["completed lore"]);
 }
 
 void Application::SetImGuiStyle()
@@ -252,6 +273,8 @@ void Application::RenderSettingsMenu()
 
 	ImGui::Checkbox("Movable", &moveable_);
 	ImGui::Checkbox("Show Progress", &show_progress_);
+	ImGui::Checkbox("All Ears", &all_ears_enabled_);
+	ImGui::Checkbox("No Stone Unturned", &no_stone_unturned_enabled_);
 
 	ImGui::TextWrapped("Current Log Folder:");
 	ImGui::TextWrapped(log_parser_.log_file_path_.c_str());
