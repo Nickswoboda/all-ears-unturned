@@ -69,19 +69,22 @@ void Application::Run()
 
 		static int frames = 0;
 		if (frames > 10) {
-			frames -= 10;
+			frames = 0;
 			CheckStepCompletion();
 		}
 		++frames;
 
 		switch (state_stack_.top()) {
+			case State::TUTORIAL:
+				RenderTutorial();
+				break;
 			case State::LOAD_DATA_ERROR:
 				RenderReadSaveFileError();
 				break;
 			case State::FILE_DIALOG:
 				file_dialog_->Render();
 				if (file_dialog_->done_) {
-					log_parser_.log_file_path_ = file_dialog_->full_log_path_;
+					log_parser_.SetLogPath(file_dialog_->full_log_path_);
 					PopState();
 				}
 				break;
@@ -109,10 +112,13 @@ void Application::Run()
 				PushState(State::SETTINGS);
 			}
 		}
+
+
 		if (window_.height_ != ImGui::GetCursorPosY()) {
 			window_.ResizeHeight(ImGui::GetCursorPosY());
 		}
 
+		ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 		ImGui::End();
 
 		ImGui::Render();
@@ -197,7 +203,7 @@ void Application::Load()
 
 	std::ifstream save_file("assets/save-info.json");
 	if (!save_file.is_open()) {
-		PushState(State::FILE_DIALOG);
+		PushState(State::TUTORIAL);
 		return;
 	}
 
@@ -286,6 +292,9 @@ void Application::RenderSettingsMenu()
 		PopState();
 	}
 
+	if (ImGui::Button("Tutorial")) {
+		PushState(State::TUTORIAL);
+	}
 }
 
 void Application::RenderReadSaveFileError()
@@ -296,6 +305,41 @@ void Application::RenderReadSaveFileError()
 		PopState();
 		PushState(State::FILE_DIALOG);
 	}
+}
+
+void Application::RenderTutorial()
+{
+	ImGui::Text("Tutorial");
+	ImGui::Separator();
+
+	int num_pages = 3;
+	switch (tutorial_page_) {
+		case 1: 
+			ImGui::TextWrapped("Follow all ears steps exactly as laid out. Deviating from the path may lead to missed opportunities for certian dialog.");
+			ImGui::TextWrapped("Mark checkboxes as you complete dialogs. The step will automatically progress when all dialogs are marked off");
+			break;
+		case 2:
+			ImGui::TextWrapped("You change the text size and width of the window. To minimize space, the window will change it's height based on it's contents.");
+			break;
+		case 3:
+			ImGui::TextWrapped("Page 3");
+	}
+
+	if (ImGui::ArrowButton("Left", ImGuiDir_Left) && tutorial_page_ > 1) {
+		--tutorial_page_;
+	}
+	ImGui::SameLine();
+	ImGui::Text("%d / %d", tutorial_page_, num_pages);
+	ImGui::SameLine();
+
+	if (ImGui::ArrowButton("Right", ImGuiDir_Right) && tutorial_page_ < num_pages) {
+		++tutorial_page_;
+	}
+
+	if (ImGui::Button("Okay")) {
+		PopState();
+	}
+	
 }
 
 void Application::PushState(State state)

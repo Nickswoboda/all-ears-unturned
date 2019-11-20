@@ -4,7 +4,19 @@
       "Lioneye's Watch": [
         "Carling of Mirfield",
         "Hillock of Slaugh",
-        "Karityn of Theopolis"
+        "Karityn of Theopolis",
+        "Ender of Romsey",
+        "Brylla of Cinderford",
+        "Missy of Nashe",
+        "Barden of Inkley",
+        "Ollin of Theopolis",
+        "Maitlyn of Theopolis",
+        "Salem of Theopolis",
+        "Lothar of Wetherdale",
+        "Joy of Kimbey",
+        "Cafar of Beecham",
+        "Maramoa of Ngmagakanui",
+        "Hadrey of Dayton"
       ]
     },
     {
@@ -30,195 +42,6 @@
     },
     {
       "The Fellshrine Ruins": [
-        "Plaque"
-      ]
-    },
-    {
-      "The Crypt Level 1": [
-        "Bronze Monograph"
-      ]
-    }
-  ],
-
-  "Act 3": [
-    {
-      "The Crossroads": [
-        "Etchings On Wood I",
-        "Etchings On Wood II",
-        "Etchings On Wood III",
-        "Etchings On Wood IV"
-      ]
-    },
-    {
-      "The Fellshrine Ruins": [
-        "Plaque"
-      ]
-    },
-    {
-      "The Crypt Level 1": [
-        "Bronze Monograph"
-      ]
-    }
-  ],
-
-  "Act 4": [
-    {
-      "The Crossroads": [
-        "Etchings On Wood I",
-        "Etchings On Wood II",
-        "Etchings On Wood III",
-        "Etchings On Wood IV"
-      ]
-    },
-    {
-      "The Fellshrine Ruins": [
-        "Plaque"
-      ]
-    },
-    {
-      "The Crypt Level 1": [
-        "Bronze Monograph"
-      ]
-    }
-  ],
-
-  "Act 5": [
-    {
-      "The Crossroads": [
-        "Etchings On Wood I",
-        "Etchings On Wood II",
-        "Etchings On Wood III",
-        "Etchings On Wood IV"
-      ]
-    },
-    {
-      "The Fellshrine Ruins": [
-        "Plaque"
-      ]
-    },
-    {
-      "The Crypt Level 1": [
-        "Bronze Monograph"
-      ]
-    }
-  ],
-
-  "Act 6": [
-    {
-      "The Crossroads": [
-        "Etchings On Wood I",
-        "Etchings On Wood II",
-        "Etchings On Wood III",
-        "Etchings On Wood IV"
-      ]
-    },
-    {
-      "The Fellshrine Ruins": [
-        "Plaque"
-      ]
-    },
-    {
-      "The Crypt Level 1": [
-        "Bronze Monograph"
-      ]
-    }
-  ],
-
-  "Act 7": [
-    {
-      "The Crossroads": [
-        "Etchings On Wood I",
-        "Etchings On Wood II",
-        "Etchings On Wood III",
-        "Etchings On Wood IV"
-      ]
-    },
-    {
-      "The Fellshrine Ruins": [
-        "Plaque"
-      ]
-    },
-    {
-      "The Crypt Level 1": [
-        "Bronze Monograph"
-      ]
-    }
-  ],
-
-  "Act 8": [
-    {
-      "The Crossroads": [
-        "Etchings On Wood I",
-        "Etchings On Wood II",
-        "Etchings On Wood III",
-        "Etchings On Wood IV"
-      ]
-    },
-    {
-      "The Fellshrine Ruins": [
-        "Plaque"
-      ]
-    },
-    {
-      "The Crypt Level 1": [
-        "Bronze Monograph"
-      ]
-    }
-  ],
-
-  "Act 9": [
-    {
-      "The Crossroads": [
-        "Etchings On Wood I",
-        "Etchings On Wood II",
-        "Etchings On Wood III",
-        "Etchings On Wood IV"
-      ]
-    },
-    {
-      "The Fellshrine Ruins": [
-        "Plaque"
-      ]
-    },
-    {
-      "The Crypt Level 1": [
-        "Bronze Monograph"
-      ]
-    }
-  ],
-
-  "Act 10": [
-    {
-      "The Crossroads": [
-        "Etchings On Wood I",
-        "Etchings On Wood II",
-        "Etchings On Wood III",
-        "Etchings On Wood IV"
-      ]
-    },
-    {
-      "The Fellshrine Ruins": [
-        "Plaque"
-      ]
-    },
-    {
-      "The Crypt Level 1": [
-        "Bronze Monograph"
-      ]
-    }
-  ],
-
-  "Other": [
-    {
-      "The Lord's Labyrinth": [
-        "Etchings On Wood I",
-        "Etchings On Wood II",
-        "Etchings On Wood III",
-        "Etchings On Wood IV"
-      ]
-    },
-    {
-      "Vaal Area": [
         "Plaque"
       ]
     },

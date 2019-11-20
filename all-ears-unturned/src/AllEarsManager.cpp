@@ -39,7 +39,15 @@ AllEarsManager::AllEarsManager()
 
 void AllEarsManager::Render()
 {
-	steps_[current_step_]->Render();
+	ImGui::Text("ALL EARS");
+	ImGui::Separator();
+	if (achievement_complete_) {
+		ImGui::Text("You have completed the All Ears Achievement!");
+	}
+
+	else {
+		steps_[current_step_]->Render();
+	}
 
 	ImGui::Separator();
 
@@ -47,10 +55,14 @@ void AllEarsManager::Render()
 		DecrementStep();
 	}
 	ImGui::SameLine();
-	ImGui::Text("Step: %d / %d", current_step_ + 1, steps_.size());
-	ImGui::SameLine();
-	if (ImGui::ArrowButton("##right", ImGuiDir_Right)) {
-		IncrementStep();
+
+	if (!achievement_complete_) {
+		ImGui::Text("Step: %d / %d", current_step_ + 1, steps_.size());
+
+		ImGui::SameLine();
+		if (ImGui::ArrowButton("##right", ImGuiDir_Right)) {
+			IncrementStep();
+		}
 	}
 }
 
@@ -69,12 +81,17 @@ void AllEarsManager::IncrementStep()
 		++current_step_;
 	}
 	else {
+		achievement_complete_ = true;
 		std::cout << "AT END OF STEPS";
 	}
 }
 
 void AllEarsManager::DecrementStep()
 {
+	if (achievement_complete_) {
+		achievement_complete_ = false;
+		return;
+	}
 	if (current_step_ > 0) {
 		--current_step_;
 	}

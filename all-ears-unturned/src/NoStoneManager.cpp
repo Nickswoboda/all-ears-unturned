@@ -15,10 +15,28 @@ NoStoneManager::NoStoneManager()
 
 void NoStoneManager::Render()
 {
+
+	ImGui::Separator();
+	ImGui::Separator();
+	ImGui::Separator();
+	ImGui::Text("NO STONE UNTURNED");
+	ImGui::Separator();
+	if (complete_) {
+		ImGui::Text("You have completed the No Stone Unturned achievement!");
+
+		if (ImGui::Button("Back")) {
+			complete_ = false;
+		}
+		return;
+	}
+	
 	if (ImGui::BeginCombo("Act", acts_[current_act_].name_.c_str())) {
 		for (int i = 0; i < acts_.size(); ++i) {
-			if (ImGui::Selectable(acts_[i].name_.c_str(), current_act_ == i))
+			if (ImGui::Selectable(acts_[i].name_.c_str(), current_act_ == i)) {
 				current_act_ = i;
+				current_location_ = 0;
+			}
+			
 		}
 
 		//selectable popup does not close if user clicks out of window and loses focus
@@ -47,24 +65,45 @@ void NoStoneManager::Render()
 
 	ImGui::Separator();
 
-	static bool bool_ = false;
-	static int page_ = 1;
+
+	int num_pages = 1;
+	static int current_page = 1;
 	int num_items = acts_[current_act_].lore_[current_location_].size();
-	int num_pages = (num_items / 7) + 1;
-	for (int i = (page_ - 1) * 7; i < 7 * page_ && i < num_items; ++i) {
-		
-		ImGui::Checkbox(acts_[current_act_].lore_[current_location_][i].name.c_str(), &acts_[current_act_].lore_[current_location_][i].completed);
-		++i;
+	if (num_items > max_items_) {
+		if (num_items % max_items_ == 0) {
+			num_pages = num_items / max_items_;
+		}
+		else {
+			num_pages = (num_items / max_items_) + 1;
+		}
+	}
+	else {
+		current_page = 1;
+	}
 	
-		if (i < 7 * page_ && i < num_items) {
-			ImGui::SameLine(333);
-			ImGui::Checkbox(acts_[current_act_].lore_[current_location_][i].name.c_str(), &acts_[current_act_].lore_[current_location_][i].completed);
+
+	for (int i = (current_page - 1) * max_items_; (i < num_items) && i < (current_page * max_items_); ++i) {
+		
+		if (ImGui::Checkbox(acts_[current_act_].lore_[current_location_][i].name.c_str(), &acts_[current_act_].lore_[current_location_][i].completed) && acts_[current_act_].lore_[current_location_][i].completed) {
+			CheckForAchievementCompletion();
 		}
 	}
 
-	ImGui::Text("Page %d / %d", page_, num_pages);
-	if (ImGui::Button("Next Page")) {
-		++page_;
+
+	if (num_pages > 1) {
+		if (ImGui::Button("Prev")) {
+			if (current_page > 1) {
+				--current_page;
+			}
+		}
+
+		ImGui::SameLine();
+
+		if (ImGui::Button("Next")) {
+			if (current_page < num_pages) {
+				++current_page;
+			}
+		}
 	}
 }
 
@@ -79,6 +118,24 @@ void NoStoneManager::ChangeLocation(const std::string& location)
 			}
 		}
 	}
+}
+
+void NoStoneManager::CheckForAchievementCompletion()
+{
+	for (const auto& act : acts_) {
+		int index = 0;
+		for (const auto& location : act.locations_) {
+			for (const auto& lore_item : act.lore_[index]) {
+				if (!lore_item.completed) {
+					return;
+				}
+			}
+			++index;
+		}
+	}
+
+	std::cout << "Achievement Complete";
+	complete_ = true;
 }
 
 void NoStoneManager::LoadData(std::vector<int> completed_lore)

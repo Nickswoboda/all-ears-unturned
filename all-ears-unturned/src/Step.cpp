@@ -30,13 +30,12 @@ void NpcStep::Render()
 TravelStep::TravelStep(const std::string& destination)
 {
 	destination_ = destination;
+	display_text_ = "Travel to: " + destination;
 }
 
 void TravelStep::Render()
 {
-	ImGui::Text("Travel to: ");
-	ImGui::SameLine(85);
-	ImGui::Text(destination_.c_str());
+	ImGui::Text(display_text_.c_str());
 }
 
 

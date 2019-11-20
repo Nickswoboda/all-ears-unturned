@@ -16,6 +16,13 @@ void LogParser::Init()
 	}
 }
 
+void LogParser::SetLogPath(const std::string& path)
+{
+	log_file_path_ = path;
+
+	Init();
+}
+
 std::string LogParser::GetLocation()
 {
 	std::ifstream file(log_file_path_, std::ios::in);
@@ -43,3 +50,4 @@ std::string LogParser::GetLocation()
 
 	return "";
 }
+

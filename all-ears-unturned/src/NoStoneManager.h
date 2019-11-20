@@ -14,8 +14,11 @@ public:
 
 	void ChangeLocation(const std::string& location);
 
+	void CheckForAchievementCompletion();
+
 	std::vector<ActLore> acts_;
-	int max_items_ = 7;
+	int max_items_ = 5;
 	int current_act_ = 0;
 	int current_location_ = 0;
+	bool complete_ = false;
 };

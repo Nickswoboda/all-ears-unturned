@@ -14,6 +14,7 @@ class Application
 public:
 
 	enum class State {
+		TUTORIAL,
 		FILE_DIALOG,
 		GUIDE,
 		SETTINGS,
@@ -32,6 +33,7 @@ public:
 	void SetImGuiStyle();
 	void RenderSettingsMenu();
 	void RenderReadSaveFileError();
+	void RenderTutorial();
 
 	void PushState(State state);
 	void PopState();
@@ -44,6 +46,7 @@ private:
 	bool show_progress_ = false;
 	bool all_ears_enabled_ = true;
 	bool no_stone_unturned_enabled_ = true;
+	int tutorial_page_ = 1;
 
 	Window window_;
 	AllEarsManager all_ears_manager_;

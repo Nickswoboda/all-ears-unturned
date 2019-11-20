@@ -33,6 +33,7 @@ public:
 	void Render() override;
 
 	std::string destination_;
+	std::string display_text_;
 };
 
 class EventStep : public Step
