@@ -47,6 +47,7 @@ private:
 	bool all_ears_enabled_ = true;
 	bool no_stone_unturned_enabled_ = true;
 	int tutorial_page_ = 1;
+	bool hidden_ = false;
 
 	Window window_;
 	AllEarsManager all_ears_manager_;

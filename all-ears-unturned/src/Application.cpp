@@ -49,7 +49,6 @@ void Application::Run()
 		ImGui::NewFrame();
 
 		ImGui::SetNextWindowSize({ (float)window_.width_, (float)window_.height_ });
-		
 		if (moveable_) {
 			ImGui::Begin("All Ears Unturned", &running_,
 				ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
@@ -71,39 +70,47 @@ void Application::Run()
 		if (frames > 10) {
 			frames = 0;
 			CheckStepCompletion();
+			if (glfwGetKey(window_.glfw_window_, GLFW_KEY_LEFT_CONTROL) && glfwGetKey(window_.glfw_window_, GLFW_KEY_M)) {
+				if (hidden_) {
+					hidden_ = false;
+				}
+				else {
+					hidden_ = true;
+				}
+			}
 		}
 		++frames;
 
 		switch (state_stack_.top()) {
-			case State::TUTORIAL:
-				RenderTutorial();
-				break;
-			case State::LOAD_DATA_ERROR:
-				RenderReadSaveFileError();
-				break;
-			case State::FILE_DIALOG:
-				file_dialog_->Render();
-				if (file_dialog_->done_) {
-					log_parser_.SetLogPath(file_dialog_->full_log_path_);
-					PopState();
-				}
-				break;
+		case State::TUTORIAL:
+			RenderTutorial();
+			break;
+		case State::LOAD_DATA_ERROR:
+			RenderReadSaveFileError();
+			break;
+		case State::FILE_DIALOG:
+			file_dialog_->Render();
+			if (file_dialog_->done_) {
+				log_parser_.SetLogPath(file_dialog_->full_log_path_);
+				PopState();
+			}
+			break;
 
-			case State::GUIDE:
-				
-				if (all_ears_enabled_) {
-					all_ears_manager_.Render();
-					ImGui::Separator();
-				}
-				
-				if (no_stone_unturned_enabled_) {
-					no_stone_manager_.Render();
-				}
-				break;
+		case State::GUIDE:
 
-			case State::SETTINGS:
-				RenderSettingsMenu();
-				break;
+			if (all_ears_enabled_) {
+				all_ears_manager_.Render();
+				ImGui::Separator();
+			}
+
+			if (no_stone_unturned_enabled_) {
+				no_stone_manager_.Render();
+			}
+			break;
+
+		case State::SETTINGS:
+			RenderSettingsMenu();
+			break;
 		}
 
 		ImGui::Separator();
@@ -112,16 +119,19 @@ void Application::Run()
 				PushState(State::SETTINGS);
 			}
 		}
-
-
-		if (window_.height_ != ImGui::GetCursorPosY()) {
+		if (hidden_) {
+			window_.ResizeHeight(0);
+		}
+		else if (window_.height_ != ImGui::GetCursorPosY()) {
 			window_.ResizeHeight(ImGui::GetCursorPosY());
 		}
+		
 
 		ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 		ImGui::End();
 
 		ImGui::Render();
+		
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 		glfwSwapBuffers(window_.glfw_window_);
@@ -317,6 +327,8 @@ void Application::RenderTutorial()
 		case 1: 
 			ImGui::TextWrapped("Follow all ears steps exactly as laid out. Deviating from the path may lead to missed opportunities for certian dialog.");
 			ImGui::TextWrapped("Mark checkboxes as you complete dialogs. The step will automatically progress when all dialogs are marked off");
+			ImGui::TextWrapped("Mark checkboxes as soon as you complete the objective");
+			ImGui::TextWrapped("NOTE: You MUST kill all Bandits in order to complete the acheivemtn");
 			break;
 		case 2:
 			ImGui::TextWrapped("You change the text size and width of the window. To minimize space, the window will change it's height based on it's contents.");

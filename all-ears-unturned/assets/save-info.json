@@ -16,12 +16,12 @@
         13,
         14
     ],
-    "current step": 10,
-    "font size": 16,
+    "current step": 302,
+    "font size": 14,
     "log path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Path of Exile\\logs\\Client.txt",
-    "no stone unturned enabled": true,
+    "no stone unturned enabled": false,
     "show progress": false,
-    "window width": 500,
-    "window x": 909,
-    "window y": 145
+    "window width": 306,
+    "window x": 41,
+    "window y": 493
 }

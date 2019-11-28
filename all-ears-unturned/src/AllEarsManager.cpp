@@ -24,12 +24,28 @@ AllEarsManager::AllEarsManager()
 			}
 
 			steps_.push_back(std::make_unique<NpcStep>(index["NPC"], dialogs ));
+			
+			if (index.count("note")) {
+				steps_[steps_.size() - 1]->note_ = index["note"];
+			}
 		}
 		else if (key == "destination") {
 			steps_.push_back(std::make_unique<TravelStep>(index["destination"]));
+			if (index.count("note")) {
+				steps_[steps_.size() - 1]->note_ = index["note"];
+			}
 		}
 		else if (key == "event") {
-			steps_.push_back(std::make_unique<EventStep>(index["event"]));
+			std::vector<std::string> events;
+			for (const auto& event : index["event"]) {
+				events.push_back(event);
+			}
+
+			steps_.push_back(std::make_unique<EventStep>(events));;
+
+			if (index.count("note")) {
+				steps_[steps_.size() - 1]->note_ = index["note"];
+			}
 		}
 		else {
 			std::cout << "JSON syntax error";
@@ -129,9 +145,14 @@ bool AllEarsManager::StepIsComplete()
 
 	auto event_step = dynamic_cast<EventStep*>(steps_[current_step_].get());
 	if (event_step != nullptr) {
-
-		if (event_step->completed_) {
-			event_step->completed_ = false;
+		bool all_events_complete = true;
+		for (const auto& event : event_step->events_) {
+			if (!event.completed) {
+				all_events_complete = false;
+				break;
+			}
+		}
+		if (all_events_complete) {
 			return true;
 		}
 	}
