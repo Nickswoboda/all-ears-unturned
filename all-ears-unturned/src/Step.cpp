@@ -40,7 +40,7 @@ TravelStep::TravelStep(const std::string& destination)
 
 void TravelStep::Render()
 {
-	ImGui::Text(display_text_.c_str());
+	ImGui::TextWrapped(display_text_.c_str());
 	if (!note_.empty()) {
 		ImGui::TextWrapped(note_.c_str());
 	}

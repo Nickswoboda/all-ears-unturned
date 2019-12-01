@@ -16,9 +16,10 @@ void LogParser::Init()
 	}
 }
 
-void LogParser::SetLogPath(const std::string& path)
+void LogParser::SetFolderPath(const std::string& path)
 {
-	log_file_path_ = path;
+	folder_path_ = path;
+	log_file_path_ = folder_path_ + "\\logs\\Client.txt";
 
 	Init();
 }

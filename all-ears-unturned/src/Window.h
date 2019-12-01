@@ -18,4 +18,5 @@ public:
 	int y_pos_ = 0;
 	int width_ = 0;
 	int height_ = 0;
+	bool hidden_ = false;
 };

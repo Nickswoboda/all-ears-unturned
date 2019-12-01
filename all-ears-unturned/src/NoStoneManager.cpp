@@ -22,7 +22,7 @@ void NoStoneManager::Render()
 	ImGui::Text("NO STONE UNTURNED");
 	ImGui::Separator();
 	if (complete_) {
-		ImGui::Text("You have completed the No Stone Unturned achievement!");
+		ImGui::TextWrapped("You have completed the No Stone Unturned achievement!");
 
 		if (ImGui::Button("Back")) {
 			complete_ = false;
@@ -85,7 +85,11 @@ void NoStoneManager::Render()
 	for (int i = (current_page - 1) * max_items_; (i < num_items) && i < (current_page * max_items_); ++i) {
 		
 		if (ImGui::Checkbox(acts_[current_act_].lore_[current_location_][i].name.c_str(), &acts_[current_act_].lore_[current_location_][i].completed) && acts_[current_act_].lore_[current_location_][i].completed) {
-			CheckForAchievementCompletion();
+			if (CheckAreaCompletion()) {
+				Advance();
+				CheckAchievementCompletion();
+				break;
+			}
 		}
 	}
 
@@ -97,6 +101,8 @@ void NoStoneManager::Render()
 			}
 		}
 
+		ImGui::SameLine();
+		ImGui::Text("%d / %d", current_page, num_pages);
 		ImGui::SameLine();
 
 		if (ImGui::Button("Next")) {
@@ -120,7 +126,28 @@ void NoStoneManager::ChangeLocation(const std::string& location)
 	}
 }
 
-void NoStoneManager::CheckForAchievementCompletion()
+void NoStoneManager::Advance()
+{
+	if ((current_location_ + 1) < acts_[current_act_].locations_.size()) {
+		++current_location_;
+	}
+	else if ((current_act_ + 1) < acts_.size()) {
+		++current_act_;
+		current_location_ = 0;
+	}
+}
+
+bool NoStoneManager::CheckAreaCompletion()
+{
+	for (const auto& lore_item : acts_[current_act_].lore_[current_location_]) {
+		if (!lore_item.completed) {
+			return false;
+		}
+	}
+	return true;
+}
+
+void NoStoneManager::CheckAchievementCompletion()
 {
 	for (const auto& act : acts_) {
 		int index = 0;
@@ -134,7 +161,6 @@ void NoStoneManager::CheckForAchievementCompletion()
 		}
 	}
 
-	std::cout << "Achievement Complete";
 	complete_ = true;
 }
 
@@ -144,21 +170,26 @@ void NoStoneManager::LoadData(std::vector<int> completed_lore)
 	if (!file.is_open()) {
 		std::cout << "Error loading No Stone Unturned file";
 	}
-	nlohmann::json json = nlohmann::json::parse(file);
+	nlohmann::json json;
+
+	file >> json;
 
 	file.close();
 
 	int id = 0;
-	for (const auto& act : json.items()) {
+	for (const auto& act : json) {
 
-		auto new_act = ActLore();
-		new_act.name_ = act.key();
+		auto key = act.begin().key();
 
-		for (const auto& location : act.value()) {
-			std::string key = location.begin().key();
-			new_act.locations_.push_back(key);
-			std::vector<Lore> lore_temp;
-			for (const auto& lore : location[key]) {
+		ActLore new_act;
+		new_act.name_ = key;
+
+		for (const auto& location : act[key]) {
+			new_act.locations_.push_back(location.begin().key());
+
+			std::vector<Lore> temp_lore;
+
+			for (const auto& lore : location[location.begin().key()]) {
 				bool completed = false;
 
 				for (const auto& item : completed_lore) {
@@ -167,10 +198,10 @@ void NoStoneManager::LoadData(std::vector<int> completed_lore)
 						break;
 					}
 				}
-				lore_temp.push_back(Lore{ lore, completed });
+				temp_lore.push_back(Lore{ lore, completed });
 				++id;
 			}
-			new_act.lore_.push_back(lore_temp);
+			new_act.lore_.push_back(temp_lore);
 		}
 
 		acts_.push_back(new_act);

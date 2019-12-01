@@ -16,8 +16,8 @@ FileDialog::FileDialog(int width)
 
 void FileDialog::Render()
 {
-	ImGui::Text("Select the Path of Exile folder");
-	ImGui::Text(current_file_path_.c_str());
+	ImGui::TextWrapped("Select the Path of Exile folder");
+	ImGui::TextWrapped(current_file_path_.c_str());
 
 	std::filesystem::path path = current_file_path_;
 	if (!std::filesystem::exists(path)) {
@@ -60,7 +60,7 @@ void FileDialog::Render()
 	ImGui::SameLine();
 	if (ImGui::Button("Select")) {
 		if (!selected_path_.empty()) {
-			full_log_path_ = selected_path_.u8string() + "\\logs\\Client.txt";
+			folder_path_ = selected_path_.u8string();
 			done_ = true;
 		}
 	}

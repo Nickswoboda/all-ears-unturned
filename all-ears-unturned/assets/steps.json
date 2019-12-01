@@ -1,2668 +1,2234 @@
- [
-  {
-    "NPC": "Dying Exile",
-    "subjects": [
-      "Introduction"
-    ]
-  },
-  {
-    "destination": "Lioneye's Watch"
-  },
-  {
-    "NPC": "Nessa",
-    "subjects": [
-      "Introduction",
-      "Luoneye's Watch"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Introduction",
-      "Nessa",
-      "Drowned Dead"
-    ]
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "Introduction",
-      "Lioneye's Watch",
-      "Drowned Dead",
-      "Bestel",
-      "Nessa",
-      "Letters of Exile"
-    ]
-  },
-  {
-    "NPC": "Nessa",
-    "subjects": [
-      "Tarkleigh",
-      "Bestel"
-    ]
-  },
-
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Tarkleigh"
-    ]
-  },
-  {
-    "destination": "The Coast"
-  },
-
-  {
-    "destination": "The Tidal Island"
-  },
-  {
-    "event": [
-      "Obtain the Medicine Chest",
-      "Give the Medicine Chest to Nessa"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Medicine Chest"
-    ]
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "Cannibals",
-      "Medicine Chest"
-    ]
-  },
-  {
-    "destination": "The Mud Flats"
-  },
-  {
-    "event": [
-      "Pick up a glyph",
-      "Find the unique Rhoa, Oozeback Bloom",
-      "Walk near glyph wall"
-    ],
-    "note": "DO NOT PUT GLYPHS IN WALL"
-  },
-  {
-    "NPC": "Nessa",
-    "subjects": [
-      "Rhoas"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Undead Rhoas"
-    ]
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "Rhoas",
-      "Glyph Wall",
-      "Strange Glyphs"
-    ]
-  },
-  {
-    "destination": "The Fetid Pool"
-  },
-  {
-    "event" : [
-      "Kill all the monsters in the Fetid Pool",
-      "Return to Tarkleigh for your reward"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Surviving Wraeclast"
-    ]
-  },
-  {
-    "destination": "The Submerged Passage"
-  },
-  {
-    "destination": "The Ledge"
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "Goatmen"
-    ]
-  },
-  {
-    "destination": "The Climb"
-  },
-  {
-    "event" : [
-      "Rescue Navali"
-    ]
-  },
-  {
-    "NPC": "Navali",
-    "subjects": [
-      "Introduction",
-      "Wraeclast",
-      "Yama the White",
-      "Karui Gods"
-    ]
-  },
-  {
-    "destination": "The Lower Prison"
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "Brutus"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Brutus"
-    ]
-  },
-  {
-    "destination": "The Upper Prison"
-  },
-  {
-    "event" : [
-      "Read Shavronne's Journal"
-    ],
-    "note" : "DO NOT KILL BRUTUS"
-  },
-  {
-    "NPC": "Nessa",
-    "subjects": [
-      "Piety"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Marceus Lioneye"
-    ]
-  },
-  {
-    "event" : [
-      "Kill Brutus"
-    ]
-  },
-  {
-    "NPC": "Nessa",
-    "subjects": [
-      "Brutus"
-    ]
-  },
-  {
-    "destination": "Prisoner's Gate"
-  },
-  {
-    "event" : [
-      "Watch Piety block the passage"
-    ],
-    "note" : "Follow the road from the Prisoner Gate's waypoint"
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "The Prisoner's Gate"
-    ]
-  },
-  {
-    "destination": "The Ship Graveyard"
-  },
-  {
-    "NPC": "Captain Fairgraves",
-    "subjects": [
-      "The Allflame",
-      "Merveil",
-      "Merveil's Necklace"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Merveil",
-      "Captain Fairgraves"
-    ]
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "Merveil"
-    ]
-  },
-  {
-    "NPC": "Captain Fairgraves",
-    "subjects": [
-      "The Real Fairgraves"
-    ]
-  },
-  {
-    "destination": "The Ship Graveyard Cave"
-  },
-  {
-    "event" : [
-      "Obtain the Allflame",
-      "Kill Fairgrave's"
-    ]
-  },
-  {
-    "destination": "The Cavern of Wrath"
-  },
-  {
-    "destination": "The Cavern of Anger"
-  },
-  {
-    "event" :[
-      "Defeat Merveil"
-    ]
-  },
-  {
-    "NPC": "Nessa",
-    "subjects": [
-      "Merveil"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Merveil"
-    ]
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "Merveil"
-    ]
-  },
-  {
-    "destination": "The Forest Encampment"
-  },
-
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Introduction",
-      "The Azmeri",
-      "Blocked Passage"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "Introduction",
-      "Eramir",
-      "Blood Apes"
-    ]
-  },
-  {
-    "NPC": "Silk",
-    "subjects": [
-      "Introduction",
-      "Eramir",
-      "Yeena",
-      "The Great White Beast"
-    ]
-  },
-  {
-    "NPC": "Greust",
-    "subjects": [
-      "Introduction",
-      "Eramir",
-      "Yeena",
-      "Silk",
-      "Blood Apes",
-      "Bandit Lords"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Yeena",
-      "Greust",
-      "Silk"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "Greust",
-      "Silk"
-    ]
-  },
-  {
-    "NPC": "Silk",
-    "subjects": [
-      "Greust"
-    ]
-  },
-  {
-    "NPC": "Navali",
-    "subjects": [
-      "Introduction"
-    ]
-  },
-  {
-    "destination": "The Old Fields"
-  },
-  {
-    "destination": "The Den"
-  },
-  {
-    "event" : [
-      "Defeat the Great White Beast"
-    ]
-  },
-  {
-    "destination": "The Crossroads"
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "Elementals"
-    ]
-  },
-  {
-    "NPC": "Silk",
-    "subjects": [
-      "The Great White Beast"
-    ]
-  },
-  {
-    "NPC": "Greust",
-    "subjects": [
-      "Elementals"
-    ]
-  },
-  {
-    "destination": "The Riverways"
-  },
-  {
-    "destination": "The Western Forest",
-    "note" : "DO NOT KILL ALIRA"
-  },
-  {
-    "event" : [
-      "Open the passage to the Prisoner's Gate"
-    ]
-  },
-  {
-    "NPC": "Gruest",
-    "subjects": [
-      "Vipers",
-      "Chamber of Sins"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Blackguards",
-      "The Chamber of Sins"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "Vipers"
-    ]
-  },
-  {
-    "NPC": "Silk",
-    "subjects": [
-      "Reopened Passage"
-    ]
-  },
-  {
-    "NPC": "Nessa",
-    "subjects": [
-      "Reopened Passage"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Inspirational Poem"
-    ]
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "Reopened Passage"
-    ]
-  },
-  {
-    "destination": "The Crossroads"
-  },
-  {
-    "destination": "The Chamber of Sins Level 1"
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "Chamber of Sins"
-    ]
-  },
-  {
-    "destination": "The Chamber of Sins Level 2"
-  },
-  {
-    "event" : [
-      "Save Helena and obtain the Baleful Gem"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Helena",
-      "The Baleful Gem"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "Helena"
-    ]
-  },
-  {
-    "NPC": "Helena",
-    "subjects": [
-      "Rescued",
-      "The Baleful Gem",
-      "Fidelitas",
-      "Dominus",
-      "Prisoner's Gate"
-    ]
-  },
-  {
-    "NPC": "Silk",
-    "subjects": [
-      "Helena"
-    ]
-  },
-  {
-    "NPC": "Greust",
-    "subjects": [
-      "Maligaro's Spike",
-      "Helena"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Maligaro's Spike"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "Maligaro's Spike"
-    ]
-  },
-  {
-    "destination": "The Fellshrine Ruins"
-  },
-  {
-    "destination": "The Crypt Level 1"
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Fellshrine Ruins"
-    ]
-  },
-  {
-    "destination": "The Western Forest",
-    "note" :"DO NOT KILL ALIRA"
-  },
-  {
-    "destination": "The Weaver's Chambers"
-
-  },
-  {
-    "event" :[
-      "Obtain Maligaro's Spike"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Maligaro's Creations"
-    ]
-  },
-  {
-    "destination": "The Riverways"
-  },
-  {
-    "destination": "The Wetlands",
-    "note" : "DO NOT KILL OAK"
-  },
-  {
-    "event" : [
-      "Find the tree roots"
-    ],
-    "note" : "DO NOT DESTROY THE TREE ROOTS"
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Ancient Gateway"
-    ]
-  },
-  {
-    "event" :[
-      "Open the passage to the Vaal Ruins"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Lorrata"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "Lorrata"
-    ]
-  },
-  {
-    "destination": "The Vaal Ruins"
-  },
-  {
-    "destination": "The Northern Forest"
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "The Darkness"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "The Darkness"
-    ]
-  },
-  {
-    "NPC": "Helena",
-    "subjects": [
-      "The Darkness"
-    ]
-  },
-  {
-    "NPC": "Silk",
-    "subjects": [
-      "The Darkness"
-    ]
-  },
-  {
-    "NPC": "Greust",
-    "subjects": [
-      "The Darkness"
-    ]
-  },
-  {
-    "destination": "The Crossroads"
-  },
-  {
-    "destination": "The Broken Bridge"
-  },
-  {
-    "event" :[
-      "Kill Kraityn"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Kraityn"
-    ]
-  },
-  {
-    "destination": "The Western Forest"
-  },
-  {
-    "NPC": "Alira",
-    "subjects": [
-      "The Darkness"
-    ]
-  },
-  {
-    "event" :[
-      "Kill Alira"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Oak"
-    ]
-  },
-  {
-    "destination": "The Wetlands"
-  },
-  {
-    "NPC": "Oak",
-    "subjects": [
-      "The Darkness"
-    ]
-  },
-  {
-    "event" :[
-      "Kill Oak"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Bandit Lords"
-    ]
-  },
-  {
-    "NPC": "Helena",
-    "subjects": [
-      "Yeena's Vision"
-    ]
-  },
-  {
-    "NPC": "Greust",
-    "subjects": [
-      "Bandit Lords"
-    ]
-  },
-  {
-    "destination": "The Northern Forest"
-  },
-  {
-    "destination": "The Caverns"
-  },
-  {
-    "destination": "The Ancient Pyramid"
-  },
-  {
-    "event" :[
-      "Defeat the Vaal Oversoul"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "The Light"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "The Light"
-    ]
-  },
-  {
-    "NPC": "Helena",
-    "subjects": [
-      "The Light"
-    ]
-  },
-  {
-    "NPC": "Silk",
-    "subjects": [
-      "The Light"
-    ]
-  },
-  {
-    "NPC": "Greust",
-    "subjects": [
-      "The Light"
-    ]
-  },
-  {
-    "destination" : "The City of Sarn"
-  },
-  {
-    "event" : "Save Clarissa"
-  },
-  {
-    "destination": "The Sarn Encampment"
-  },
-  {
-    "NPC": "Grigor",
-    "subjects": [
-      "The Ezomytes"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-      "Tolman",
-      "The Slums"
-    ]
-  },
-  {
-    "NPC": "Maramoa",
-    "subjects": [
-      "The Ebony Legion"
-    ]
-  },
-  {
-    "NPC": "Navali",
-    "subjects": [
-      "Introduction"
-    ]
-  },
-  {
-    "destination": "The Slums"
-  },
-  {
-    "destination": "The Crematorium"
-  },
-  {
-    "event" :[
-      "Obtain Tolman's Bracelet"
-    ]
-  },
-  {
-    "NPC": "Grigor",
-    "subjects": [
-      "Tolman"
-    ]
-  },
-  {
-    "NPC": "Clarissa",
-    "subjects": [
-      "Sewer Keys"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-      "Introduction",
-      "Clarissa",
-      "Maramoa",
-      "The Purity Rebellion"
-    ]
-  },
-  {
-    "NPC": "Maramoa",
-    "subjects": [
-      "Tolman",
-      "Hargan",
-      "Grigor",
-      "The Purity Rebellion",
-      "Crossing the River"
-    ]
-  },
-  {
-    "NPC": "Grigor",
-    "subjects": [
-      "Maramoa",
-      "Hargan",
-      "Victario",
-      "General Gravicius"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-      "Grigor",
-      "General Gravicius"
-    ]
-  },
-  {
-    "destination": "The Sewers"
-  },
-  {
-    "event" : [
-      "Find the Undying Blockage"
-    ],
-    "note" : "DO NOT ENTER THE MARKETPLACE"
-  },
-  {
-    "NPC": "Clarissa",
-    "subjects": [
-      "Maramoa",
-      "Hargan",
-      "Grigor",
-      "Piety",
-      "Piety's Gems",
-      "Vinia",
-      "Cataclysm",
-      "The Purity Rebellion"
-    ]
-  },
-  {
-    "NPC": "Maramoa",
-    "subjects": [
-      "Crossing the River"
-    ]
-  },
-  {
-    "destination": "The Marketplace"
-  },
-  {
-    "destination": "The Battlefront"
-  },
-  {
-    "NPC": "Clarissa",
-    "subjects": [
-      "Statues"
-    ]
-  },
-  {
-    "destination": "The Docks"
-  },
-  {
-    "NPC": "Captain Fairgraves",
-    "subjects": [
-      "Introduction",
-      "Decanter Spiritus",
-      "Chitus' Plum",
-      "Resurrection",
-      "The Undying"
-    ],
-    "note" : "DO NOT HAVE DECANTER SPIRITUS OR CHITUS' PLUM IN INVENTORY"
-  },
-  {
-    "destination": "The Solaris Temple Level 1"
-  },
-  {
-    "NPC": "Clarissa",
-    "subjects": [
-      "The Lunaris Temple"
-    ]
-  },
-  {
-    "destination": "The Solaris Temple Level 2"
-  },
-  {
-    "NPC": "Dialla",
-    "subjects": [
-      "Introduction"
-    ],
-    "note" : "DO NOT HAVE THAUMETIC SULPHITE OR RIBBON SPOOL IN INVENTORY"
-  },
-  {
-    "NPC": "Grigor",
-    "subjects": [
-      "The Ribbon Spool",
-      "Gemlings"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-      "The Undying"
-    ]
-  },
-  {
-    "NPC": "Maramoa",
-    "subjects": [
-      "The Undying"
-    ]
-  },
-  {
-    "event" :[
-      "Get Thaumetic Sulphite"
-    ]
-  },
-  {
-    "NPC": "Dialla",
-    "subjects": [
-      "Thaumetic Sulphite"
-    ],
-    "note" : "DO NOT HAVE RIBBON SPOOL IN INVENTORY"
-  },
-  {
-    "event" :[
-      "Get Ribbon Spool"
-    ]
-  },
-  {
-    "NPC": "Dialla",
-    "subjects": [
-      "The Sewers",
-      "Infernal Talc",
-      "Malachai",
-      "Chitus"
-    ]
-  },
-  {
-    "destination" : "The Ebony Barracks"
-  },
-  {
-    "NPC": "Maramoa",
-    "subjects": [
-      "Crossing the River"
-    ],
-    "note" : "DO NOT KILL GENERAL GRAVICIUS"
-  },
-  {
-    "event" : [
-      "Kill General Gravicius"
-    ]
-  },
-  {
-    "NPC": "Dialla",
-    "subjects": [
-      "General Gravicius"
-    ]
-  },
-  {
-    "NPC": "Grigor",
-    "subjects": [
-      "The Lunaris Temple"
-    ]
-  },
-  {
-    "NPC": "Clarissa",
-    "subjects": [
-      "General Gravicius"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-      "General Gravicius"
-    ]
-  },
-  {
-    "NPC": "Maramoa",
-    "subjects": [
-      "General Gravicius",
-      "Piety"
-    ]
-  },
-  {
-    "destination": "The Lunaris Temple Level 1"
-  },
-  {
-    "destination": "The Lunaris Temple Level 2"
-  },
-  {
-    "event" : [
-      "Kill Piety"
-    ]
-  },
-  {
-    "NPC": "Grigor",
-    "subjects": [
-      "The Beast"
-    ]
-  },
-  {
-    "NPC": "Clarissa",
-    "subjects": [
-      "Piety"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-      "Piety"
-    ]
-  },
-  {
-    "NPC": "Maramoa",
-    "subjects": [
-      "Piety"
-    ]
-  },
-  {
-    "destination": "The Imperial Gardens"
-  },
-  {
-    "destination": "The Library"
-  },
-  {
-    "NPC": "Siosa",
-    "subjects": [
-      "Introduction",
-      "Archives",
-      "The Painting"
-    ]
-  },
-  {
-    "destination":"The Archives"
-  },
-  {
-    "event" : [
-      "Find the four Golden Pages"
-    ]
-  },
-  {
-    "NPC": "Siosa",
-    "subjects": [
-      "Page One Translation",
-      "Page Two Translation",
-      "Page Three Translation",
-      "Page Four Translation",
-      "Doryani",
-      "Malachai",
-      "Queen Atziri",
-      "Cataclysm"
-    ]
-  },
-  {
-    "destination": "The Sceptre of God"
-  },
-  {
-    "destination": "The Upper Sceptre of God"
-  },
-  {
-    "event" : [
-      "Kill Dominus"
-    ]
-  },
-  {
-    "NPC": "Maramoa",
-    "subjects": [
-      "Dominus",
-      "Piety and Dominus"
-    ]
-  },
-  {
-    "destination": "The Aqueduct"
-  },
-  {
-    "destination": "Highgate"
-  },
-  {
-    "NPC": "Kira",
-    "subjects": [
-      "Introduction",
-      "Trading"
-    ]
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-      "Introduction",
-      "Highgate",
-      "Kira",
-      "Trading",
-      "The Beast"
-    ]
-  },
-  {
-    "NPC": "Navali",
-    "subjects": [
-      "Introduction"
-    ]
-  },
-  {
-    "NPC": "Oyun",
-    "subjects": [
-      "Introduction",
-      "Deshret",
-      "Voll",
-      "Petarus and Vanja",
-      "Kira"
-    ]
-  },
-  {
-    "NPC": "Dialla",
-    "subjects": [
-      "Deshret's Banner",
-      "Voll"
-    ]
-  },
-  {
-    "NPC": "Tasuni",
-    "subjects": [
-      "Introduction",
-      "Oyun",
-      "Dialla",
-      "Kira",
-      "Petarus and Vanja",
-      "Voll",
-      "Deshret"
-    ]
-  },
-  {
-    "NPC": "Kira",
-    "subjects": [
-      "Voll",
-      "Petarus and Vanja",
-      "Oyun",
-      "Tasuni",
-      "Dialla"
-    ]
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-      "Dialla",
-      "Oyun",
-      "Tasuni"
-    ]
-  },
-  {
-    "NPC": "Oyun",
-    "subjects": [
-      "Tasuni",
-      "Dialla"
-    ]
-  },
-  {
-    "destination":"The Dried Lake"
-  },
-  {
-    "event" : [ 
-      "Obtain Deshret's Banner",
-      "Break Deshret's Seal"
-    ]
-  },
-  {
-    "NPC": "Kira",
-    "subjects": [
-      "The Mines",
-      "Voll"
-    ]
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-      "The Mines"
-    ]
-  },
-  {
-    "NPC": "Lady Dialla",
-    "subjects": [
-      "The Rapture Device"
-    ]
-  },
-  {
-    "NPC": "Tasuni",
-    "subjects": [
-      "Voll"
-    ]
-  },
-  {
-    "NPC": "Oyun",
-    "subjects": [
-      "Kaom",
-      "Deshret"
-    ]
-  },
-  {
-    "NPC": "Kira",
-    "subjects": [
-      "Deshret"
-    ]
-  },
-  {
-    "destination" : "The Mines Level 1"
-  },
-  {
-    "destination" : "The Mines Level 2"
-  },
-  {
-    "event" : [
-      "Free Deshret's Spirit"
-    ]
-  },
-  {
-    "NPC": "Kira",
-    "subjects": [
-      "Deshret"
-    ]
-  },
-  {
-    "NPC": "Oyun",
-    "subjects": [
-      "Deshret"
-    ]
-  },
-  {
-    "destination" : "The Crystal Veins"
-  },
-  {
-    "NPC": "Lady Dialla",
-    "subjects": [
-      "Kaom",
-      "Daresso"
-    ]
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-      "Daresso"
-    ]
-  },
-  {
-    "NPC": "Oyun",
-    "subjects": [
-      "Dialla",
-      "Daresso"
-    ]
-  },
-  {
-    "NPC": "Tasuni",
-    "subjects": [
-      "Daresso",
-      "Kaom",
-      "The Beast"
-    ]
-  },
-  {
-    "destination" : "Daresso's Dream"
-  },
-  {
-    "destination" : "The Grand Arena"
-  },
-  {
-    "event" : [
-      "Obtain the Eye of Desire",
-      "Give the Eye of Desire to Dialla"
-    ]
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-      "Daresso"
-    ]
-  },
-  {
-    "NPC": "Tasuni",
-    "subjects": [
-      "Daresso"
-    ]
-  },
-  {
-    "destination" : "Kaom's Dream"
-  },
-  {
-    "destination" : "Kaom's Stronghold"
-  },
-  {
-    "event" : [
-      "Obtain the Eye of Fury",
-      "Give the Eye of Fury to Dialla"
-    ],
-    "note" : "DO NOT ENTER THE BELLY OF THE BEAST"
-  },
-  {
-    "NPC": "Kira",
-    "subjects": [
-      "Dialla"
-    ]
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-      "Dialla"
-    ]
-  },
-  {
-    "NPC": "Dialla",
-    "subjects": [
-      "Dialla"
-    ]
-  },
-  {
-    "NPC": "Oyun",
-    "subjects": [
-      "Kaom",
-      "Dialla"
-    ]
-  },
-  {
-    "NPC": "Tasuni",
-    "subjects": [
-      "Dialla",
-      "Kaom"
-    ]
-  },
-  {
-    "destination" : "The Belly of the Beast Level 1"
-  },
-  {
-    "destination" : "The Belly of the Beast Level 2"
-  },
-  {
-    "event" : [
-      "Defeat Piety"
-    ],
-    "note" : "DO NOT ENTER THE HARVEST"
-  },
-  {
-    "NPC": "Piety",
-    "subjects": [
-      "The Godless Three"
-    ]
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-      "Piety"
-    ]
-  },
-  {
-    "NPC": "Dialla",
-    "subjects": [
-      "Piety"
-    ]
-  },
-  {
-    "NPC": "Tasuni",
-    "subjects": [
-      "Ghasts",
-      "Malachai",
-      "Cataclysm",
-      "Malachai's Apprentices"
-    ]
-  },
-  {
-    "destination" : "The Harvest"
-  },
-  {
-    "NPC": "Piety",
-    "subjects": [
-      "Malachai"
-    ]
-  },
-  {
-    "event" : [
-      "Obtain the three organs",
-      "Give the Organs to Piety"
-    ],
-    "note" : "DO NOT KILL MALACHAI"
-  },
-  {
-    "NPC": "Dialla",
-    "subjects": [
-      "Malachai"
-    ]
-  },
-  {
-    "event" : [ 
-      "Defeat Malachai"
-    ]
-  },
-  {
-    "NPC": "Kira",
-    "subjects": [
-      "Malachai"
-    ]
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-      "Malachai"
-    ]
-  },
-  {
-    "NPC": "Oyun",
-    "subjects": [
-      "Malachai"
-    ]
-  },
-  {
-    "NPC": "Tasuni",
-    "subjects": [
-      "Malachai",
-      "Malachai's Apprentices"
-    ]
-  },
-  {
-    "destination" : "The Ascent"
-  },
-  {
-    "destination" : "The Slave Pens",
-    "note" : "Take the Oriath Portal"
-  },
-  {
-    "destination" : "Overseer's Tower"
-  },
-  {
-    "NPC": "Utula",
-    "subjects": [
-      "Introduction",
-      "Slave Pens",
-      "Overseer's Tower",
-      "Kitava",
-      "Innocence",
-      "Templar Courts",
-      "High Templar Avarius"
-    ]
-  },
-  {
-    "NPC": "Lani",
-    "subjects": [
-      "Introduction",
-      "Uprising",
-      "Utula"
-    ]
-  },
-  {
-    "NPC": "Vilenta",
-    "subjects": [
-      "Introduction",
-      "Lani",
-      "Utula",
-      "Justicar Casticus",
-      "High Templar Avarius",
-      "Piety",
-      "Research"
-    ]
-  },
-  {
-    "NPC": "Utula",
-    "subjects": [
-      "Lani",
-      "Vilenta"
-    ]
-  },
-  {
-    "NPC": "Lani",
-    "subjects": [
-      "Vilenta"
-    ]
-  },
-  {
-    "NPC": "Navali",
-    "subjects": [
-      "Introduction"
-    ]
-  },
-  {
-    "event" : [
-      "Kill Justicar Casticus"
-    ]
-  },
-  {
-    "destination" : "Oriath Square"
-  },
-  {
-    "NPC": "Utula",
-    "subjects": [
-      "Justicar Casticus"
-    ]
-  },
-  {
-    "destination" : "The Templar Courts"
-  },
-  {
-    "NPC": "Lani",
-    "subjects": [
-      "Oriath Square"
-    ]
-  },
-  {
-    "destination" : "The Chamber of Innocence"
-  },
-  {
-    "event" : "Defeat Innocence"
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "Innocence"
-    ],
-    "note" : "DO NOT LEAVE THE CHAMBER OF INNOCENCE"
-  },
-  {
-    "event" : [
-      "Talk to Bannon in The Chamber of Innocence"
-    ],
-    "note" : "DO NOT ENTER THE TORCHED COURTS"
-  },
-  {
-    "NPC": "Vilenta",
-    "subjects": [
-      "Utula",
-      "The Sign of Purity",
-      "Gods",
-      "Innocence",
-      "Chitus Cathedral"
-    ]
-  },
-  {
-    "NPC": "Bannon",
-    "subjects": [
-      "Introduction",
-      "Utula",
-      "Overseer's Tower",
-      "Innocence",
-      "The Sign of Purity",
-      "The Ossuary",
-      "Lani",
-      "Vilenta"
-    ]
-  },
-  {
-    "NPC": "Lani",
-    "subjects": [
-      "Bannon",
-      "The King's Feast",
-      "Cult of Kitava"
-    ]
-  },
-  {
-    "NPC": "Vilenta",
-    "subjects": [
-      "Bannon"
-    ]
-  },
-  {
-    "destination" : "The Torched Courts"
-  },
-  {
-    "destination" : "The Ruined Square"
-  },
-  {
-    "destination" : "The Ossuary"
-  },
-  {
-    "event" : "Obtain the Sign of Purity"
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "The Sign of Purity"
-    ],
-    "note" : "DO NOT LEAVE THE OSSUARY"
-  },
-  {
-    "destination" : "The Cathedral Rooftop"
-  },
-  {
-    "event" : [
-      "Defeat Kitava"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "Kitava"
-    ]
-  },
-  {
-    "NPC": "Vilenta",
-    "subjects": [
-      "Kitava"
-    ]
-  },
-  {
-    "destination" : "Lioneye's Watch"
-  },
-  {
-    "NPC": "Lily Roth",
-    "subjects": [
-      "Introduction",
-      "Weylem Roth",
-      "Tarkleigh",
-      "Bestel"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "The Essence of Umbra",
-      "Shavronne's Soul",
-      "The Rise of the Gods",
-      "The Beast"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Introduction",
-      "Nessa",
-      "Lilly",
-      "The Old Gods",
-      "The Brine King",
-      "Weylam Roth"
-    ]
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "Introduction",
-      "Lilly",
-      "Life with Lilly",
-      "The Brine King",
-      "The Twilight Strand"
-    ]
-  },
-  {
-    "destination" : "The Twilight Strand"
-  },
-  {
-    "event" : [
-      "Clear the Twilight Strand"
-    ]
-  },
-  {
-    "NPC": "Lilly",
-    "subjects": [
-      "Virtue Gems",
-      "Trade"
-    ]
-  },
-  {
-    "destination" : "The Coast"
-  },
-  {
-    "destination" : "The Mud Flats"
-  },
-  {
-    "event" : [
-      "Obtain the Eye of Conquest",
-      "Find the Fortress Gate"
-    ], 
-    "note" : "DO NOT OPEN GATE"
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "Eye of Conquest"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "The Father of War",
-      "Tukohama"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Tukohama"
-    ]
-  },
-  {
-    "event" : [
-      "Use the Eye of Conquest to open the Gate"
-    ],
-    "note" : "DO NOT ENTER THE KARUI FORTRESS"
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "The Karui Fortress",
-      "The Karui Revenants"
-    ]
-  },
-  {
-    "destination" : "The Karui Fortress"
-  },
-  {
-    "event" : [
-      "Defeat Tukohama"
-    ]
-  },
-  {
-    "destination" : "The Ridge"
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "Shavronne of Umbra"
-    ]
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "Shavronne of Umbra"
-    ]
-  },
-  {
-    "destination" : "The Lower Prison"
-  },
-  {
-    "destination" : "Shavronne's Tower"
-  },
-  {
-    "event" : [
-      "Defeat Shavronne"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "Shavronne"
-    ],
-    "note" : "DO NOT LEAVE SHAVRONNE'S TOWER"
-  },
-  {
-    "event" : [
-      "Obtain 'The Cloven One' quest from Bestel"
-    ]
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "Shavronne of Umbra"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "The Cloven One",
-      "Abberath",
-      "The Puppet Mistress",
-      "Rsylatha"
-    ]
-  },
-  {
-    "destination" : "The Prisoner's Gate"
-  },
-  {
-    "event" : [
-      "Find Nessa"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "The Ship Graveyard"
-    ]
-  },
-  {
-    "NPC": "Tarkleigh",
-    "subjects": [
-      "The Ship Graveyard"
-    ]
-  },
-  {
-    "destination" : "The Western Forest"
-  },
-  {
-    "destination" : "The Riverwats"
-  },
-  {
-    "destination" : "The Southern Forest"
-  },
-  {
-    "destination" : "The Cavern of Anger"
-  },
-  {
-    "event" : [
-      "Obtain the Black Flag"
-    ]
-  },
-  {
-    "NPC": "Lilly",
-    "subjects": [
-      "The Black Flag"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "The Brine King",
-      "Tsoagoth"
-    ]
-  },
-  {
-    "destination" : "The Beacon"
-  },
-  {
-    "NPC": "Lilly",
-    "subjects": [
-      "The Brine King"
-    ]
-  },
-  {
-    "destination" : "The Brine King's Reef"
-  },
-  {
-    "NPC": "Weylam Roth",
-    "subjects": [
-      "The Brine King's Reef",
-      "The Brine King"
-    ]
-  },
-  {
-    "event" : [
-      "Kill the Brine King"
-    ]
-  },
-  {
-    "NPC": "Lilly Roth",
-    "subjects": [
-      "The Brine King"
-    ]
-  },
-  {
-    "NPC": "Bestel",
-    "subjects": [
-      "The Brine King"
-    ]
-  },
-  {
-    "destination" : "The Bridge Encampment"
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "Greetings",
-      "The Forest Encampment",
-      "Silk",
-      "Wraeclast"
-    ]
-  },
-  {
-    "NPC": "Helena",
-    "subjects": [
-      "Silk",
-      "Trading"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Ralakesh",
-      "Silk"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "The Origins of the Gods",
-      "Ralakesh",
-      "The Master of a Million Faces"
-    ]
-  },
-  {
-    "NPC": "Weylam Roth",
-    "subjects": [
-      "The Broken Bridge",
-      "Merveil",
-      "Lilly",
-      "Yeena",
-      "Helena",
-      "Eramir",
-      "Pondium",
-      "The Brinerot Clan"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "Weylam"
-    ]
-  },
-  {
-    "NPC": "Helena",
-    "subjects": [
-      "Maligaro",
-      "Weylam",
-      "Greust"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Weylam"
-    ]
-  },
-  {
-    "destination" : "The Broken Bridge"
-  },
-  {
-    "destination" : "The Crossroads"
-  },
-  {
-    "event" : [
-      "Find the blocked path to the Forest Encampment"
-    ]
-  },
-  {
-    "NPC": "Helena",
-    "subjects": [
-      "The Den"
-    ]
-  },
-  {
-    "destination" : "The Fellshrine Ruins"
-  },
-  {
-    "destination" : "The Crypt"
-  },
-  {
-    "event" : [
-      "Obtain Maligaro's Map"
-    ]
-  },
-  {
-    "NPC": "Helena",
-    "subjects": [
-      "Maligaro's Map"
-    ]
-  },
-  {
-    "destination" : "The Chamber of Sins Level 1"
-  },
-  {
-    "NPC": "Silk",
-    "subjects": [
-      "Black Death",
-      "Silk's Journey "
-    ]
-  },
-  {
-    "destination" : "Maligaro's Sanctum"
-  },
-  {
-    "event" : "Defeat Maligaro"
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "Maligaro"
-    ],
-    "note" : "DO NOT LEAVE MALIGARO'S SANCTUM"
-  },
-  {
-    "event" : [
-      "Give the Black Venom to Silk"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-      "Silk",
-      "Arakaali"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-      "Silk",
-      "Arakaali's Temple",
-      "Arakaali"
-    ] 
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "Arakaali",
-      "The Spinner of Shadows"
-    ]
-  },
-  {
-    "destination" : "The Chamber of Sins Level 2"
-  },
-  {
-    "destination" : "The Den"
-  },
-  {
-    "destination" : "The Ashen Fields"
-  },
-  {
-    "event" : [
-      "Kill Greust"
-    ],
-    "note" : "DO NOT ENTER THE NORTHERN FOREST"
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-     "Greust"
-    ]
-  },
-  {
-    "NPC": "Helena",
-    "subjects": [
-     "Greust"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-     "The Mother of Despair"
-    ]
-  },
-  {
-    "NPC": "Weylam Roth",
-    "subjects": [
-     "Kishara"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-     "Gruthkul"
-    ]
-  },
-  {
-    "destination" : "The Dread Thicket"
-  },
-  {
-    "event" : [
-      "Obtain all Fireflies",
-      "Kill Gruthkul"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-     "Arakaali's Temple"
-    ]
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-     "Gruthkul"
-    ]
-  },
-  {
-    "destination" : "The Causeway"
-  },
-  {
-    "destination" : "The Vaal City"
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-     "The Vaal City"
-    ]
-  },
-  {
-    "destination" : "The Temple of Decay Level 1"
-  },
-  {
-    "destination" : "The Temple of Decay Level 2"
-  },
-  {
-    "event" : [
-      "Kill Arakaali"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-     "Arakaali"
-    ],
-    "note" : "DO NOT LEAVE THE TEMPLE OF DECAY LEVEL 2"
-  },
-  {
-    "NPC": "Eramir",
-    "subjects": [
-     "Silk"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-     "Silk"
-    ]
-  },
-  {
-    "destination" : "The Sarn Ramparts"
-  },
-  {
-    "destination" : "The Sarn Encampment"
-  },
-  {
-    "event" : [
-      "Obtain 'Essence of the Hag' quest from Sin"
-    ]
-  },
-  {
-    "NPC": "Clarissa",
-    "subjects": [
-     "Tolman",
-     "Grigor",
-     "Emperor Veruso",
-     "The Ankh of Eternity"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-     "Greetings",
-     "Clarissa and Tolman",
-     "Doedre Darktongue",
-     "Grigor"
-    ]
-  },
-  {
-    "NPC": "Yeena",
-    "subjects": [
-     "Grigor",
-     "Clarissa and Tolman",
-     "Gemling Legionnaires"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-     "The Eternal Sun",
-     "Solaris",
-     "The Eternal Moon",
-     "Lunaris"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-     "Solaris and Lunaris"
-    ]
-  },
-  {
-    "destination" : "The Toxic Conduits"
-  },
-  {
-    "destination" : "Doedre's Cesspool"
-  },
-  {
-    "event" : [
-      "Defeat Doedre"
-    ],
-    "note" : "DO NOT LEAVE DOEDRE'S CESSPOOL"
-  },
-  {
-    "destination" : "Sewer Outlet"
-  },
-  {
-    "event" : [
-      "Obtain 'Love is Dead' quest from Clarissa"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-     "The Ankh of Eternity",
-     "Hector Titucius"
-    ]
-  },
-  {
-    "NPC": "Maramoa",
-    "subjects": [
-     "The Sun Orb",
-     "The Moon Orb"
-    ]
-  },
-  {
-    "destination" : "The Grand Promenade"
-  },
-  {
-    "destination" : "The Bath House"
-  },
-  {
-    "event" : [
-      "Obtain the Wings of Vastiri"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-     "The Wings of Vastiri"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-     "Yugul"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-     "Yugul"
-    ]
-  },
-  {
-    "destination" : "The Lunaris Concourse"
-  },
-  {
-    "destination" : "The Lunaris Temple Level 1"
-  },
-  {
-    "destination" : "The Lunaris Temple Level 2"
-  },
-  {
-    "event" : [
-      "Obtain the Moon Orb"
-    ]
-  },
-  {
-    "destination" : "The Quay"
-  },
-  {
-    "event" :[
-      "Find the Ankh of Eternity",
-      "Find Clarissa at the Resurrection Site",
-      "Kill Tolmann"
-    ]
-  },
-  {
-    "NPC": "Clarissa",
-    "subjects": [
-     "The Ankh of Eternity"
-    ],
-    "note" : "DO NOT LEAVE THE QUAY"
-  },
-  {
-    "NPC": "Clarissa",
-    "subjects": [
-     "Tolman"
-    ],
-    "note" : "Completed when recieving quest reward"
-  },
-  {
-    "NPC": "Maramoa",
-    "subjects": [
-     "Clarissa and Tolman"
-    ]
-  },
-  {
-    "destination" : "The Grain Gate"
-  },
-  {
-    "destination" : "The Imperial Fields"
-  },
-  {
-    "destination" : "The Solaris Temple Level 1"
-  },
-  {
-    "destination" : "The Solaris Temple Level 2"
-  },
-  {
-    "event" : [
-      "Obtain the Sun Orb"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-     "The Orbs of Sun and Moon"
-    ]
-  },
-  {
-    "NPC": "Maramoa",
-    "subjects": [
-     "The Orbs of Sun and Moon"
-    ]
-  },
-  {
-    "destination" : "The Harbour Bridge"
-  },
-  {
-    "event" : [
-      "Kill Solaris and Lunaris"
-    ]
-  },
-  {
-    "NPC": "Hargan",
-    "subjects": [
-     "Solaris and Lunaris"
-    ]
-  },
-  {
-    "destination" : "The Blood Aqueduct"
-  },
-  {
-    "destination" : "Highgate"
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-     "Trathan Powder",
-     "Chimeric Acid"
-    ]
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-     "Oyun",
-     "Kira",
-     "Irasha",
-     "The Old Gods"
-    ]
-  },
-  {
-    "NPC": "Irasha",
-    "subjects": [
-     "Maraketh Tradition",
-     "Tasuni",
-     "Petarus and Vanja",
-     "Kira",
-     "Garukhan",
-     "Lady Dialla",
-     "Trading",
-     "Beast Blood"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-     "Garukhan",
-     "Queen of the Winds"
-    ]
-  },
-  {
-    "NPC": "Tasuni",
-    "subjects": [
-     "Sin",
-     "The Beast",
-     "Irasha"
-    ]
-  },
-  {
-    "destination" : "The Descent"
-  },
-  {
-    "destination" : "The Vastiri Desert"
-  },
-  {
-    "event" : [
-      "Find the Storm Blade",
-      "Find the Sandstorm Barrier blocking the Oasis"
-    ],
-    "note" : "DO NOT ENTER THE FOOTHILLS"
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-     "Queen of the Sands"
-    ]
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-     "General Adus"
-    ]
-  },
-  {
-    "destination" : "The Foothills"
-  },
-  {
-    "destination" : "The Boiling Lake"
-  },
-  {
-    "event" :[
-      "Obtain the Basilisk Acid"
-    ]
-  },
-  {
-    "destination" : "The Tunnel"
-  },
-  {
-    "destination" : "The Quarry"
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-     "The Dark Ember"
-    ]
-  },
-  {
-    "event" : [
-      "Kill Garukhan",
-      "Obtain the Sekhema Feather"
-    ],
-    "note" : "DO NOT TALK TO IRASHA OR TASUNI"
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-     "Garukhan"
-    ]
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-      "Oyun"
-    ]
-  },
-  {
-    "NPC": "Irashi",
-    "subjects": [
-     "Maraketh Justice",
-     "Garukhan"
-    ]
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-      "Irasha"
-    ]
-  },
-  {
-    "NPC": "Tasuni",
-    "subjects": [
-      "Feather of Sekhema"
-    ]
-  },
-  {
-    "destination" : "The Refinery"
-  },
-  {
-    "event" : [
-      "Obtain the Trarthan Powder"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "The Dark Ember"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "The Black Core",
-      "Cataclysm"
-    ],
-    "note" : "DO NOT ENTER THE BELLY OF THE BEAST"
-  },
-  {
-    "destination" : "The Belly of the Beast"
-  },
-  {
-    "destination" : "The Rotting Core"
-  },
-  {
-    "event" :[
-      "Defeat Doedre",
-      "Defeat Maligaro",
-      "Defeat Shavronne",
-      "Defeat the Depraved Trinity"
-    ]
-  },
-  {
-    "NPC": "Weylam Roth",
-    "subjects": [
-      "Rescue",
-      "Lilly"
-    ],
-    "note" : "DO NOT SAIL TO ORIATH"
-  },
-  {
-    "NPC": "Petarus and Vanja",
-    "subjects": [
-      "The Beast"
-    ]
-  },
-  {
-    "NPC": "Irasha",
-    "subjects": [
-      "The Beast"
-    ]
-  },
-  {
-    "NPC": "Tasuni",
-    "subjects": [
-      "The Beast"
-    ]
-  },
-  {
-    "destination" : "The Oriath Docks"
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "Welcome Back",
-      "The Dark Ember",
-      "Lilly",
-      "The Gods"
-    ]
-  },
-  {
-    "NPC": "Lani",
-    "subjects": [
-      "Greetings",
-      "Vilenta",
-      "Lilly",
-      "Weylam",
-      "Sin",
-      "Kitava"
-    ]
-  },
-  {
-    "NPC": "Lilly Roth",
-    "subjects": [
-      "Welcome",
-      "Bannon",
-      "Kitava"
-    ]
-  },
-  {
-    "NPC": "Weylam Roth",
-    "subjects": [
-      "Welcome",
-      "Trading",
-      "Lani",
-      "Bannon",
-      "Lilly"
-    ]
-  },
-  {
-    "destination" : "The Cathedral Rooftop"
-  },
-  {
-    "event" : [
-      "Save Bannon"
-    ]
-  },
-  {
-    "NPC": "Bannon",
-    "subjects": [
-      "Welcome Back",
-      "Kitava's Cultists",
-      "Kitava",
-      "Innocence",
-      "Chamber of Innocence",
-      "Kitava's Horns"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "Kitava",
-      "Bannon"
-    ]
-  },
-  {
-    "NPC": "Lilly Roth",
-    "subjects": [
-      "Tsoatha",
-      "The Teardrop"
-    ]
-  },
-  {
-    "destination" : "The Ravaged Square"
-  },
-  {
-    "destination" : "The Torched Courts"
-  },
-  {
-    "destination" : "The Desecrated Chambers"
-  },
-  {
-    "event" : [
-      "Obtain the Staff of Purity"
-    ]
-  },
-  {
-    "NPC": "Lilly Roth",
-    "subjects": [
-      "Innocence"
-    ]
-  },
-  {
-    "destination" : "The Canals"
-  },
-  {
-    "destination" : "The Feeding Trough"
-  },
-  {
-    "event" : [
-      "Kill Kitava"
-    ]
-  },
-  {
-    "destination" : "Oriath"
-  },
-  {
-    "NPC": "Innocence",
-    "subjects": [
-      "Exile"
-    ]
-  },
-  {
-    "NPC": "Sin",
-    "subjects": [
-      "Innocence"
-    ]
-  },
-  {
-    "NPC": "Zana",
-    "subjects": [
-      "Exile",
-      "Kitava",
-      "Oriath",
-      "Rebuilding"
-    ]
-  },
-  {
-    "NPC": "Lilly Roth",
-    "subjects": [
-      "Kitava"
-    ]
-  },
-  {
-    "NPC": "Weylam Roth",
-    "subjects": [
-      "Kitava"
-    ]
-  },
-  {
-    "NPC": "Navali",
-    "subjects": [
-      "Anarchy's End",
-      "Day of Sacrifice",
-      "Beyond Sight",
-      "The Warmongers",
-      "Deadly Rivalry",
-      "The Plaguemaw",
-      "The Feral Lord",
-      "Unbearable Whispers",
-      "The Unbreathing Queen",
-      "Thaumaturgical History",
-      "The Ambitious Bandit"
-    ],
-    "note" : "You must complete the first step of the named prophecy chain first"
-  },
-  {
-    "event" : [
-      "Complete 'The Plaguemaw V' Prophecy",
-      "Complete 'The Feral Lord V' Prophecy",
-      "Complete 'Unbearable Whispers V' Prophecy",
-      "Complete 'The Unbreathing Queen V' Prophecy"
-    ]
-  },
-  {
-    "NPC": "Navali",
-    "subjects": [
-      "The Pale Court"
-    ]
+[ 
+  { 
+     "NPC":"Dying Exile",
+     "subjects":"Introduction"
+  },
+  { 
+     "destination":"Lioneye's Watch"
+  },
+  { 
+     "NPC":"Nessa",
+     "subjects":[ 
+        "Introduction",
+        "Lioneye's Watch"
+     ]
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":[ 
+        "Introduction",
+        "Nessa",
+        "Drowned Dead"
+     ]
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":[ 
+        "Introduction",
+        "Lioneye's Watch",
+        "Drowned Dead",
+        "Bestel",
+        "Nessa",
+        "Letters of Exile"
+     ]
+  },
+  { 
+     "NPC":"Nessa",
+     "subjects":[ 
+        "Tarkleigh",
+        "Bestel"
+     ]
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"Tarkleigh"
+  },
+  { 
+     "destination":"The Coast"
+  },
+  { 
+     "destination":"The Tidal Island"
+  },
+  { 
+     "event":[ 
+        "Obtain the Medicine Chest",
+        "Give the Medicine Chest to Nessa"
+     ]
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"Medicine Chest"
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":[ 
+        "Cannibals",
+        "Medicine Chest"
+     ]
+  },
+  { 
+     "destination":"The Mud Flats"
+  },
+  { 
+     "event":[ 
+        "Pick up a glyph",
+        "Find the unique Rhoa, Oozeback Bloom",
+        "Walk near glyph wall"
+     ],
+     "note":"DO NOT PUT GLYPHS IN WALL"
+  },
+  { 
+     "NPC":"Nessa",
+     "subjects":"Rhoas"
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"Undead Rhoas"
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":[ 
+        "Rhoas",
+        "Glyph Wall",
+        "Strange Glyphs"
+     ]
+  },
+  { 
+     "destination":"The Fetid Pool"
+  },
+  { 
+     "event":[ 
+        "Kill all the monsters in the Fetid Pool",
+        "Return to Tarkleigh for your reward"
+     ]
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"Surviving Wraeclast"
+  },
+  { 
+     "destination":"The Submerged Passage"
+  },
+  { 
+     "destination":"The Ledge"
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":"Goatmen"
+  },
+  { 
+     "destination":"The Climb"
+  },
+  { 
+     "event":"Rescue Navali"
+  },
+  { 
+     "NPC":"Navali",
+     "subjects":[ 
+        "Introduction",
+        "Wraeclast",
+        "Yama the White",
+        "Karui Gods"
+     ]
+  },
+  { 
+     "destination":"The Lower Prison"
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":"Brutus"
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"Brutus"
+  },
+  { 
+     "destination":"The Upper Prison"
+  },
+  { 
+     "event":"Read Shavronne's Journal",
+     "note":"DO NOT KILL BRUTUS"
+  },
+  { 
+     "NPC":"Nessa",
+     "subjects":"Piety"
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"Marceus Lioneye"
+  },
+  { 
+     "event":"Kill Brutus"
+  },
+  { 
+     "NPC":"Nessa",
+     "subjects":"Brutus"
+  },
+  { 
+     "destination":"Prisoner's Gate"
+  },
+  { 
+     "event":"Watch Piety block the passage",
+     "note":"Follow the road from the Prisoner Gate's waypoint"
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"The Prisoner's Gate"
+  },
+  { 
+     "destination":"The Ship Graveyard"
+  },
+  { 
+     "NPC":"Captain Fairgraves",
+     "subjects":[ 
+        "The Allflame",
+        "Merveil",
+        "Merveil's Necklace"
+     ]
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":[ 
+        "Merveil",
+        "Captain Fairgraves"
+     ]
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":"Merveil"
+  },
+  { 
+     "NPC":"Captain Fairgraves",
+     "subjects":"The Real Fairgraves"
+  },
+  { 
+     "destination":"The Ship Graveyard Cave"
+  },
+  { 
+     "event":[ 
+        "Obtain the Allflame",
+        "Kill Fairgrave's"
+     ]
+  },
+  { 
+     "destination":"The Cavern of Wrath"
+  },
+  { 
+     "destination":"The Cavern of Anger"
+  },
+  { 
+     "event":"Defeat Merveil"
+  },
+  { 
+     "NPC":"Nessa",
+     "subjects":"Merveil"
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"Merveil"
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":"Merveil"
+  },
+  { 
+     "destination":"The Forest Encampment"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":[ 
+        "Introduction",
+        "The Azmeri",
+        "Blocked Passage"
+     ]
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":[ 
+        "Introduction",
+        "Eramir",
+        "Blood Apes"
+     ]
+  },
+  { 
+     "NPC":"Silk",
+     "subjects":[ 
+        "Introduction",
+        "Eramir",
+        "Yeena",
+        "The Great White Beast"
+     ]
+  },
+  { 
+     "NPC":"Greust",
+     "subjects":[ 
+        "Introduction",
+        "Eramir",
+        "Yeena",
+        "Silk",
+        "Blood Apes",
+        "Bandit Lords"
+     ]
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":[ 
+        "Yeena",
+        "Greust",
+        "Silk"
+     ]
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":[ 
+        "Greust",
+        "Silk"
+     ]
+  },
+  { 
+     "NPC":"Silk",
+     "subjects":"Greust"
+  },
+  { 
+     "NPC":"Navali",
+     "subjects":"Introduction"
+  },
+  { 
+     "destination":"The Old Fields"
+  },
+  { 
+     "destination":"The Den"
+  },
+  { 
+     "event":"Defeat the Great White Beast"
+  },
+  { 
+     "destination":"The Crossroads"
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"Elementals"
+  },
+  { 
+     "NPC":"Silk",
+     "subjects":"The Great White Beast"
+  },
+  { 
+     "NPC":"Greust",
+     "subjects":"Elementals"
+  },
+  { 
+     "destination":"The Riverways"
+  },
+  { 
+     "destination":"The Western Forest",
+     "note":"DO NOT KILL ALIRA"
+  },
+  { 
+     "event":"Open the passage to the Prisoner's Gate"
+  },
+  { 
+     "NPC":"Gruest",
+     "subjects":[ 
+        "Vipers",
+        "Chamber of Sins"
+     ]
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":[ 
+        "Blackguards",
+        "The Chamber of Sins"
+     ]
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"Vipers"
+  },
+  { 
+     "NPC":"Silk",
+     "subjects":"Reopened Passage"
+  },
+  { 
+     "NPC":"Nessa",
+     "subjects":"Reopened Passage"
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"Inspirational Poem"
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":"Reopened Passage"
+  },
+  { 
+     "destination":"The Crossroads"
+  },
+  { 
+     "destination":"The Chamber of Sins Level 1"
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"Chamber of Sins"
+  },
+  { 
+     "destination":"The Chamber of Sins Level 2"
+  },
+  { 
+     "event":"Save Helena and obtain the Baleful Gem"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":[ 
+        "Helena",
+        "The Baleful Gem"
+     ]
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"Helena"
+  },
+  { 
+     "NPC":"Helena",
+     "subjects":[ 
+        "Rescued",
+        "The Baleful Gem",
+        "Fidelitas",
+        "Dominus",
+        "Prisoner's Gate"
+     ]
+  },
+  { 
+     "NPC":"Silk",
+     "subjects":"Helena"
+  },
+  { 
+     "NPC":"Greust",
+     "subjects":[ 
+        "Maligaro's Spike",
+        "Helena"
+     ]
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"Maligaro's Spike"
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"Maligaro's Spike"
+  },
+  { 
+     "destination":"The Fellshrine Ruins"
+  },
+  { 
+     "destination":"The Crypt Level 1"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"Fellshrine Ruins"
+  },
+  { 
+     "destination":"The Western Forest",
+     "note":"DO NOT KILL ALIRA"
+  },
+  { 
+     "destination":"The Weaver's Chambers"
+  },
+  { 
+     "event":"Obtain Maligaro's Spike"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"Maligaro's Creations"
+  },
+  { 
+     "destination":"The Riverways"
+  },
+  { 
+     "destination":"The Wetlands",
+     "note":"DO NOT KILL OAK"
+  },
+  { 
+     "event":"Find the tree roots",
+     "note":"DO NOT DESTROY THE TREE ROOTS"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"Ancient Gateway"
+  },
+  { 
+     "event":"Open the passage to the Vaal Ruins"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"Lorrata"
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"Lorrata"
+  },
+  { 
+     "destination":"The Vaal Ruins"
+  },
+  { 
+     "destination":"The Northern Forest"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"The Darkness"
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"The Darkness"
+  },
+  { 
+     "NPC":"Helena",
+     "subjects":"The Darkness"
+  },
+  { 
+     "NPC":"Silk",
+     "subjects":"The Darkness"
+  },
+  { 
+     "NPC":"Greust",
+     "subjects":"The Darkness"
+  },
+  { 
+     "destination":"The Crossroads"
+  },
+  { 
+     "destination":"The Broken Bridge"
+  },
+  { 
+     "event":"Kill Kraityn"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"Kraityn"
+  },
+  { 
+     "destination":"The Western Forest"
+  },
+  { 
+     "NPC":"Alira",
+     "subjects":"The Darkness"
+  },
+  { 
+     "event":"Kill Alira"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"Oak"
+  },
+  { 
+     "destination":"The Wetlands"
+  },
+  { 
+     "NPC":"Oak",
+     "subjects":"The Darkness"
+  },
+  { 
+     "event":"Kill Oak"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"Bandit Lords"
+  },
+  { 
+     "NPC":"Helena",
+     "subjects":"Yeena's Vision"
+  },
+  { 
+     "NPC":"Greust",
+     "subjects":"Bandit Lords"
+  },
+  { 
+     "destination":"The Northern Forest"
+  },
+  { 
+     "destination":"The Caverns"
+  },
+  { 
+     "destination":"The Ancient Pyramid"
+  },
+  { 
+     "event":"Defeat the Vaal Oversoul"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"The Light"
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"The Light"
+  },
+  { 
+     "NPC":"Helena",
+     "subjects":"The Light"
+  },
+  { 
+     "NPC":"Silk",
+     "subjects":"The Light"
+  },
+  { 
+     "NPC":"Greust",
+     "subjects":"The Light"
+  },
+  { 
+     "destination":"The City of Sarn"
+  },
+  { 
+     "event":"Save Clarissa"
+  },
+  { 
+     "destination":"The Sarn Encampment"
+  },
+  { 
+     "NPC":"Grigor",
+     "subjects":"The Ezomytes"
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":[ 
+        "Tolman",
+        "The Slums"
+     ]
+  },
+  { 
+     "NPC":"Maramoa",
+     "subjects":"The Ebony Legion"
+  },
+  { 
+     "NPC":"Navali",
+     "subjects":"Introduction"
+  },
+  { 
+     "destination":"The Slums"
+  },
+  { 
+     "destination":"The Crematorium"
+  },
+  { 
+     "event":"Obtain Tolman's Bracelet"
+  },
+  { 
+     "NPC":"Grigor",
+     "subjects":"Tolman"
+  },
+  { 
+     "NPC":"Clarissa",
+     "subjects":"Sewer Keys"
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":[ 
+        "Introduction",
+        "Clarissa",
+        "Maramoa",
+        "The Purity Rebellion"
+     ]
+  },
+  { 
+     "NPC":"Maramoa",
+     "subjects":[ 
+        "Tolman",
+        "Hargan",
+        "Grigor",
+        "The Purity Rebellion",
+        "Crossing the River"
+     ]
+  },
+  { 
+     "NPC":"Grigor",
+     "subjects":[ 
+        "Maramoa",
+        "Hargan",
+        "Victario",
+        "General Gravicius"
+     ]
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":[ 
+        "Grigor",
+        "General Gravicius"
+     ]
+  },
+  { 
+     "destination":"The Sewers"
+  },
+  { 
+     "event":"Find the Undying Blockage",
+     "note":"DO NOT ENTER THE MARKETPLACE"
+  },
+  { 
+     "NPC":"Clarissa",
+     "subjects":[ 
+        "Maramoa",
+        "Hargan",
+        "Grigor",
+        "Piety",
+        "Piety's Gems",
+        "Vinia",
+        "Cataclysm",
+        "The Purity Rebellion"
+     ]
+  },
+  { 
+     "NPC":"Maramoa",
+     "subjects":"Crossing the River"
+  },
+  { 
+     "destination":"The Marketplace"
+  },
+  { 
+     "destination":"The Battlefront"
+  },
+  { 
+     "NPC":"Clarissa",
+     "subjects":"Statues"
+  },
+  { 
+     "destination":"The Docks"
+  },
+  { 
+     "NPC":"Captain Fairgraves",
+     "subjects":[ 
+        "Introduction",
+        "Decanter Spiritus",
+        "Chitus' Plum",
+        "Resurrection",
+        "The Undying"
+     ],
+     "note":"DO NOT HAVE DECANTER SPIRITUS OR CHITUS' PLUM IN INVENTORY"
+  },
+  { 
+     "destination":"The Solaris Temple Level 1"
+  },
+  { 
+     "NPC":"Clarissa",
+     "subjects":"The Lunaris Temple"
+  },
+  { 
+     "destination":"The Solaris Temple Level 2"
+  },
+  { 
+     "NPC":"Dialla",
+     "subjects":"Introduction",
+     "note":"DO NOT HAVE THAUMETIC SULPHITE OR RIBBON SPOOL IN INVENTORY"
+  },
+  { 
+     "NPC":"Grigor",
+     "subjects":[ 
+        "The Ribbon Spool",
+        "Gemlings"
+     ]
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":"The Undying"
+  },
+  { 
+     "NPC":"Maramoa",
+     "subjects":"The Undying"
+  },
+  { 
+     "event":"Get Thaumetic Sulphite"
+  },
+  { 
+     "NPC":"Dialla",
+     "subjects":"Thaumetic Sulphite",
+     "note":"DO NOT HAVE RIBBON SPOOL IN INVENTORY"
+  },
+  { 
+     "event":"Get Ribbon Spool"
+  },
+  { 
+     "NPC":"Dialla",
+     "subjects":[ 
+        "The Sewers",
+        "Infernal Talc",
+        "Malachai",
+        "Chitus"
+     ]
+  },
+  { 
+     "destination":"The Ebony Barracks"
+  },
+  { 
+     "NPC":"Maramoa",
+     "subjects":"Crossing the River",
+     "note":"DO NOT KILL GENERAL GRAVICIUS"
+  },
+  { 
+     "event":"Kill General Gravicius"
+  },
+  { 
+     "NPC":"Dialla",
+     "subjects":"General Gravicius"
+  },
+  { 
+     "NPC":"Grigor",
+     "subjects":"The Lunaris Temple"
+  },
+  { 
+     "NPC":"Clarissa",
+     "subjects":"General Gravicius"
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":"General Gravicius"
+  },
+  { 
+     "NPC":"Maramoa",
+     "subjects":[ 
+        "General Gravicius",
+        "Piety"
+     ]
+  },
+  { 
+     "destination":"The Lunaris Temple Level 1"
+  },
+  { 
+     "destination":"The Lunaris Temple Level 2"
+  },
+  { 
+     "event":"Kill Piety"
+  },
+  { 
+     "NPC":"Grigor",
+     "subjects":"The Beast"
+  },
+  { 
+     "NPC":"Clarissa",
+     "subjects":"Piety"
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":"Piety"
+  },
+  { 
+     "NPC":"Maramoa",
+     "subjects":"Piety"
+  },
+  { 
+     "destination":"The Imperial Gardens"
+  },
+  { 
+     "destination":"The Library"
+  },
+  { 
+     "NPC":"Siosa",
+     "subjects":[ 
+        "Introduction",
+        "Archives",
+        "The Painting"
+     ]
+  },
+  { 
+     "destination":"The Archives"
+  },
+  { 
+     "event":"Find the four Golden Pages"
+  },
+  { 
+     "NPC":"Siosa",
+     "subjects":[ 
+        "Page One Translation",
+        "Page Two Translation",
+        "Page Three Translation",
+        "Page Four Translation",
+        "Doryani",
+        "Malachai",
+        "Queen Atziri",
+        "Cataclysm"
+     ]
+  },
+  { 
+     "destination":"The Sceptre of God"
+  },
+  { 
+     "destination":"The Upper Sceptre of God"
+  },
+  { 
+     "event":"Kill Dominus"
+  },
+  { 
+     "NPC":"Maramoa",
+     "subjects":[ 
+        "Dominus",
+        "Piety and Dominus"
+     ]
+  },
+  { 
+     "destination":"The Aqueduct"
+  },
+  { 
+     "destination":"Highgate"
+  },
+  { 
+     "NPC":"Kira",
+     "subjects":[ 
+        "Introduction",
+        "Trading"
+     ]
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":[ 
+        "Introduction",
+        "Highgate",
+        "Kira",
+        "Trading",
+        "The Beast"
+     ]
+  },
+  { 
+     "NPC":"Navali",
+     "subjects":"Introduction"
+  },
+  { 
+     "NPC":"Oyun",
+     "subjects":[ 
+        "Introduction",
+        "Deshret",
+        "Voll",
+        "Petarus and Vanja",
+        "Kira"
+     ]
+  },
+  { 
+     "NPC":"Dialla",
+     "subjects":[ 
+        "Deshret's Banner",
+        "Voll"
+     ]
+  },
+  { 
+     "NPC":"Tasuni",
+     "subjects":[ 
+        "Introduction",
+        "Oyun",
+        "Dialla",
+        "Kira",
+        "Petarus and Vanja",
+        "Voll",
+        "Deshret"
+     ]
+  },
+  { 
+     "NPC":"Kira",
+     "subjects":[ 
+        "Voll",
+        "Petarus and Vanja",
+        "Oyun",
+        "Tasuni",
+        "Dialla"
+     ]
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":[ 
+        "Dialla",
+        "Oyun",
+        "Tasuni"
+     ]
+  },
+  { 
+     "NPC":"Oyun",
+     "subjects":[ 
+        "Tasuni",
+        "Dialla"
+     ]
+  },
+  { 
+     "destination":"The Dried Lake"
+  },
+  { 
+     "event":[ 
+        "Obtain Deshret's Banner",
+        "Break Deshret's Seal"
+     ]
+  },
+  { 
+     "NPC":"Kira",
+     "subjects":[ 
+        "The Mines",
+        "Voll"
+     ]
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":"The Mines"
+  },
+  { 
+     "NPC":"Lady Dialla",
+     "subjects":"The Rapture Device"
+  },
+  { 
+     "NPC":"Tasuni",
+     "subjects":"Voll"
+  },
+  { 
+     "NPC":"Oyun",
+     "subjects":[ 
+        "Kaom",
+        "Deshret"
+     ]
+  },
+  { 
+     "NPC":"Kira",
+     "subjects":"Deshret"
+  },
+  { 
+     "destination":"The Mines Level 1"
+  },
+  { 
+     "destination":"The Mines Level 2"
+  },
+  { 
+     "event":"Free Deshret's Spirit"
+  },
+  { 
+     "NPC":"Kira",
+     "subjects":"Deshret"
+  },
+  { 
+     "NPC":"Oyun",
+     "subjects":"Deshret"
+  },
+  { 
+     "destination":"The Crystal Veins"
+  },
+  { 
+     "NPC":"Lady Dialla",
+     "subjects":[ 
+        "Kaom",
+        "Daresso"
+     ]
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":"Daresso"
+  },
+  { 
+     "NPC":"Oyun",
+     "subjects":[ 
+        "Dialla",
+        "Daresso"
+     ]
+  },
+  { 
+     "NPC":"Tasuni",
+     "subjects":[ 
+        "Daresso",
+        "Kaom",
+        "The Beast"
+     ]
+  },
+  { 
+     "destination":"Daresso's Dream"
+  },
+  { 
+     "destination":"The Grand Arena"
+  },
+  { 
+     "event":[ 
+        "Obtain the Eye of Desire",
+        "Give the Eye of Desire to Dialla"
+     ]
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":"Daresso"
+  },
+  { 
+     "NPC":"Tasuni",
+     "subjects":"Daresso"
+  },
+  { 
+     "destination":"Kaom's Dream"
+  },
+  { 
+     "destination":"Kaom's Stronghold"
+  },
+  { 
+     "event":[ 
+        "Obtain the Eye of Fury",
+        "Give the Eye of Fury to Dialla"
+     ],
+     "note":"DO NOT ENTER THE BELLY OF THE BEAST"
+  },
+  { 
+     "NPC":"Kira",
+     "subjects":"Dialla"
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":"Dialla"
+  },
+  { 
+     "NPC":"Dialla",
+     "subjects":"Dialla"
+  },
+  { 
+     "NPC":"Oyun",
+     "subjects":[ 
+        "Kaom",
+        "Dialla"
+     ]
+  },
+  { 
+     "NPC":"Tasuni",
+     "subjects":[ 
+        "Dialla",
+        "Kaom"
+     ]
+  },
+  { 
+     "destination":"The Belly of the Beast Level 1"
+  },
+  { 
+     "destination":"The Belly of the Beast Level 2"
+  },
+  { 
+     "event":"Defeat Piety",
+     "note":"DO NOT ENTER THE HARVEST"
+  },
+  { 
+     "NPC":"Piety",
+     "subjects":"The Godless Three"
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":"Piety"
+  },
+  { 
+     "NPC":"Dialla",
+     "subjects":"Piety"
+  },
+  { 
+     "NPC":"Tasuni",
+     "subjects":[ 
+        "Ghasts",
+        "Malachai",
+        "Cataclysm",
+        "Malachai's Apprentices"
+     ]
+  },
+  { 
+     "destination":"The Harvest"
+  },
+  { 
+     "NPC":"Piety",
+     "subjects":"Malachai"
+  },
+  { 
+     "event":[ 
+        "Obtain the three organs",
+        "Give the Organs to Piety"
+     ],
+     "note":"DO NOT KILL MALACHAI"
+  },
+  { 
+     "NPC":"Dialla",
+     "subjects":"Malachai"
+  },
+  { 
+     "event":"Defeat Malachai"
+  },
+  { 
+     "NPC":"Kira",
+     "subjects":"Malachai"
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":"Malachai"
+  },
+  { 
+     "NPC":"Oyun",
+     "subjects":"Malachai"
+  },
+  { 
+     "NPC":"Tasuni",
+     "subjects":[ 
+        "Malachai",
+        "Malachai's Apprentices"
+     ]
+  },
+  { 
+     "destination":"The Ascent"
+  },
+  { 
+     "destination":"The Slave Pens",
+     "note":"Take the Oriath Portal"
+  },
+  { 
+     "destination":"Overseer's Tower"
+  },
+  { 
+     "NPC":"Utula",
+     "subjects":[ 
+        "Introduction",
+        "Slave Pens",
+        "Overseer's Tower",
+        "Kitava",
+        "Innocence",
+        "Templar Courts",
+        "High Templar Avarius"
+     ]
+  },
+  { 
+     "NPC":"Lani",
+     "subjects":[ 
+        "Introduction",
+        "Uprising",
+        "Utula"
+     ]
+  },
+  { 
+     "NPC":"Vilenta",
+     "subjects":[ 
+        "Introduction",
+        "Lani",
+        "Utula",
+        "Justicar Casticus",
+        "High Templar Avarius",
+        "Piety",
+        "Research"
+     ]
+  },
+  { 
+     "NPC":"Utula",
+     "subjects":[ 
+        "Lani",
+        "Vilenta"
+     ]
+  },
+  { 
+     "NPC":"Lani",
+     "subjects":"Vilenta"
+  },
+  { 
+     "NPC":"Navali",
+     "subjects":"Introduction"
+  },
+  { 
+     "event":"Kill Justicar Casticus"
+  },
+  { 
+     "destination":"Oriath Square"
+  },
+  { 
+     "NPC":"Utula",
+     "subjects":"Justicar Casticus"
+  },
+  { 
+     "destination":"The Templar Courts"
+  },
+  { 
+     "NPC":"Lani",
+     "subjects":"Oriath Square"
+  },
+  { 
+     "destination":"The Chamber of Innocence"
+  },
+  { 
+     "event":"Defeat Innocence"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":"Innocence",
+     "note":"DO NOT LEAVE THE CHAMBER OF INNOCENCE"
+  },
+  { 
+     "event":"Talk to Bannon in The Chamber of Innocence",
+     "note":"DO NOT ENTER THE TORCHED COURTS"
+  },
+  { 
+     "NPC":"Vilenta",
+     "subjects":[ 
+        "Utula",
+        "The Sign of Purity",
+        "Gods",
+        "Innocence",
+        "Chitus Cathedral"
+     ]
+  },
+  { 
+     "NPC":"Bannon",
+     "subjects":[ 
+        "Introduction",
+        "Utula",
+        "Overseer's Tower",
+        "Innocence",
+        "The Sign of Purity",
+        "The Ossuary",
+        "Lani",
+        "Vilenta"
+     ]
+  },
+  { 
+     "NPC":"Lani",
+     "subjects":[ 
+        "Bannon",
+        "The King's Feast",
+        "Cult of Kitava"
+     ]
+  },
+  { 
+     "NPC":"Vilenta",
+     "subjects":"Bannon"
+  },
+  { 
+     "destination":"The Torched Courts"
+  },
+  { 
+     "destination":"The Ruined Square"
+  },
+  { 
+     "destination":"The Ossuary"
+  },
+  { 
+     "event":"Obtain the Sign of Purity"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":"The Sign of Purity",
+     "note":"DO NOT LEAVE THE OSSUARY"
+  },
+  { 
+     "destination":"The Cathedral Rooftop"
+  },
+  { 
+     "event":"Defeat Kitava"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":"Kitava"
+  },
+  { 
+     "NPC":"Vilenta",
+     "subjects":"Kitava"
+  },
+  { 
+     "destination":"Lioneye's Watch"
+  },
+  { 
+     "NPC":"Lily Roth",
+     "subjects":[ 
+        "Introduction",
+        "Weylem Roth",
+        "Tarkleigh",
+        "Bestel"
+     ]
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":[ 
+        "The Essence of Umbra",
+        "Shavronne's Soul",
+        "The Rise of the Gods",
+        "The Beast"
+     ]
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":[ 
+        "Introduction",
+        "Nessa",
+        "Lilly",
+        "The Old Gods",
+        "The Brine King",
+        "Weylam Roth"
+     ]
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":[ 
+        "Introduction",
+        "Lilly",
+        "Life with Lilly",
+        "The Brine King",
+        "The Twilight Strand"
+     ]
+  },
+  { 
+     "destination":"The Twilight Strand"
+  },
+  { 
+     "event":"Clear the Twilight Strand"
+  },
+  { 
+     "NPC":"Lilly",
+     "subjects":[ 
+        "Virtue Gems",
+        "Trade"
+     ]
+  },
+  { 
+     "destination":"The Coast"
+  },
+  { 
+     "destination":"The Mud Flats"
+  },
+  { 
+     "event":[ 
+        "Obtain the Eye of Conquest",
+        "Find the Fortress Gate"
+     ],
+     "note":"DO NOT OPEN GATE"
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":"Eye of Conquest"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":[ 
+        "The Father of War",
+        "Tukohama"
+     ]
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"Tukohama"
+  },
+  { 
+     "event":"Use the Eye of Conquest to open the Gate",
+     "note":"DO NOT ENTER THE KARUI FORTRESS"
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":[ 
+        "The Karui Fortress",
+        "The Karui Revenants"
+     ]
+  },
+  { 
+     "destination":"The Karui Fortress"
+  },
+  { 
+     "event":"Defeat Tukohama"
+  },
+  { 
+     "destination":"The Ridge"
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"Shavronne of Umbra"
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":"Shavronne of Umbra"
+  },
+  { 
+     "destination":"The Lower Prison"
+  },
+  { 
+     "destination":"Shavronne's Tower"
+  },
+  { 
+     "event":"Defeat Shavronne"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":"Shavronne",
+     "note":"DO NOT LEAVE SHAVRONNE'S TOWER"
+  },
+  { 
+     "event":"Obtain 'The Cloven One' quest from Bestel"
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":"Shavronne of Umbra"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":[ 
+        "The Cloven One",
+        "Abberath",
+        "The Puppet Mistress",
+        "Rsylatha"
+     ]
+  },
+  { 
+     "destination":"The Prisoner's Gate"
+  },
+  { 
+     "event":"Find Nessa"
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"The Ship Graveyard"
+  },
+  { 
+     "NPC":"Tarkleigh",
+     "subjects":"The Ship Graveyard"
+  },
+  { 
+     "destination":"The Western Forest"
+  },
+  { 
+     "destination":"The Riverwats"
+  },
+  { 
+     "destination":"The Southern Forest"
+  },
+  { 
+     "destination":"The Cavern of Anger"
+  },
+  { 
+     "event":"Obtain the Black Flag"
+  },
+  { 
+     "NPC":"Lilly",
+     "subjects":"The Black Flag"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":[ 
+        "The Brine King",
+        "Tsoagoth"
+     ]
+  },
+  { 
+     "destination":"The Beacon"
+  },
+  { 
+     "NPC":"Lilly",
+     "subjects":"The Brine King"
+  },
+  { 
+     "destination":"The Brine King's Reef"
+  },
+  { 
+     "NPC":"Weylam Roth",
+     "subjects":[ 
+        "The Brine King's Reef",
+        "The Brine King"
+     ]
+  },
+  { 
+     "event":"Kill the Brine King"
+  },
+  { 
+     "NPC":"Lilly Roth",
+     "subjects":"The Brine King"
+  },
+  { 
+     "NPC":"Bestel",
+     "subjects":"The Brine King"
+  },
+  { 
+     "destination":"The Bridge Encampment"
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":[ 
+        "Greetings",
+        "The Forest Encampment",
+        "Silk",
+        "Wraeclast"
+     ]
+  },
+  { 
+     "NPC":"Helena",
+     "subjects":[ 
+        "Silk",
+        "Trading"
+     ]
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":[ 
+        "Ralakesh",
+        "Silk"
+     ]
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":[ 
+        "The Origins of the Gods",
+        "Ralakesh",
+        "The Master of a Million Faces"
+     ]
+  },
+  { 
+     "NPC":"Weylam Roth",
+     "subjects":[ 
+        "The Broken Bridge",
+        "Merveil",
+        "Lilly",
+        "Yeena",
+        "Helena",
+        "Eramir",
+        "Pondium",
+        "The Brinerot Clan"
+     ]
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"Weylam"
+  },
+  { 
+     "NPC":"Helena",
+     "subjects":[ 
+        "Maligaro",
+        "Weylam",
+        "Greust"
+     ]
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"Weylam"
+  },
+  { 
+     "destination":"The Broken Bridge"
+  },
+  { 
+     "destination":"The Crossroads"
+  },
+  { 
+     "event":"Find the blocked path to the Forest Encampment"
+  },
+  { 
+     "NPC":"Helena",
+     "subjects":"The Den"
+  },
+  { 
+     "destination":"The Fellshrine Ruins"
+  },
+  { 
+     "destination":"The Crypt"
+  },
+  { 
+     "event":"Obtain Maligaro's Map"
+  },
+  { 
+     "NPC":"Helena",
+     "subjects":"Maligaro's Map"
+  },
+  { 
+     "destination":"The Chamber of Sins Level 1"
+  },
+  { 
+     "NPC":"Silk",
+     "subjects":[ 
+        "Black Death",
+        "Silk's Journey "
+     ]
+  },
+  { 
+     "destination":"Maligaro's Sanctum"
+  },
+  { 
+     "event":"Defeat Maligaro"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":"Maligaro",
+     "note":"DO NOT LEAVE MALIGARO'S SANCTUM"
+  },
+  { 
+     "event":"Give the Black Venom to Silk"
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":[ 
+        "Silk",
+        "Arakaali"
+     ]
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":[ 
+        "Silk",
+        "Arakaali's Temple",
+        "Arakaali"
+     ]
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":[ 
+        "Arakaali",
+        "The Spinner of Shadows"
+     ]
+  },
+  { 
+     "destination":"The Chamber of Sins Level 2"
+  },
+  { 
+     "destination":"The Den"
+  },
+  { 
+     "destination":"The Ashen Fields"
+  },
+  { 
+     "event":"Kill Greust",
+     "note":"DO NOT ENTER THE NORTHERN FOREST"
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"Greust"
+  },
+  { 
+     "NPC":"Helena",
+     "subjects":"Greust"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":"The Mother of Despair"
+  },
+  { 
+     "NPC":"Weylam Roth",
+     "subjects":"Kishara"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"Gruthkul"
+  },
+  { 
+     "destination":"The Dread Thicket"
+  },
+  { 
+     "event":[ 
+        "Obtain all Fireflies",
+        "Kill Gruthkul"
+     ]
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"Arakaali's Temple"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"Gruthkul"
+  },
+  { 
+     "destination":"The Causeway"
+  },
+  { 
+     "destination":"The Vaal City"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"The Vaal City"
+  },
+  { 
+     "destination":"The Temple of Decay Level 1"
+  },
+  { 
+     "destination":"The Temple of Decay Level 2"
+  },
+  { 
+     "event":"Kill Arakaali"
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"Arakaali",
+     "note":"DO NOT LEAVE THE TEMPLE OF DECAY LEVEL 2"
+  },
+  { 
+     "NPC":"Eramir",
+     "subjects":"Silk"
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":"Silk"
+  },
+  { 
+     "destination":"The Sarn Ramparts"
+  },
+  { 
+     "destination":"The Sarn Encampment"
+  },
+  { 
+     "event":"Obtain 'Essence of the Hag' quest from Sin"
+  },
+  { 
+     "NPC":"Clarissa",
+     "subjects":[ 
+        "Tolman",
+        "Grigor",
+        "Emperor Veruso",
+        "The Ankh of Eternity"
+     ]
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":[ 
+        "Greetings",
+        "Clarissa and Tolman",
+        "Doedre Darktongue",
+        "Grigor"
+     ]
+  },
+  { 
+     "NPC":"Yeena",
+     "subjects":[ 
+        "Grigor",
+        "Clarissa and Tolman",
+        "Gemling Legionnaires"
+     ]
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":[ 
+        "The Eternal Sun",
+        "Solaris",
+        "The Eternal Moon",
+        "Lunaris"
+     ]
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":"Solaris and Lunaris"
+  },
+  { 
+     "destination":"The Toxic Conduits"
+  },
+  { 
+     "destination":"Doedre's Cesspool"
+  },
+  { 
+     "event":"Defeat Doedre",
+     "note":"DO NOT LEAVE DOEDRE'S CESSPOOL"
+  },
+  { 
+     "destination":"Sewer Outlet"
+  },
+  { 
+     "event":"Obtain 'Love is Dead' quest from Clarissa"
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":[ 
+        "The Ankh of Eternity",
+        "Hector Titucius"
+     ]
+  },
+  { 
+     "NPC":"Maramoa",
+     "subjects":[ 
+        "The Sun Orb",
+        "The Moon Orb"
+     ]
+  },
+  { 
+     "destination":"The Grand Promenade"
+  },
+  { 
+     "destination":"The Bath House"
+  },
+  { 
+     "event":"Obtain the Wings of Vastiri"
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":"The Wings of Vastiri"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":"Yugul"
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":"Yugul"
+  },
+  { 
+     "destination":"The Lunaris Concourse"
+  },
+  { 
+     "destination":"The Lunaris Temple Level 1"
+  },
+  { 
+     "destination":"The Lunaris Temple Level 2"
+  },
+  { 
+     "event":"Obtain the Moon Orb"
+  },
+  { 
+     "destination":"The Quay"
+  },
+  { 
+     "event":[ 
+        "Find the Ankh of Eternity",
+        "Find Clarissa at the Resurrection Site",
+        "Kill Tolmann"
+     ]
+  },
+  { 
+     "NPC":"Clarissa",
+     "subjects":"The Ankh of Eternity",
+     "note":"DO NOT LEAVE THE QUAY"
+  },
+  { 
+     "NPC":"Clarissa",
+     "subjects":"Tolman",
+     "note":"Completed when recieving quest reward"
+  },
+  { 
+     "NPC":"Maramoa",
+     "subjects":"Clarissa and Tolman"
+  },
+  { 
+     "destination":"The Grain Gate"
+  },
+  { 
+     "destination":"The Imperial Fields"
+  },
+  { 
+     "destination":"The Solaris Temple Level 1"
+  },
+  { 
+     "destination":"The Solaris Temple Level 2"
+  },
+  { 
+     "event":"Obtain the Sun Orb"
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":"The Orbs of Sun and Moon"
+  },
+  { 
+     "NPC":"Maramoa",
+     "subjects":"The Orbs of Sun and Moon"
+  },
+  { 
+     "destination":"The Harbour Bridge"
+  },
+  { 
+     "event":"Kill Solaris and Lunaris"
+  },
+  { 
+     "NPC":"Hargan",
+     "subjects":"Solaris and Lunaris"
+  },
+  { 
+     "destination":"The Blood Aqueduct"
+  },
+  { 
+     "destination":"Highgate"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":[ 
+        "Trathan Powder",
+        "Chimeric Acid"
+     ]
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":[ 
+        "Oyun",
+        "Kira",
+        "Irasha",
+        "The Old Gods"
+     ]
+  },
+  { 
+     "NPC":"Irasha",
+     "subjects":[ 
+        "Maraketh Tradition",
+        "Tasuni",
+        "Petarus and Vanja",
+        "Kira",
+        "Garukhan",
+        "Lady Dialla",
+        "Trading",
+        "Beast Blood"
+     ]
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":[ 
+        "Garukhan",
+        "Queen of the Winds"
+     ]
+  },
+  { 
+     "NPC":"Tasuni",
+     "subjects":[ 
+        "Sin",
+        "The Beast",
+        "Irasha"
+     ]
+  },
+  { 
+     "destination":"The Descent"
+  },
+  { 
+     "destination":"The Vastiri Desert"
+  },
+  { 
+     "event":[ 
+        "Find the Storm Blade",
+        "Find the Sandstorm Barrier blocking the Oasis"
+     ],
+     "note":"DO NOT ENTER THE FOOTHILLS"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":"Queen of the Sands"
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":"General Adus"
+  },
+  { 
+     "destination":"The Foothills"
+  },
+  { 
+     "destination":"The Boiling Lake"
+  },
+  { 
+     "event":"Obtain the Basilisk Acid"
+  },
+  { 
+     "destination":"The Tunnel"
+  },
+  { 
+     "destination":"The Quarry"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":"The Dark Ember"
+  },
+  { 
+     "event":[ 
+        "Kill Garukhan",
+        "Obtain the Sekhema Feather"
+     ],
+     "note":"DO NOT TALK TO IRASHA OR TASUNI"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":"Garukhan"
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":"Oyun"
+  },
+  { 
+     "NPC":"Irashi",
+     "subjects":[ 
+        "Maraketh Justice",
+        "Garukhan"
+     ]
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":"Irasha"
+  },
+  { 
+     "NPC":"Tasuni",
+     "subjects":"Feather of Sekhema"
+  },
+  { 
+     "destination":"The Refinery"
+  },
+  { 
+     "event":"Obtain the Trarthan Powder"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":"The Dark Ember"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":[ 
+        "The Black Core",
+        "Cataclysm"
+     ],
+     "note":"DO NOT ENTER THE BELLY OF THE BEAST"
+  },
+  { 
+     "destination":"The Belly of the Beast"
+  },
+  { 
+     "destination":"The Rotting Core"
+  },
+  { 
+     "event":[ 
+        "Defeat Doedre",
+        "Defeat Maligaro",
+        "Defeat Shavronne",
+        "Defeat the Depraved Trinity"
+     ]
+  },
+  { 
+     "NPC":"Weylam Roth",
+     "subjects":[ 
+        "Rescue",
+        "Lilly"
+     ],
+     "note":"DO NOT SAIL TO ORIATH"
+  },
+  { 
+     "NPC":"Petarus and Vanja",
+     "subjects":"The Beast"
+  },
+  { 
+     "NPC":"Irasha",
+     "subjects":"The Beast"
+  },
+  { 
+     "NPC":"Tasuni",
+     "subjects":"The Beast"
+  },
+  { 
+     "destination":"The Oriath Docks"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":[ 
+        "Welcome Back",
+        "The Dark Ember",
+        "Lilly",
+        "The Gods"
+     ]
+  },
+  { 
+     "NPC":"Lani",
+     "subjects":[ 
+        "Greetings",
+        "Vilenta",
+        "Lilly",
+        "Weylam",
+        "Sin",
+        "Kitava"
+     ]
+  },
+  { 
+     "NPC":"Lilly Roth",
+     "subjects":[ 
+        "Welcome",
+        "Bannon",
+        "Kitava"
+     ]
+  },
+  { 
+     "NPC":"Weylam Roth",
+     "subjects":[ 
+        "Welcome",
+        "Trading",
+        "Lani",
+        "Bannon",
+        "Lilly"
+     ]
+  },
+  { 
+     "destination":"The Cathedral Rooftop"
+  },
+  { 
+     "event":"Save Bannon"
+  },
+  { 
+     "NPC":"Bannon",
+     "subjects":[ 
+        "Welcome Back",
+        "Kitava's Cultists",
+        "Kitava",
+        "Innocence",
+        "Chamber of Innocence",
+        "Kitava's Horns"
+     ]
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":[ 
+        "Kitava",
+        "Bannon"
+     ]
+  },
+  { 
+     "NPC":"Lilly Roth",
+     "subjects":[ 
+        "Tsoatha",
+        "The Teardrop"
+     ]
+  },
+  { 
+     "destination":"The Ravaged Square"
+  },
+  { 
+     "destination":"The Torched Courts"
+  },
+  { 
+     "destination":"The Desecrated Chambers"
+  },
+  { 
+     "event":"Obtain the Staff of Purity"
+  },
+  { 
+     "NPC":"Lilly Roth",
+     "subjects":"Innocence"
+  },
+  { 
+     "destination":"The Canals"
+  },
+  { 
+     "destination":"The Feeding Trough"
+  },
+  { 
+     "event":"Kill Kitava"
+  },
+  { 
+     "destination":"Oriath"
+  },
+  { 
+     "NPC":"Innocence",
+     "subjects":"Exile"
+  },
+  { 
+     "NPC":"Sin",
+     "subjects":"Innocence"
+  },
+  { 
+     "NPC":"Zana",
+     "subjects":[ 
+        "Exile",
+        "Kitava",
+        "Oriath",
+        "Rebuilding"
+     ]
+  },
+  { 
+     "NPC":"Lilly Roth",
+     "subjects":"Kitava"
+  },
+  { 
+     "NPC":"Weylam Roth",
+     "subjects":"Kitava"
+  },
+  { 
+     "NPC":"Navali",
+     "subjects":[ 
+        "Anarchy's End",
+        "Day of Sacrifice",
+        "Beyond Sight",
+        "The Warmongers",
+        "Deadly Rivalry",
+        "The Plaguemaw",
+        "The Feral Lord",
+        "Unbearable Whispers",
+        "The Unbreathing Queen",
+        "Thaumaturgical History",
+        "The Ambitious Bandit"
+     ],
+     "note":"You must complete the first step of the named prophecy chain first"
+  },
+  { 
+     "event":[ 
+        "Complete 'The Plaguemaw V' Prophecy",
+        "Complete 'The Feral Lord V' Prophecy",
+        "Complete 'Unbearable Whispers V' Prophecy",
+        "Complete 'The Unbreathing Queen V' Prophecy"
+     ]
+  },
+  { 
+     "NPC":"Navali",
+     "subjects":"The Pale Court"
   }
 ]

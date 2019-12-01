@@ -42,99 +42,93 @@ void Application::Run()
 {
 	while (!glfwWindowShouldClose(window_.glfw_window_) && running_)
 	{
-		glClear(GL_COLOR_BUFFER_BIT);
+		if (!window_.hidden_) {
 
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplGlfw_NewFrame();
-		ImGui::NewFrame();
 
-		ImGui::SetNextWindowSize({ (float)window_.width_, (float)window_.height_ });
-		if (moveable_) {
-			ImGui::Begin("All Ears Unturned", &running_,
-				ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
+			glClear(GL_COLOR_BUFFER_BIT);
 
-			ImVec2 pos = ImGui::GetWindowPos();
-			if (pos.x != 0.0f || pos.y != 0.0f) {
-				ImGui::SetWindowPos({ 0.0f, 0.0f });
-				window_.Move(pos.x, pos.y);
-			}
-		}
-		else {
-			ImGui::Begin("All Ears Unturned", &running_,
-				ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoMove);
-		}
+			ImGui_ImplOpenGL3_NewFrame();
+			ImGui_ImplGlfw_NewFrame();
+			ImGui::NewFrame();
 
-		ImGui::Separator();
+			ImGui::SetNextWindowSize({ (float)window_.width_, (float)window_.height_ });
+			if (moveable_) {
+				ImGui::Begin("All Ears Unturned", &running_,
+					ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
 
-		static int frames = 0;
-		if (frames > 10) {
-			frames = 0;
-			CheckStepCompletion();
-			if (glfwGetKey(window_.glfw_window_, GLFW_KEY_LEFT_CONTROL) && glfwGetKey(window_.glfw_window_, GLFW_KEY_M)) {
-				if (hidden_) {
-					hidden_ = false;
-				}
-				else {
-					hidden_ = true;
+				ImVec2 pos = ImGui::GetWindowPos();
+				if (pos.x != 0.0f || pos.y != 0.0f) {
+					ImGui::SetWindowPos({ 0.0f, 0.0f });
+					window_.Move(pos.x, pos.y);
 				}
 			}
-		}
-		++frames;
-
-		switch (state_stack_.top()) {
-		case State::TUTORIAL:
-			RenderTutorial();
-			break;
-		case State::LOAD_DATA_ERROR:
-			RenderReadSaveFileError();
-			break;
-		case State::FILE_DIALOG:
-			file_dialog_->Render();
-			if (file_dialog_->done_) {
-				log_parser_.SetLogPath(file_dialog_->full_log_path_);
-				PopState();
-			}
-			break;
-
-		case State::GUIDE:
-
-			if (all_ears_enabled_) {
-				all_ears_manager_.Render();
-				ImGui::Separator();
+			else {
+				ImGui::Begin("All Ears Unturned", &running_,
+					ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoMove);
 			}
 
-			if (no_stone_unturned_enabled_) {
-				no_stone_manager_.Render();
+			ImGui::Separator();
+
+			static int frames = 0;
+			if (frames > 10) {
+				frames = 0;
+				CheckStepCompletion();
 			}
-			break;
+			++frames;
 
-		case State::SETTINGS:
-			RenderSettingsMenu();
-			break;
-		}
+			switch (state_stack_.top()) {
+			case State::TUTORIAL:
+				RenderTutorial();
+				break;
+			case State::LOAD_DATA_ERROR:
+				RenderReadSaveFileError();
+				break;
+			case State::FILE_DIALOG:
+				file_dialog_->Render();
+				if (file_dialog_->done_) {
+					log_parser_.SetFolderPath(file_dialog_->folder_path_);
+					PopState();
+				}
+				break;
 
-		ImGui::Separator();
-		if (state_stack_.top() != State::SETTINGS) {
-			if (ImGui::Button("Settings")) {
-				PushState(State::SETTINGS);
+			case State::GUIDE:
+
+				if (all_ears_enabled_) {
+					all_ears_manager_.Render();
+					ImGui::Separator();
+				}
+
+				if (no_stone_unturned_enabled_) {
+					no_stone_manager_.Render();
+				}
+				break;
+
+			case State::SETTINGS:
+				RenderSettingsMenu();
+				break;
 			}
-		}
-		if (hidden_) {
-			window_.ResizeHeight(0);
-		}
-		else if (window_.height_ != ImGui::GetCursorPosY()) {
-			window_.ResizeHeight(ImGui::GetCursorPosY());
-		}
-		
 
-		ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-		ImGui::End();
+			ImGui::Separator();
+			if (state_stack_.top() != State::SETTINGS) {
+				if (ImGui::Button("Settings")) {
+					PushState(State::SETTINGS);
+				}
+			}
+			if (hidden_) {
+				window_.ResizeHeight(0);
+			}
+			else if (window_.height_ != ImGui::GetCursorPosY()) {
+				window_.ResizeHeight(ImGui::GetCursorPosY());
+			}
 
-		ImGui::Render();
-		
-		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+			ImGui::End();
 
-		glfwSwapBuffers(window_.glfw_window_);
+			ImGui::Render();
+
+			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+			glfwSwapBuffers(window_.glfw_window_);
+		}
 		glfwPollEvents();
 
 
@@ -154,19 +148,21 @@ void Application::Run()
 
 void Application::CheckStepCompletion()
 {
-	if (all_ears_manager_.StepIsComplete()) {
+	if (all_ears_enabled_ && all_ears_manager_.StepIsComplete()) {
 		all_ears_manager_.IncrementStep();
-	}
-
-	if (all_ears_manager_.GetDestination() != "") {
-		if (all_ears_manager_.GetDestination() == log_parser_.GetLocation()) {
-			all_ears_manager_.IncrementStep();
-		}
 	}
 
 	if (state_stack_.top() == State::GUIDE) {
 		auto location = log_parser_.GetLocation();
-		if (location != "") {
+		if (location == "") {
+			return;
+		}
+
+		if (all_ears_enabled_ && all_ears_manager_.GetDestination() == location) {
+			all_ears_manager_.IncrementStep();
+		}
+
+		if (no_stone_unturned_enabled_) {
 			no_stone_manager_.ChangeLocation(location);
 		}
 	}
@@ -176,13 +172,12 @@ void Application::CheckStepCompletion()
 void Application::Save()
 {
 	nlohmann::json json;
-	json["log path"] = log_parser_.log_file_path_;
+	json["log folder path"] = log_parser_.folder_path_;
 	json["current step"] = all_ears_manager_.current_step_;
 	json["window x"] = window_.x_pos_;
 	json["window y"] = window_.y_pos_;
 	json["window width"] = window_.width_;
 	json["font size"] = font_size_;
-	json["show progress"] = show_progress_;
 	json["all ears enabled"] = all_ears_enabled_;
 	json["no stone unturned enabled"] = no_stone_unturned_enabled_;
 
@@ -214,6 +209,7 @@ void Application::Load()
 	std::ifstream save_file("assets/save-info.json");
 	if (!save_file.is_open()) {
 		PushState(State::TUTORIAL);
+		no_stone_manager_.LoadData(std::vector<int>());
 		return;
 	}
 
@@ -222,27 +218,21 @@ void Application::Load()
 	save_file.close();
 
 	
-	if (json.count("log path") && json.count("current step") && json.count("window x") &&
-		json.count("window y") && json.count("window width") && json.count("font size") &&
-		json.count("show progress") && json.count("no stone unturned enabled") && json.count("all ears enabled")) {
+	if (json.count("log folder path") && json.count("current step") && json.count("window x") &&
+		json.count("window y") && json.count("window width") && json.count("font size") && 
+		json.count("no stone unturned enabled") && json.count("all ears enabled")) {
 
-		log_parser_.log_file_path_ = json["log path"];
+		log_parser_.folder_path_ = json["log folder path"];
 		all_ears_manager_.current_step_ = json["current step"];
 		window_.Move(json["window x"], json["window y"]);
 		window_.width_ = (json["window width"]);
 		font_size_ = json["font size"];
-		show_progress_ = json["show progress"];
 		all_ears_enabled_ = json["all ears enabled"];
 		no_stone_unturned_enabled_ = json["no stone unturned enabled"];
-
-		if (log_parser_.log_file_path_ == "") {
-			PushState(State::FILE_DIALOG);
-		}
 	}
 	else {
 		PushState(State::LOAD_DATA_ERROR);
 	}
-
 	no_stone_manager_.LoadData(json["completed lore"]);
 }
 
@@ -264,52 +254,58 @@ void Application::SetImGuiStyle()
 
 void Application::RenderSettingsMenu()
 {
-	if (ImGui::DragInt("font size", &font_size_, 1.0f, 10, 32)) {
+	ImGui::TextWrapped("Font Size");
+	ImGui::PushItemWidth(window_.width_ - 10);
+	if (ImGui::DragInt("##font", &font_size_, 1.0f, 10, 32)) {
 		font_size_changed_ = true;
 	}
-	if (ImGui::DragInt("window width", &window_.width_, 1.0f, 100, 1000)) {
+	ImGui::TextWrapped("Window Width");
+	if (ImGui::DragInt("##width", &window_.width_, 1.0f, 100, 1000)) {
 		window_.UpdateSize();
 
 		if (file_dialog_ != nullptr) {
 			file_dialog_->width_ = window_.width_;
 		}
 	}
+	ImGui::PopItemWidth();
 
+
+	ImGui::TextWrapped("Change Step");
 	ImGui::PushButtonRepeat(true);
-	if (ImGui::Button("-")) {
-		all_ears_manager_.DecrementStep();
-	}
 	ImGui::SameLine();
-	if (ImGui::Button("+")) {
-		all_ears_manager_.IncrementStep();
+
+	int step = all_ears_manager_.current_step_ + 1;
+	
+	if (ImGui::InputInt("##step", &step)) {
+		if (step > 0 && step < all_ears_manager_.steps_.size()) {
+			all_ears_manager_.current_step_ = step - 1;
+		}
 	}
+
 	ImGui::PopButtonRepeat();
-	ImGui::SameLine();
-	ImGui::Text("Current Step: %d", all_ears_manager_.current_step_ + 1);
 
 	ImGui::Checkbox("Movable", &moveable_);
-	ImGui::Checkbox("Show Progress", &show_progress_);
 	ImGui::Checkbox("All Ears", &all_ears_enabled_);
 	ImGui::Checkbox("No Stone Unturned", &no_stone_unturned_enabled_);
 
 	ImGui::TextWrapped("Current Log Folder:");
-	ImGui::TextWrapped(log_parser_.log_file_path_.c_str());
+	ImGui::TextWrapped(log_parser_.folder_path_.c_str());
 	if (ImGui::Button("Change Folder Path")) {
 		PushState(State::FILE_DIALOG);
+	}
+	if (ImGui::Button("Tutorial")) {
+		PushState(State::TUTORIAL);
 	}
 
 	if (ImGui::Button("Return")) {
 		PopState();
 	}
 
-	if (ImGui::Button("Tutorial")) {
-		PushState(State::TUTORIAL);
-	}
 }
 
 void Application::RenderReadSaveFileError()
 {
-	ImGui::Text("Unable to Read Save File");
+	ImGui::TextWrapped("Unable to Read Save File");
 
 	if (ImGui::Button("OK")) {
 		PopState();
@@ -319,7 +315,7 @@ void Application::RenderReadSaveFileError()
 
 void Application::RenderTutorial()
 {
-	ImGui::Text("Tutorial");
+	ImGui::TextWrapped("Tutorial");
 	ImGui::Separator();
 
 	int num_pages = 3;
@@ -329,6 +325,7 @@ void Application::RenderTutorial()
 			ImGui::TextWrapped("Mark checkboxes as you complete dialogs. The step will automatically progress when all dialogs are marked off");
 			ImGui::TextWrapped("Mark checkboxes as soon as you complete the objective");
 			ImGui::TextWrapped("NOTE: You MUST kill all Bandits in order to complete the acheivemtn");
+			ImGui::TextWrapped("You can set the path of your Path of Exile folder in the settings menu. If set, the guide will switch automatically for steps that require travelling to areas");
 			break;
 		case 2:
 			ImGui::TextWrapped("You change the text size and width of the window. To minimize space, the window will change it's height based on it's contents.");

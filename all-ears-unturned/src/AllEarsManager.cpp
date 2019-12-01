@@ -58,7 +58,7 @@ void AllEarsManager::Render()
 	ImGui::Text("ALL EARS");
 	ImGui::Separator();
 	if (achievement_complete_) {
-		ImGui::Text("You have completed the All Ears Achievement!");
+		ImGui::TextWrapped("You have completed the All Ears Achievement!");
 	}
 
 	else {
