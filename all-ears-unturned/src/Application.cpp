@@ -42,93 +42,19 @@ void Application::Run()
 {
 	while (!glfwWindowShouldClose(window_.glfw_window_) && running_)
 	{
-		if (!window_.hidden_) {
-
-
-			glClear(GL_COLOR_BUFFER_BIT);
-
-			ImGui_ImplOpenGL3_NewFrame();
-			ImGui_ImplGlfw_NewFrame();
-			ImGui::NewFrame();
-
-			ImGui::SetNextWindowSize({ (float)window_.width_, (float)window_.height_ });
-			if (moveable_) {
-				ImGui::Begin("All Ears Unturned", &running_,
-					ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
-
-				ImVec2 pos = ImGui::GetWindowPos();
-				if (pos.x != 0.0f || pos.y != 0.0f) {
-					ImGui::SetWindowPos({ 0.0f, 0.0f });
-					window_.Move(pos.x, pos.y);
-				}
-			}
-			else {
-				ImGui::Begin("All Ears Unturned", &running_,
-					ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoMove);
-			}
-
-			ImGui::Separator();
-
-			static int frames = 0;
-			if (frames > 10) {
-				frames = 0;
+		static int frames = 0;
+		if (frames > 20) {
+			frames = 0;
+			if (state_stack_.top() == State::GUIDE) {
 				CheckStepCompletion();
 			}
-			++frames;
-
-			switch (state_stack_.top()) {
-			case State::TUTORIAL:
-				RenderTutorial();
-				break;
-			case State::LOAD_DATA_ERROR:
-				RenderReadSaveFileError();
-				break;
-			case State::FILE_DIALOG:
-				file_dialog_->Render();
-				if (file_dialog_->done_) {
-					log_parser_.SetFolderPath(file_dialog_->folder_path_);
-					PopState();
-				}
-				break;
-
-			case State::GUIDE:
-
-				if (all_ears_enabled_) {
-					all_ears_manager_.Render();
-					ImGui::Separator();
-				}
-
-				if (no_stone_unturned_enabled_) {
-					no_stone_manager_.Render();
-				}
-				break;
-
-			case State::SETTINGS:
-				RenderSettingsMenu();
-				break;
-			}
-
-			ImGui::Separator();
-			if (state_stack_.top() != State::SETTINGS) {
-				if (ImGui::Button("Settings")) {
-					PushState(State::SETTINGS);
-				}
-			}
-			if (hidden_) {
-				window_.ResizeHeight(0);
-			}
-			else if (window_.height_ != ImGui::GetCursorPosY()) {
-				window_.ResizeHeight(ImGui::GetCursorPosY());
-			}
-
-			ImGui::End();
-
-			ImGui::Render();
-
-			ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-			glfwSwapBuffers(window_.glfw_window_);
 		}
+		++frames;
+
+		if (Window::IsFocused()) {
+			Render();
+		}
+
 		glfwPollEvents();
 
 
@@ -148,24 +74,23 @@ void Application::Run()
 
 void Application::CheckStepCompletion()
 {
+
 	if (all_ears_enabled_ && all_ears_manager_.StepIsComplete()) {
 		all_ears_manager_.IncrementStep();
 	}
 
-	if (state_stack_.top() == State::GUIDE) {
-		auto location = log_parser_.GetLocation();
-		if (location == "") {
-			return;
-		}
+	auto location = log_parser_.GetLocation();
 
-		if (all_ears_enabled_ && all_ears_manager_.GetDestination() == location) {
-			all_ears_manager_.IncrementStep();
-		}
-
-		if (no_stone_unturned_enabled_) {
-			no_stone_manager_.ChangeLocation(location);
-		}
+	if (all_ears_enabled_ && all_ears_manager_.GetDestination() == location && all_ears_manager_.GetDestination() != "") {
+		all_ears_manager_.IncrementStep();
 	}
+
+	if (no_stone_unturned_enabled_) {
+		no_stone_manager_.ChangeLocation(location);
+	}
+
+	Render();
+
 }
 
 
@@ -222,7 +147,7 @@ void Application::Load()
 		json.count("window y") && json.count("window width") && json.count("font size") && 
 		json.count("no stone unturned enabled") && json.count("all ears enabled")) {
 
-		log_parser_.folder_path_ = json["log folder path"];
+		log_parser_.SetFolderPath(json["log folder path"]);
 		all_ears_manager_.current_step_ = json["current step"];
 		window_.Move(json["window x"], json["window y"]);
 		window_.width_ = (json["window width"]);
@@ -250,6 +175,95 @@ void Application::SetImGuiStyle()
 
 	style->Colors[ImGuiCol_WindowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.8f);
 
+}
+
+void Application::Render()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplGlfw_NewFrame();
+	ImGui::NewFrame();
+
+	if (window_.hidden_) {
+		ImGui::SetNextWindowSize({ 100.0, (float)window_.height_ });
+		ImGui::Begin("All Ears Unturned", &running_,
+			ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
+
+		ImVec2 pos = ImGui::GetWindowPos();
+		if (pos.x != 0.0f || pos.y != 0.0f) {
+			ImGui::SetWindowPos({ 0.0f, 0.0f });
+			window_.Move(pos.x, pos.y);
+		}
+	}
+	else {
+		ImGui::SetNextWindowSize({ (float)window_.width_, (float)window_.height_ });
+		if (moveable_) {
+			ImGui::Begin("All Ears Unturned", &running_,
+				ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
+
+			ImVec2 pos = ImGui::GetWindowPos();
+			if (pos.x != 0.0f || pos.y != 0.0f) {
+				ImGui::SetWindowPos({ 0.0f, 0.0f });
+				window_.Move(pos.x, pos.y);
+			}
+		}
+		else {
+			ImGui::Begin("All Ears Unturned", &running_,
+				ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoMove);
+		}
+
+		ImGui::Separator();
+
+		switch (state_stack_.top()) {
+		case State::TUTORIAL:
+			RenderTutorial();
+			break;
+		case State::LOAD_DATA_ERROR:
+			RenderReadSaveFileError();
+			break;
+		case State::FILE_DIALOG:
+			file_dialog_->Render();
+			if (file_dialog_->done_) {
+				log_parser_.SetFolderPath(file_dialog_->folder_path_);
+				PopState();
+			}
+			break;
+
+		case State::GUIDE:
+
+			if (all_ears_enabled_) {
+				all_ears_manager_.Render();
+				ImGui::Separator();
+			}
+
+			if (no_stone_unturned_enabled_) {
+				no_stone_manager_.Render();
+			}
+			break;
+
+		case State::SETTINGS:
+			RenderSettingsMenu();
+			break;
+		}
+
+		ImGui::Separator();
+		if (state_stack_.top() != State::SETTINGS) {
+			if (ImGui::Button("Settings")) {
+				PushState(State::SETTINGS);
+			}
+		}
+	}
+
+	if (window_.height_ != ImGui::GetCursorPosY()) {
+		window_.ResizeHeight(ImGui::GetCursorPosY());
+	}
+	
+	ImGui::End();
+
+	ImGui::Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+	glfwSwapBuffers(window_.glfw_window_);
 }
 
 void Application::RenderSettingsMenu()
@@ -321,17 +335,17 @@ void Application::RenderTutorial()
 	int num_pages = 3;
 	switch (tutorial_page_) {
 		case 1: 
-			ImGui::TextWrapped("Follow all ears steps exactly as laid out. Deviating from the path may lead to missed opportunities for certian dialog.");
-			ImGui::TextWrapped("Mark checkboxes as you complete dialogs. The step will automatically progress when all dialogs are marked off");
-			ImGui::TextWrapped("Mark checkboxes as soon as you complete the objective");
-			ImGui::TextWrapped("NOTE: You MUST kill all Bandits in order to complete the acheivemtn");
-			ImGui::TextWrapped("You can set the path of your Path of Exile folder in the settings menu. If set, the guide will switch automatically for steps that require travelling to areas");
+			ImGui::TextWrapped("Follow the All Ears steps exactly as given. Do not enter new areas or complete quests. Doing so may cause you to miss certain dialog options.");
+			ImGui::TextWrapped("NOTE: You MUST kill all Bandits in order to complete the acheivement.");
 			break;
 		case 2:
-			ImGui::TextWrapped("You change the text size and width of the window. To minimize space, the window will change it's height based on it's contents.");
+			ImGui::TextWrapped("Complete the objectives in the order given and mark off each checkbox when done. The step will automatically progress when all objectives are marked.");
+			ImGui::TextWrapped("You can set the path of your Path of Exile folder in the settings menu. If set, the guide will progress automatically for steps that require travelling to areas");
 			break;
 		case 3:
-			ImGui::TextWrapped("Page 3");
+			ImGui::TextWrapped("In the Settings menu, you may change the text size and width of the window. To minimize space, the window will change it's height based on it's contents.");
+			ImGui::TextWrapped("You may also move the window by toggling the 'Movable' checkbox and dragging the window with your mouse.");
+			ImGui::TextWrapped("You may reread this tutorial by clicking on the tutorial button in the settings menu at any time");
 	}
 
 	if (ImGui::ArrowButton("Left", ImGuiDir_Left) && tutorial_page_ > 1) {

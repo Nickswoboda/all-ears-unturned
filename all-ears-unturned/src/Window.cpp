@@ -32,9 +32,7 @@ Window::Window(int width, int height)
 			else {
 				window->hidden_ = false;
 			}
-			std::cout << "CONTROL PRESSED";
 		}
-	
 	});
 
 	glfwMakeContextCurrent(glfw_window_);

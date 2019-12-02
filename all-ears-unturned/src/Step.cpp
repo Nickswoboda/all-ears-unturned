@@ -27,7 +27,9 @@ void NpcStep::Render()
 	}
 
 	if (!note_.empty()) {
+		ImGui::PushStyleColor(ImGuiCol_Text, { 1.0f, 0.0f, 0.0f, 1.0f });
 		ImGui::TextWrapped(note_.c_str());
+		ImGui::PopStyleColor();
 	}
 	
 }
@@ -42,7 +44,9 @@ void TravelStep::Render()
 {
 	ImGui::TextWrapped(display_text_.c_str());
 	if (!note_.empty()) {
+		ImGui::PushStyleColor(ImGuiCol_Text, { 1.0f, 0.0f, 0.0f, 1.0f });
 		ImGui::TextWrapped(note_.c_str());
+		ImGui::PopStyleColor();
 	}
 }
 
@@ -66,6 +70,8 @@ void EventStep::Render()
 	}
 
 	if (!note_.empty()) {
+		ImGui::PushStyleColor(ImGuiCol_Text, { 1.0f, 0.0f, 0.0f, 1.0f });
 		ImGui::TextWrapped(note_.c_str());
+		ImGui::PopStyleColor();
 	}
 }

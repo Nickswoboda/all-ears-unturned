@@ -31,6 +31,7 @@ public:
 	void Load();
 
 	void SetImGuiStyle();
+	void Render();
 	void RenderSettingsMenu();
 	void RenderReadSaveFileError();
 	void RenderTutorial();
