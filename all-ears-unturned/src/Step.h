@@ -3,11 +3,13 @@
 #include <iostream>
 #include <vector>
 
-struct StepObjective
+#include <json.hpp>
+
+struct Objective
 {
-	std::string name;
-	std::string id;
-	bool completed = false;
+	std::string name_;
+	std::string id_;
+	bool completed_ = false;
 };
 
 class Step
@@ -20,18 +22,18 @@ public:
 class NpcStep : public Step
 {
 public:
-	NpcStep(const std::string& npc, const std::vector<std::string>& dialogs);
+	NpcStep(const nlohmann::json& json);
 	void Render() override;
 
 	std::string npc_;
-	std::vector<StepObjective> dialogs_;
+	std::vector<Objective> dialogs_;
 	std::string display_text_;
 };
 
 class TravelStep : public Step
 {
 public:
-	TravelStep(const std::string& destination);
+	TravelStep(const nlohmann::json& json);
 	void Render() override;
 
 	std::string destination_;
@@ -41,8 +43,8 @@ public:
 class EventStep : public Step
 {
 public:
-	EventStep(const std::vector<std::string>& dialogs);
+	EventStep(const nlohmann::json& json);
 	void Render() override;
 
-	std::vector<StepObjective> events_;
+	std::vector<Objective> events_;
 };

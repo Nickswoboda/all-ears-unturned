@@ -17,35 +17,13 @@ AllEarsManager::AllEarsManager()
 		std::string key(index.begin().key());
 
 		if (key == "NPC") {
-
-			std::vector<std::string> dialogs;
-			for (const auto& subject : index["subjects"]) {
-				dialogs.push_back(subject);
-			}
-
-			steps_.push_back(std::make_unique<NpcStep>(index["NPC"], dialogs ));
-			
-			if (index.count("note")) {
-				steps_[steps_.size() - 1]->note_ = index["note"];
-			}
+			steps_.push_back(std::make_unique<NpcStep>(index));
 		}
 		else if (key == "destination") {
-			steps_.push_back(std::make_unique<TravelStep>(index["destination"]));
-			if (index.count("note")) {
-				steps_[steps_.size() - 1]->note_ = index["note"];
-			}
+			steps_.push_back(std::make_unique<TravelStep>(index));
 		}
 		else if (key == "event") {
-			std::vector<std::string> events;
-			for (const auto& event : index["event"]) {
-				events.push_back(event);
-			}
-
-			steps_.push_back(std::make_unique<EventStep>(events));;
-
-			if (index.count("note")) {
-				steps_[steps_.size() - 1]->note_ = index["note"];
-			}
+			steps_.push_back(std::make_unique<EventStep>(index));;
 		}
 		else {
 			std::cout << "JSON syntax error";
@@ -90,7 +68,7 @@ void AllEarsManager::IncrementStep()
 		auto npc_step = dynamic_cast<NpcStep*>(steps_[current_step_].get());
 		if (npc_step != nullptr) {
 			for (auto& dialog : npc_step->dialogs_) {
-				dialog.completed = false;
+				dialog.completed_ = false;
 			}
 		}
 
@@ -116,24 +94,14 @@ void AllEarsManager::DecrementStep()
 	}
 }
 
-std::string AllEarsManager::GetDestination()
-{
-	auto travel_step = dynamic_cast<TravelStep*>(steps_[current_step_].get());
-	if (travel_step != nullptr) {
-		return travel_step->destination_;
-	}
-
-	return "";
-}
-
-bool AllEarsManager::StepIsComplete()
+bool AllEarsManager::StepIsComplete(const std::string& location)
 {
 	auto npc_step = dynamic_cast<NpcStep*>(steps_[current_step_].get());
 	if (npc_step != nullptr) {
 		bool all_dialog_complete = true;
 
 		for (const auto& dialog : npc_step->dialogs_) {
-			if (!dialog.completed) {
+			if (!dialog.completed_) {
 				all_dialog_complete = false;
 				break;
 			}
@@ -143,11 +111,19 @@ bool AllEarsManager::StepIsComplete()
 		}
 	}
 
+	auto travel_step = dynamic_cast<TravelStep*>(steps_[current_step_].get());
+	if (travel_step != nullptr) {
+		if (travel_step->destination_ == location) {
+			return true;
+		}
+		return false;
+	}
+
 	auto event_step = dynamic_cast<EventStep*>(steps_[current_step_].get());
 	if (event_step != nullptr) {
 		bool all_events_complete = true;
 		for (const auto& event : event_step->events_) {
-			if (!event.completed) {
+			if (!event.completed_) {
 				all_events_complete = false;
 				break;
 			}

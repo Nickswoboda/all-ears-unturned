@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <string>
-#include "ActLore.h"
+#include "Lore.h"
 class NoStoneManager
 {
 public:
@@ -19,9 +19,9 @@ public:
 	bool CheckAreaCompletion();
 	void CheckAchievementCompletion();
 
-	std::vector<ActLore> acts_;
-	int max_items_ = 5;
-	int current_act_ = 0;
-	int current_location_ = 0;
+	std::vector<LoreAct> acts_;
+	LoreAct* current_act_ = nullptr;
+	LoreLocation* current_location_ = nullptr;
+	int max_items_per_page_ = 5;
 	bool complete_ = false;
 };

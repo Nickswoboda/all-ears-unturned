@@ -2,13 +2,13 @@
 
 #include "imgui.h"
 #include <string>
-NpcStep::NpcStep(const std::string& npc, const std::vector<std::string>& dialog_list)
+NpcStep::NpcStep(const nlohmann::json& json)
 {
-	npc_ = npc;
+	npc_ = json["NPC"];
 
 	int index = 0;
-	for (auto& dialog : dialog_list) {
-		dialogs_.push_back(StepObjective({ dialog, "##" + std::to_string(index)}));
+	for (auto& dialog : json["subjects"]) {
+		dialogs_.push_back(Objective({ dialog, "##" + std::to_string(index)}));
 		++index;
 	}
 
@@ -21,9 +21,9 @@ void NpcStep::Render()
 	ImGui::TextWrapped(display_text_.c_str());
 
 	for (auto& dialog : dialogs_) {
-		ImGui::Checkbox(dialog.id.c_str(), &dialog.completed);
+		ImGui::Checkbox(dialog.id_.c_str(), &dialog.completed_);
 		ImGui::SameLine();
-		ImGui::TextWrapped(dialog.name.c_str());
+		ImGui::TextWrapped(dialog.name_.c_str());
 	}
 
 	if (!note_.empty()) {
@@ -34,10 +34,10 @@ void NpcStep::Render()
 	
 }
 
-TravelStep::TravelStep(const std::string& destination)
+TravelStep::TravelStep(const nlohmann::json& json)
 {
-	destination_ = destination;
-	display_text_ = "Travel to: " + destination;
+	destination_ = json["destination"];
+	display_text_ = "Travel to: " + destination_;
 }
 
 void TravelStep::Render()
@@ -52,11 +52,11 @@ void TravelStep::Render()
 
 
 
-EventStep::EventStep(const std::vector<std::string>& events)
+EventStep::EventStep(const nlohmann::json& json)
 {
 	int index = 0;
-	for (auto& event : events) {
-		events_.push_back(StepObjective({ event, "##" + std::to_string(index) }));
+	for (auto& event : json["event"]) {
+		events_.push_back(Objective({ event, "##" + std::to_string(index) }));
 		++index;
 	}
 }
@@ -64,9 +64,9 @@ EventStep::EventStep(const std::vector<std::string>& events)
 void EventStep::Render()
 {
 	for (auto& event : events_) {
-		ImGui::Checkbox(event.id.c_str(), &event.completed);
+		ImGui::Checkbox(event.id_.c_str(), &event.completed_);
 		ImGui::SameLine();
-		ImGui::TextWrapped(event.name.c_str());
+		ImGui::TextWrapped(event.name_.c_str());
 	}
 
 	if (!note_.empty()) {

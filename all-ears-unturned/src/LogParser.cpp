@@ -39,8 +39,8 @@ std::string LogParser::GetLocation()
 
 	std::string log_text = buffer.str();
 
-	if (log_text.find("You have entered") != std::string::npos) {
-		auto pos = log_text.find("You have entered");
+	auto pos = log_text.find("You have entered");
+	if (pos != std::string::npos) {
 		std::string zone;
 
 		for (int i = pos + 17; i < log_text.length() - 2; i++) {

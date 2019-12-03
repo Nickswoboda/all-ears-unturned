@@ -10,7 +10,7 @@ Window::Window(int width, int height)
 		std::cout << "Could not initialize GLFW";
 	}
 
-	glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
+	//glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
 	glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, GLFW_TRUE);
 	glfwWindowHint(GLFW_FLOATING, GLFW_TRUE);
 	glfw_window_ = glfwCreateWindow(width_, height_, "All Ears Unturned", NULL, NULL);
@@ -20,22 +20,21 @@ Window::Window(int width, int height)
 	}
 
 	glfwSetWindowUserPointer(glfw_window_, this);
-	glfwSetWindowPos(glfw_window_, x_pos_, y_pos_);
-
 	glfwSetKeyCallback(glfw_window_, [](GLFWwindow* window, int key, int scancode, int action, int mods) {
 	
 		if (key == GLFW_KEY_E && action == GLFW_PRESS) {
 			auto* window = (Window*)glfwGetWindowUserPointer(glfw_window_);
-			if (!window->hidden_) {
-				window->hidden_ = true;
+			if (!window->collapsed_) {
+				window->collapsed_ = true;
 			}
 			else {
-				window->hidden_ = false;
+				window->collapsed_ = false;
 			}
 		}
 	});
 
 	glfwMakeContextCurrent(glfw_window_);
+	glfwSetWindowPos(glfw_window_, x_pos_, y_pos_);
 }
 
 bool Window::IsFocused()
@@ -56,7 +55,7 @@ void Window::Move(int x, int y)
 void Window::ResizeHeight(int height)
 {
 	height_ = height;
-	glfwSetWindowSize(glfw_window_, width_, height_);
+	UpdateSize();
 }
 
 void Window::UpdateSize()

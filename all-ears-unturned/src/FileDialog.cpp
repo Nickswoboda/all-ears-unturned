@@ -25,8 +25,7 @@ void FileDialog::Render()
 		return;
 	}
 
-	ImGui::BeginChildFrame(1, { width_ - 5.0f, 500 });
-	
+	ImGui::BeginChildFrame(1, { width_ - 5.0f, 300 });
 	int index = 0;
 	for (auto& p : std::filesystem::directory_iterator(path, std::filesystem::directory_options::skip_permission_denied)) {
 		if (p.is_directory()) {

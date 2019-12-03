@@ -24,30 +24,28 @@ public:
 	Application(int width, int height);
 	~Application();
 
-	void Run();
-	void CheckStepCompletion();
-
-	void Save();
 	void Load();
-
 	void SetImGuiStyle();
+
+	void Run();
+	void Update();
 	void Render();
+
 	void RenderSettingsMenu();
-	void RenderReadSaveFileError();
 	void RenderTutorial();
+	void RenderReadSaveFileError();
 
 	void PushState(State state);
 	void PopState();
+	void Save();
 
 private:
 	bool running_ = true;
-	bool moveable_ = true;
 	int font_size_= 16;
 	bool font_size_changed_ = false;
 	bool all_ears_enabled_ = true;
 	bool no_stone_unturned_enabled_ = true;
 	int tutorial_page_ = 1;
-	bool hidden_ = false;
 
 	Window window_;
 	AllEarsManager all_ears_manager_;
