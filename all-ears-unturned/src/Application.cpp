@@ -25,12 +25,21 @@ Application::Application(int width, int height)
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
-	io.Fonts->AddFontFromFileTTF("assets/fonts/Roboto-Medium.ttf", font_size_);
+
+	if (std::filesystem::exists("assets/fonts/Roboto-Medium.ttf")) {
+		io.Fonts->AddFontFromFileTTF("assets/fonts/Roboto-Medium.ttf", font_size_);
+	}
 
 	ImGui_ImplGlfw_InitForOpenGL(window_.glfw_window_, true);
 	ImGui_ImplOpenGL3_Init("#version 410");
 
 	SetImGuiStyle();
+
+	if (!AssetsExist()) {
+		PushState(State::LOAD_DATA_ERROR);
+		error_message_ = "Unable to load one or more asset files.";
+	}
+
 }
 
 Application::~Application()
@@ -117,7 +126,7 @@ void Application::Render()
 				break;
 
 			case State::LOAD_DATA_ERROR:
-				RenderReadSaveFileError();
+				RenderErrorMessage();
 				break;
 
 			case State::FILE_DIALOG:
@@ -144,7 +153,7 @@ void Application::Render()
 		}
 
 		ImGui::Separator();
-		if (state_stack_.top() != State::SETTINGS) {
+		if (state_stack_.top() != State::SETTINGS && state_stack_.top() != State::LOAD_DATA_ERROR) {
 			if (ImGui::Button("Settings")) {
 				//used to avoid being able infinitely stack states
 				if (state_stack_.top() == State::FILE_DIALOG || state_stack_.top() == State::TUTORIAL) {
@@ -261,11 +270,11 @@ void Application::RenderTutorial()
 	
 }
 
-void Application::RenderReadSaveFileError()
+void Application::RenderErrorMessage()
 {
-	ImGui::TextWrapped("Unable to Read Save File. Your settings will return to their default values.");
+	ImGui::TextWrapped(error_message_.c_str());
 
-	if (ImGui::Button("OK")) {
+	if (ImGui::Button("OK") && AssetsExist()) {
 		PopState();
 	}
 }
@@ -302,10 +311,12 @@ void Application::SetImGuiStyle()
 
 void Application::Load()
 {
+	all_ears_manager_.LoadData();
 	std::ifstream save_file("assets/save-info.json");
 	if (!save_file.is_open()) {
 		PushState(State::TUTORIAL);
 		no_stone_manager_.LoadData(std::vector<int>());
+		
 		return;
 	}
 
@@ -328,7 +339,17 @@ void Application::Load()
 	}
 	else {
 		PushState(State::LOAD_DATA_ERROR);
+		error_message_ = "No save data was found. Settings will return to their default values.";
 	}
+}
+
+bool Application::AssetsExist()
+{
+	if (std::filesystem::exists("assets/fonts/Roboto-Medium.ttf") && std::filesystem::exists("assets/steps.json") && std::filesystem::exists("assets/no-stone-unturned.json")) {
+		return true;
+	}
+
+	return false;
 }
 
 void Application::Save()

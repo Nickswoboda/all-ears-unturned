@@ -1,0 +1,331 @@
+[
+  {
+    "Act 1": [
+      {
+        "Lioneye's Watch": [
+          "Carling of Mirfield",
+          "Hillock of Slaugh",
+          "Karityn of Theopolis",
+          "Ender of Romsey",
+          "Brylla of Cinderford",
+          "Missy of Nashe",
+          "Barden of Inkley",
+          "Ollin of Theopolis",
+          "Maitlyn of Theopolis",
+          "Salem of Theopolis",
+          "Lothar of Wetherdale",
+          "Joy of Kimbey",
+          "Cafar of Beecham",
+          "Maramoa of Ngmagakanui",
+          "Hadrey of Dayton"
+        ]
+      },
+      {
+        "The Coast": "Weathered Carving"
+      },
+      {
+        "The Tidal Island": "Weathered Carving"
+      },
+      {
+        "The Mud Flats": "Weathered Carving"
+      },
+      {
+        "The Ledge": "Weathered Carving"
+      },
+      {
+        "The Climb": [
+          "Weathered Carving",
+          "Lioneye's Standard"
+        ]
+      },
+      {
+        "The Lower Prison": "Bronze Monograph"
+      },
+      {
+        "The Upper Prison": [
+          "Shavronne's Journal",
+          "Order of Protection",
+          "Letter of Instruction"
+        ]
+      },
+      {
+        "The Ship Graveyard": [
+          "Weathered Carving 1",
+          "Weathered Carving 2"
+        ]
+      },
+      {
+        "The Cavern of Wrath": "Sailor's Skin"
+      },
+      {
+        "The Cavern of Anger": "Damp Diary"
+      }
+    ]
+  },
+  {
+    "Act 2": [
+      {
+        "The Crossroads": [
+          "Etchings On Wood I",
+          "Etchings On Wood II",
+          "Etchings On Wood III",
+          "Etchings On Wood IV"
+        ]
+      },
+      {
+        "The Fellshrine Ruins": "Plaque"
+      },
+      {
+        "The Crypt Level 1": "Bronze Monograph"
+      },
+      {
+        "The Chamber of Sins Level 1": "Ancient Reverie Device"
+      },
+      {
+        "The Chamber of Sins Level 2": [
+          "Transmutia Device",
+          "Bronze Monograph"
+        ]
+      },
+      {
+        "The Western Forest": [
+          "Proclamation",
+          "Arteri's Letter"
+        ]
+      }
+    ]
+  },
+  {
+    "Act 3": [
+      {
+        "The City of Sarn": "Ancient Graffiti"
+      },
+      {
+        "The Slums": "Ancient Graffiti"
+      },
+      {
+        "The Crematorium": "Bronze Monograph"
+      },
+      {
+        "The Marketplace": "Ancient Notebook"
+      },
+      {
+        "The Catacombs": [
+          "Ancient Graffiti",
+          "Bronze Monograph"
+        ]
+      },
+      {
+        "The Battlefront": "Ancient Graffiti"
+      },
+      {
+        "The Docks": "Ancient Graffiti"
+      },
+      {
+        "The Solaris Temple Level 2": [
+          "Journal Entry",
+          "Reverie Device",
+          "Malachai's Journal"
+        ]
+      },
+      {
+        "The Ebony Barracks": "Ancient Graffiti"
+      },
+      {
+        "The Imperial Gardens": "Bronze Monograph"
+      },
+      {
+        "The Sceptre of God": "Letter to Chitus"
+      },
+      {
+        "The Library": [
+          "The Ancients - Last of the Vaal Queens",
+          "The Ancients - Zerphi the Murderer",
+          "The Ancients - The Queen's Thaumaturgist",
+          "The Ancients - Raising the Azmeri",
+          "The Ancients - The Fall",
+          "The Ancients - Imperialus Conceptus",
+          "The Ancients - The Light of Phrecia",
+          "Victario's Writings - Kalisa Maas",
+          "Victario's Writings - The Blackest Monkey",
+          "Victario's Writings - Slaves of Virtue",
+          "Victario's Writings - A Friend in Need",
+          "The Purity Chronicles - Embers of Insurrection",
+          "The Purity Chronicles - Fall of a Jade Axe",
+          "The Purity Chronicles - The Red Sekhema's Saddle",
+          "The Purity Chronicles - The Emperor is Dead...",
+          "The Purity Chronicles - The Rapture Device"
+        ]
+      }
+    ]
+  },
+  {
+    "Act 4": [
+      {
+        "The Aqueduct": "Note"
+      },
+      {
+        "The Dried Lake": "Voll's Confession"
+      },
+      {
+        "The Crystal Veins": "Malachai's Notebook"
+      },
+      {
+        "The Grand Arena": [
+          "Plaque 1",
+          "Plaque 2",
+          "Plaque 3"
+        ]
+      },
+      {
+        "Kaom's Dream": [
+          "Weathered Carving 1",
+          "Weathered Carving 2"
+        ]
+      },
+      {
+        "Kaom's Stronghold": [
+          "Weathered Carving 1",
+          "Weathered Carving 2"
+        ]
+      },
+      {
+        "The Harvest": "Malachai's Dedication"
+      },
+      {
+        "The Ascent": "Resonator Instructions"
+      }
+    ]
+  },
+  {
+    "Act 5": [
+      {
+        "The Chamber of Innocence": [
+          "Stained Glass Window 1",
+          "Stained Glass Window 2",
+          "Stained Glass Window 3",
+          "Stained Glass Window 4",
+          "Stained Glass Window 5",
+          "Stained Glass Window 6",
+          "Stained Glass Window 7",
+          "Stained Glass Window 8"
+        ]
+      },
+      {
+        "The Reliquary": [
+          "Kitava's Hunger I",
+          "Kitava's Hunger II",
+          "Kitava's Hunger III"
+        ]
+      }
+    ]
+  },
+  {
+    "Act 6": [
+      {
+        "The Twilight Strand": "Message in a Bottle"
+      },
+      {
+        "The Tidal Island": "Leatherbound Logbook"
+      },
+      {
+        "Shavronne's Tower": "Shavronne's Manifesto"
+      },
+      {
+        "The Beacon": [
+          "Letter Fragment",
+          "Templar Report"
+        ]
+      },
+      {
+        "The Brine King's Reef": "Shrine to the Brine King"
+      }
+    ]
+  },
+  {
+    "Act 7": [
+      {
+        "The Chamber of Sins Level 1": "Maligaro's Manifesto"
+      },
+      {
+        "The Ashen Fields": "Ode to Ralakesh"
+      },
+      {
+        "The Dread Thicket": "Shrine to Arakaali"
+      },
+      {
+        "The Causeway": "Shrine to Arakaali"
+      },
+      {
+        "The Vaal City": [
+          "Love Letter",
+          "Shrine to Arakaali"
+        ]
+      },
+      {
+        "The Temple of Decay Level 1": "Shrine to Arakaali"
+      },
+      {
+        "The Temple of Decay Level 2": "Shrine to Arakaali"
+      }
+    ]
+  },
+  {
+    "Act 8": [
+      {
+        "The Grain Gate": "The Ravaged Square"
+      }
+    ]
+  },
+  {
+    "Act 10": [
+      {
+        "The Ravaged Square": "Cultist Tract"
+      },
+      {
+        "The Desecrated Chambers": "Cultist Tract"
+      },
+      {
+        "The Canals": "Cultist Tract"
+      }
+    ]
+  },
+  {
+    "Misc": [
+      {
+        "The Lord's Labyrinth": [
+          "Bronze Plaque",
+          "Bronze Inscription 1",
+          "Poem 1",
+          "Bronze Inscription 2",
+          "Poem 2",
+          "Bronze Inscription 3",
+          "Poem 3",
+          "Poem 4",
+          "Bronze Inscription 4",
+          "Poem 5"
+        ]
+      },
+      {
+        "Vaal Area": [
+          "Vaal Letter 1",
+          "Vaal Letter 2",
+          "Vaal Letter 3",
+          "Vaal Letter 4",
+          "Vaal Letter 5",
+          "Vaal Letter 6",
+          "Vaal Letter 7",
+          "Vaal Letter 8",
+          "Vaal Letter 9",
+          "Vaal Letter 10",
+          "Vaal Letter 11",
+          "Vaal Letter 12",
+          "Research Journal 1",
+          "Research Journal 2",
+          "Research Journal 3",
+          "Research Journal 4"
+        ]
+      }
+    ]
+  }
+]

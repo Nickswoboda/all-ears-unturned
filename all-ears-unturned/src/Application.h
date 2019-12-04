@@ -25,6 +25,7 @@ public:
 	~Application();
 
 	void Load();
+	bool AssetsExist();
 	void SetImGuiStyle();
 
 	void Run();
@@ -33,7 +34,7 @@ public:
 
 	void RenderSettingsMenu();
 	void RenderTutorial();
-	void RenderReadSaveFileError();
+	void RenderErrorMessage();
 
 	void PushState(State state);
 	void PopState();
@@ -41,10 +42,14 @@ public:
 
 private:
 	bool running_ = true;
+
+	std::string error_message_;
+
 	int font_size_= 16;
 	bool font_size_changed_ = false;
+
 	bool all_ears_enabled_ = true;
-	bool no_stone_unturned_enabled_ = true;
+	bool no_stone_unturned_enabled_ = false;
 	int tutorial_page_ = 1;
 
 	Window window_;

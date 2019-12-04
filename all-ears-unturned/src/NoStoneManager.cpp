@@ -166,6 +166,7 @@ void NoStoneManager::LoadData(std::vector<int> completed_lore)
 	std::ifstream file("assets/no-stone-unturned.json");
 	if (!file.is_open()) {
 		std::cout << "Error loading No Stone Unturned file";
+		return;
 	}
 	nlohmann::json json;
 

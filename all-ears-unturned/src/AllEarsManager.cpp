@@ -7,7 +7,7 @@
 
 #include <fstream>
 
-AllEarsManager::AllEarsManager()
+void AllEarsManager::LoadData()
 {
 	std::ifstream file("assets/steps.json");
 

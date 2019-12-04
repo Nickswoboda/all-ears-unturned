@@ -7,7 +7,8 @@
 class AllEarsManager
 {
 public:
-	AllEarsManager();
+	
+	void LoadData();
 
 	void Render();
 	void IncrementStep();
