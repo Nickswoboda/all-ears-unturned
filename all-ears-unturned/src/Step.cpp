@@ -14,6 +14,9 @@ NpcStep::NpcStep(const nlohmann::json& json)
 
 	display_text_ = "Talk to: " + npc_;
 
+	if (json.count("note")) {
+		note_ = json["note"];
+	}
 }
 
 void NpcStep::Render()
@@ -38,6 +41,10 @@ TravelStep::TravelStep(const nlohmann::json& json)
 {
 	destination_ = json["destination"];
 	display_text_ = "Travel to: " + destination_;
+
+	if (json.count("note")) {
+		note_ = json["note"];
+	}
 }
 
 void TravelStep::Render()
@@ -58,6 +65,10 @@ EventStep::EventStep(const nlohmann::json& json)
 	for (auto& event : json["event"]) {
 		events_.push_back(Objective({ event, "##" + std::to_string(index) }));
 		++index;
+	}
+
+	if (json.count("note")) {
+		note_ = json["note"];
 	}
 }
 
