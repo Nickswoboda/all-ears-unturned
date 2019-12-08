@@ -82,14 +82,17 @@ void NoStoneManager::Render()
 	
 	for (int i = (current_page - 1) * max_items_per_page_; (i < num_items) && i < (current_page * max_items_per_page_); ++i) {
 		auto& current_lore = current_location_->lore_[i];
-		if (ImGui::Checkbox(current_lore.name_.c_str(), &current_lore.completed_) && current_lore.completed_) {
+		auto id = "##" + current_lore.name_;
+		if (ImGui::Checkbox(id.c_str(), &current_lore.completed_) && current_lore.completed_) {
 			if (CheckAreaCompletion()) {
+				Increment();
 				current_page = 1;
-				Advance();
 				CheckAchievementCompletion();
 				break;
 			}
 		}
+		ImGui::SameLine();
+		ImGui::TextWrapped(current_lore.name_.c_str());
 	}
 	
 	if (num_pages > 1) {
@@ -109,6 +112,18 @@ void NoStoneManager::Render()
 			}
 		}
 	}
+	ImGui::Separator();
+
+	if (ImGui::ArrowButton("##nsleft", ImGuiDir_Left)) {
+		Decrement();
+		current_page = 1;
+	}
+
+	ImGui::SameLine();
+	if (ImGui::ArrowButton("##nsright", ImGuiDir_Right)) {
+		Increment();
+		current_page = 1;
+	}
 }
 
 void NoStoneManager::ChangeLocation(const std::string& location)
@@ -124,7 +139,7 @@ void NoStoneManager::ChangeLocation(const std::string& location)
 	}
 }
 
-void NoStoneManager::Advance()
+void NoStoneManager::Increment()
 {
 	
 	if (current_location_ != &current_act_->locations_.back()) {
@@ -132,7 +147,18 @@ void NoStoneManager::Advance()
 	}
 	else if (current_act_ != &acts_.back()){
 		++current_act_;
-		current_location_ = &current_act_->locations_[0];
+		current_location_ = &current_act_->locations_.front();
+	}
+}
+
+void NoStoneManager::Decrement()
+{
+	if (current_location_ != &current_act_->locations_.front()) {
+		--current_location_;
+	}
+	else if (current_act_ != &acts_.front()) {
+		--current_act_;
+		current_location_ = &current_act_->locations_.back();
 	}
 }
 
@@ -161,7 +187,31 @@ void NoStoneManager::CheckAchievementCompletion()
 	complete_ = true;
 }
 
-void NoStoneManager::LoadData(std::vector<int> completed_lore)
+void NoStoneManager::Save(nlohmann::json& json)
+{
+	std::vector<int> completed_lore;
+	int id = 0;
+
+	for (const auto& act : acts_) {
+		for (const auto& location : act.locations_) {
+			for (const auto& lore : location.lore_) {
+				if (lore.completed_) {
+					completed_lore.push_back(id);
+				}
+				++id;
+			}
+		}
+	}
+
+	json["completed lore"] = completed_lore;
+
+	auto current_act_index = std::distance(acts_.data(), current_act_);
+	auto current_location_index = std::distance(current_act_->locations_.data(), current_location_);
+
+	json["no stone current location"] = { current_act_index, current_location_index };
+}
+
+void NoStoneManager::LoadData(const nlohmann::json& save_json)
 {
 	std::ifstream file("assets/no-stone-unturned.json");
 	if (!file.is_open()) {
@@ -187,10 +237,12 @@ void NoStoneManager::LoadData(std::vector<int> completed_lore)
 			for (const auto& lore : location[location.begin().key()]) {
 				bool completed = false;
 
-				for (const auto& item : completed_lore) {
-					if (id == item) {
-						completed = true;
-						break;
+				if (save_json.count("completed lore")) {
+					for (const auto& item : save_json["completed lore"]) {
+						if (id == item) {
+							completed = true;
+							break;
+						}
 					}
 				}
 				new_location.lore_.push_back(Lore{ lore, completed });
@@ -202,6 +254,13 @@ void NoStoneManager::LoadData(std::vector<int> completed_lore)
 		acts_.push_back(new_act);
 	}
 
-	current_act_ = &acts_[0];
-	current_location_ = &current_act_->locations_[0];
+	if (save_json.count("no stone current location")) {
+		auto indices = save_json["no stone current location"];
+		current_act_ = &acts_[indices[0]];
+		current_location_ = &current_act_->locations_[indices[1]];
+	}
+	else {
+		current_act_ = &acts_[0];
+		current_location_ = &current_act_->locations_[0];
+	}
 }

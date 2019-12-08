@@ -89,9 +89,9 @@ void Application::Update()
 		all_ears_manager_.IncrementStep();
 	}
 
-	if (no_stone_unturned_enabled_ && location != "") {
-		no_stone_manager_.ChangeLocation(location);
-	}
+	//if (no_stone_unturned_enabled_ && location != "") {
+	//	no_stone_manager_.ChangeLocation(location);
+	//}
 
 	if (!Window::IsFocused()) {
 		Render();
@@ -107,15 +107,15 @@ void Application::Render()
 
 	if (window_.collapsed_) {
 		ImGui::SetNextWindowSize({ 100.0, (float)window_.height_ });
-		ImGui::Begin("All Ears Unturned", &running_, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
+		ImGui::Begin("All Ears Unturned", &running_, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoSavedSettings);
 	}
 	else {
 		ImGui::SetNextWindowSize({ (float)window_.width_, (float)window_.height_ });
 		if (window_.movable_) {
-			ImGui::Begin("All Ears Unturned", &running_, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
+			ImGui::Begin("All Ears Unturned", &running_, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoSavedSettings);
 		}
 		else {
-			ImGui::Begin("All Ears Unturned", &running_, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoMove);
+			ImGui::Begin("All Ears Unturned", &running_, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoMove);
 		}
 
 		ImGui::Separator();
@@ -246,6 +246,7 @@ void Application::RenderTutorial()
 		case 2:
 			ImGui::TextWrapped("Complete the objectives in the order given and mark off each checkbox when done. The step will automatically progress when all objectives are marked.");
 			ImGui::TextWrapped("You can set the path of your Path of Exile folder in the settings menu. If set, the guide will progress automatically for steps that require travelling to areas");
+			ImGui::TextWrapped("You may turn off the tracking of either achievement in the Settings menu");
 			break;
 		case 3:
 			ImGui::TextWrapped("This window will block input from PoE. If needed, you may press the 'E' key to collapse and move the window out of the way. Pressing the 'E' key again will expand the window back to normal");
@@ -315,7 +316,7 @@ void Application::Load()
 	std::ifstream save_file("assets/save-info.json");
 	if (!save_file.is_open()) {
 		PushState(State::TUTORIAL);
-		no_stone_manager_.LoadData(std::vector<int>());
+		no_stone_manager_.LoadData();
 		
 		return;
 	}
@@ -335,7 +336,7 @@ void Application::Load()
 		font_size_ = json["font size"];
 		all_ears_enabled_ = json["all ears enabled"];
 		no_stone_unturned_enabled_ = json["no stone unturned enabled"];
-		no_stone_manager_.LoadData(json["completed lore"]);
+		no_stone_manager_.LoadData(json);
 	}
 	else {
 		PushState(State::LOAD_DATA_ERROR);
@@ -364,21 +365,7 @@ void Application::Save()
 	json["all ears enabled"] = all_ears_enabled_;
 	json["no stone unturned enabled"] = no_stone_unturned_enabled_;
 
-	std::vector<int> completed_lore;
-	int id = 0;
-	
-	for (const auto& act : no_stone_manager_.acts_) {
-		for (const auto& location : act.locations_) {
-			for (const auto& lore : location.lore_) {
-				if (lore.completed_) {
-					completed_lore.push_back(id);
-				}
-				++id;
-			}
-		}
-	}
-
-	json["completed lore"] = completed_lore;
+	no_stone_manager_.Save(json);
 
 	std::ofstream file("assets/save-info.json");
 	file << std::setw(4) << json << std::endl;

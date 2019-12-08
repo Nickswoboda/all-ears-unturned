@@ -7,7 +7,6 @@ struct Lore
 {
 	std::string name_;
 	bool completed_ = false;
-
 };
 
 struct LoreLocation

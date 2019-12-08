@@ -3,21 +3,21 @@
     "Act 1": [
       {
         "Lioneye's Watch": [
-          "Carling of Mirfield",
-          "Hillock of Slaugh",
-          "Karityn of Theopolis",
-          "Ender of Romsey",
-          "Brylla of Cinderford",
-          "Missy of Nashe",
-          "Barden of Inkley",
-          "Ollin of Theopolis",
-          "Maitlyn of Theopolis",
-          "Salem of Theopolis",
-          "Lothar of Wetherdale",
-          "Joy of Kimbey",
-          "Cafar of Beecham",
-          "Maramoa of Ngmagakanui",
-          "Hadrey of Dayton"
+          "Letters of Exile - Carling of Mirfield",
+          "Letters of Exile - Hillock of Slaugh",
+          "Letters of Exile - Karityn of Theopolis",
+          "Letters of Exile - Ender of Romsey",
+          "Letters of Exile - Brylla of Cinderford",
+          "Letters of Exile - Missy of Nashe",
+          "Letters of Exile - Barden of Inkley",
+          "Letters of Exile - Ollin of Theopolis",
+          "Letters of Exile - Maitlin of Theopolis",
+          "Letters of Exile - Salem of Theopolis",
+          "Letters of Exile - Lothar of Wetherdale",
+          "Letters of Exile - Joy of Kimbey",
+          "Letters of Exile - Cafar of Beecham",
+          "Letters of Exile - Maramoa of Ngamakanui",
+          "Letters of Exile - Hadrey of Dayton"
         ]
       },
       {
@@ -50,8 +50,8 @@
       },
       {
         "The Ship Graveyard": [
-          "Weathered Carving 1",
-          "Weathered Carving 2"
+          "Weathered Carving - Kaom stands before us",
+          "Weathered Carving - Kaom is gone."
         ]
       },
       {
@@ -135,7 +135,10 @@
         "The Imperial Gardens": "Bronze Monograph"
       },
       {
-        "The Sceptre of God": "Letter to Chitus"
+        "The Sceptre of God": [
+          "Letter to Chitus",
+          "Plaque"
+        ]
       },
       {
         "The Library": [
@@ -151,9 +154,10 @@
           "Victario's Writings - Slaves of Virtue",
           "Victario's Writings - A Friend in Need",
           "The Purity Chronicles - Embers of Insurrection",
+          "The Purity Chronicles - Bloody Flowers",
           "The Purity Chronicles - Fall of a Jade Axe",
           "The Purity Chronicles - The Red Sekhema's Saddle",
-          "The Purity Chronicles - The Emperor is Dead...",
+          "The Purity Chronicles - The Emperor is dead",
           "The Purity Chronicles - The Rapture Device"
         ]
       }
@@ -172,21 +176,21 @@
       },
       {
         "The Grand Arena": [
-          "Plaque 1",
-          "Plaque 2",
-          "Plaque 3"
+          "Plaque - At age 13",
+          "Plaque - I knelt in the sand",
+          "Plaque - The previous King"
         ]
       },
       {
         "Kaom's Dream": [
-          "Weathered Carving 1",
-          "Weathered Carving 2"
+          "Weathered Carving - I dreamed of my Ancestor's",
+          "Weathered Carving - We crushed the servants"
         ]
       },
       {
         "Kaom's Stronghold": [
-          "Weathered Carving 1",
-          "Weathered Carving 2"
+          "Weathered Carving - The Eternals opened the gate",
+          "Weathered Carving - The moment your skin"
         ]
       },
       {
@@ -201,14 +205,15 @@
     "Act 5": [
       {
         "The Chamber of Innocence": [
-          "Stained Glass Window 1",
-          "Stained Glass Window 2",
-          "Stained Glass Window 3",
-          "Stained Glass Window 4",
-          "Stained Glass Window 5",
-          "Stained Glass Window 6",
-          "Stained Glass Window 7",
-          "Stained Glass Window 8"
+          "Stained Glass Window - Innocence watched Sin",
+          "Stained Glass Window - Innocence lived with",
+          "Stained Glass Window - On that day two",
+          "Stained Glass Window - As this titan of Sin",
+          "Stained Glass Window - Yet the punishment",
+          "Stained Glass Window - The village gathered",
+          "Stained Glass Window - When the Mother",
+          "Stained Glass Window - Innocence could not",
+          "Triumph of Innocence"
         ]
       },
       {
@@ -273,7 +278,7 @@
   {
     "Act 8": [
       {
-        "The Grain Gate": "The Ravaged Square"
+        "The Grain Gate": "Official Orders"
       }
     ]
   },
@@ -295,35 +300,35 @@
       {
         "The Lord's Labyrinth": [
           "Bronze Plaque",
-          "Bronze Inscription 1",
-          "Poem 1",
-          "Bronze Inscription 2",
-          "Poem 2",
-          "Bronze Inscription 3",
-          "Poem 3",
-          "Poem 4",
-          "Bronze Inscription 4",
-          "Poem 5"
+          "Bronze Inscription - In the impressionable",
+          "Poem - The Son of Ezomyr",
+          "Bronze Inscription - The Azmeri were the first",
+          "Poem - The Ezomyte and the Eternal",
+          "Bronze Inscription - The Azmeri were consummate",
+          "Poem - The Warrior bled",
+          "Poem - A Guide, cornered",
+          "Bronze Inscription - The cust of the Lord's",
+          "Poem - THe Guide led"
         ]
       },
       {
         "Vaal Area": [
-          "Vaal Letter 1",
-          "Vaal Letter 2",
-          "Vaal Letter 3",
-          "Vaal Letter 4",
-          "Vaal Letter 5",
-          "Vaal Letter 6",
-          "Vaal Letter 7",
-          "Vaal Letter 8",
-          "Vaal Letter 9",
-          "Vaal Letter 10",
-          "Vaal Letter 11",
-          "Vaal Letter 12",
-          "Research Journal 1",
-          "Research Journal 2",
-          "Research Journal 3",
-          "Research Journal 4"
+          "Vaal Letter - Queen Atziri forfeited",
+          "Vaal Letter - Atziri promises us",
+          "Vaal Letter - What did I say?",
+          "Vaal Letter - I had nothing",
+          "Vaal Letter - Atziri is my love",
+          "Vaal Letter - There was no escape",
+          "Vaal Letter - I was to wither",
+          "Vaal Letter - I should have drawn",
+          "Vaal Letter - Our queen has demanded",
+          "Vaal Letter - A ring",
+          "Vaal Letter - For seven year",
+          "Vaal Letter - I am but a crude",
+          "Research Journal - I am Templar",
+          "Research Journal - I have been plagued",
+          "Research Journal - My beautiful Queen",
+          "Research Journal - The Artefacts "
         ]
       }
     ]

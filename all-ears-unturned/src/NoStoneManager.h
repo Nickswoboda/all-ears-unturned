@@ -1,23 +1,28 @@
 #pragma once
 
+#include "Lore.h"
+
+#include <json.hpp>
 #include <vector>
 #include <string>
-#include "Lore.h"
 class NoStoneManager
 {
 public:
 
 	NoStoneManager();
 
-	void LoadData(std::vector<int> completed_lore);
+	void LoadData(const nlohmann::json& save_json = nlohmann::json());
 	void Render();
 
 	void ChangeLocation(const std::string& location);
 
-	void Advance();
+	void Increment();
+	void Decrement();
 
 	bool CheckAreaCompletion();
 	void CheckAchievementCompletion();
+
+	void Save(nlohmann::json& json);
 
 	std::vector<LoreAct> acts_;
 	LoreAct* current_act_ = nullptr;
