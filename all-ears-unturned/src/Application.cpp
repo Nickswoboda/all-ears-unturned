@@ -240,19 +240,28 @@ void Application::RenderTutorial()
 	int num_pages = 3;
 	switch (tutorial_page_) {
 		case 1: 
+			ImGui::Bullet();
 			ImGui::TextWrapped("Follow the All Ears steps exactly as given. Do not enter new areas or complete quests. Doing so may cause you to miss certain dialog options.");
+			ImGui::Bullet();
 			ImGui::TextWrapped("NOTE: You MUST kill all Bandits in order to complete the acheivement.");
 			break;
 		case 2:
+			ImGui::Bullet();
 			ImGui::TextWrapped("Complete the objectives in the order given and mark off each checkbox when done. The step will automatically progress when all objectives are marked.");
-			ImGui::TextWrapped("You can set the path of your Path of Exile folder in the settings menu. If set, the guide will progress automatically for steps that require travelling to areas");
-			ImGui::TextWrapped("You may turn off the tracking of either achievement in the Settings menu");
+			ImGui::Bullet();
+			ImGui::TextWrapped("You can set the path of your Path of Exile folder in the settings menu. If set, the guide will progress automatically for steps that require travelling to areas.");
+			ImGui::Bullet();
+			ImGui::TextWrapped("You may turn off the tracking of either achievement in the Settings menu.");
 			break;
 		case 3:
+			ImGui::Bullet();
 			ImGui::TextWrapped("This window will block input from PoE. If needed, you may press the 'E' key to collapse and move the window out of the way. Pressing the 'E' key again will expand the window back to normal");
+			ImGui::Bullet();
 			ImGui::TextWrapped("In the Settings menu, you may change the text size and width of the window. To minimize space, the window will change it's height based on it's contents.");
+			ImGui::Bullet();
 			ImGui::TextWrapped("You may also move the window by toggling the 'Movable' checkbox and dragging the window with your mouse.");
-			ImGui::TextWrapped("You may reread this tutorial by clicking on the tutorial button in the settings menu at any time");
+			ImGui::Bullet();
+			ImGui::TextWrapped("You may reread this tutorial by clicking on the tutorial button in the settings menu at any time.");
 	}
 
 	if (ImGui::ArrowButton("Left", ImGuiDir_Left) && tutorial_page_ > 1) {
