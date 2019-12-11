@@ -270,12 +270,13 @@ void Application::RenderTutorial()
 			ImGui::Bullet();
 			ImGui::TextWrapped("This window will block input from PoE. If needed, you may press the 'E' key to collapse and move the window out of the way. Pressing the 'E' key again will expand the window back to normal");
 			ImGui::Bullet();
+			ImGui::TextWrapped("You may press 'Q' and 'W' to go backwards and forwards for the 'All Ears' steps. You may press 'A' and 'S' to go backwards and forwards for the 'No Stone Unturned' steps.");
+			ImGui::Bullet();
 			ImGui::TextWrapped("In the Settings menu, you may change the text size and width of the window. To minimize space, the window will change it's height based on it's contents.");
 			ImGui::Bullet();
 			ImGui::TextWrapped("You may also move the window by toggling the 'Movable' checkbox and dragging the window with your mouse.");
 			ImGui::Bullet();
 			ImGui::TextWrapped("You may reread this tutorial by clicking on the tutorial button in the settings menu at any time.");
-
 	}
 
 	if (ImGui::ArrowButton("Left", ImGuiDir_Left) && tutorial_page_ > 1) {
