@@ -266,6 +266,7 @@ void Application::RenderTutorial()
 			ImGui::TextWrapped("If not, that means you have missed one or more of the required dialogue options. You must make a new character and try again if you would like to complete the achievement");
 			ImGui::Bullet();
 			ImGui::TextWrapped("If you believe that you followed the steps exactly as given, please post a message on GitHub or the Reddit threads, so any errors may be found and fixed. Thank you.");
+			break;
 		case 4:
 			ImGui::Bullet();
 			ImGui::TextWrapped("This window will block input from PoE. If needed, you may press the 'E' key to collapse and move the window out of the way. Pressing the 'E' key again will expand the window back to normal");
