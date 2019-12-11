@@ -40,6 +40,8 @@ public:
 	void PopState();
 	void Save();
 
+	void SetKeyCallbacks();
+
 private:
 	bool running_ = true;
 

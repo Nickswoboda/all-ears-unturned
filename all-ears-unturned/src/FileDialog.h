@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 #include <stack>
 #include <filesystem>
 
@@ -14,6 +15,7 @@ public:
 
 	int width_;
 	int index_selected_ = -1;
+	std::vector<std::string> drives_;
 	std::string current_file_path_ = "/";
 	std::stack<std::string> prev_paths_;
 	std::filesystem::path selected_path_;

@@ -19,20 +19,6 @@ Window::Window(int width, int height)
 		std::cout << "Could not create window";
 	}
 
-	glfwSetWindowUserPointer(glfw_window_, this);
-	glfwSetKeyCallback(glfw_window_, [](GLFWwindow* window, int key, int scancode, int action, int mods) {
-	
-		if (key == GLFW_KEY_E && action == GLFW_PRESS) {
-			auto* window = (Window*)glfwGetWindowUserPointer(glfw_window_);
-			if (!window->collapsed_) {
-				window->collapsed_ = true;
-			}
-			else {
-				window->collapsed_ = false;
-			}
-		}
-	});
-
 	glfwMakeContextCurrent(glfw_window_);
 	glfwSetWindowPos(glfw_window_, x_pos_, y_pos_);
 }

@@ -39,7 +39,9 @@ Application::Application(int width, int height)
 		PushState(State::LOAD_DATA_ERROR);
 		error_message_ = "Unable to load one or more asset files.";
 	}
-
+	
+	glfwSetWindowUserPointer(window_.glfw_window_, this);
+	SetKeyCallbacks();
 }
 
 Application::~Application()
@@ -225,6 +227,10 @@ void Application::RenderSettingsMenu()
 	if (ImGui::Button("Tutorial")) {
 		PushState(State::TUTORIAL);
 	}
+	if (ImGui::Button("Save")) {
+		Save();
+	}
+
 
 	if (ImGui::Button("Return")) {
 		PopState();
@@ -237,7 +243,7 @@ void Application::RenderTutorial()
 	ImGui::TextWrapped("Tutorial");
 	ImGui::Separator();
 
-	int num_pages = 3;
+	int num_pages = 4;
 	switch (tutorial_page_) {
 		case 1: 
 			ImGui::Bullet();
@@ -255,6 +261,13 @@ void Application::RenderTutorial()
 			break;
 		case 3:
 			ImGui::Bullet();
+			ImGui::TextWrapped("After each Act there will be a note stating how many dialogs out of the 509 you should have completed up to that point. You may check the Achievements tab in-game to see if they match up.");
+			ImGui::Bullet();
+			ImGui::TextWrapped("If not, that means you have missed one or more of the required dialogue options. You must make a new character and try again if you would like to complete the achievement");
+			ImGui::Bullet();
+			ImGui::TextWrapped("If you believe that you followed the steps exactly as given, please post a message on GitHub or the Reddit threads, so any errors may be found and fixed. Thank you.");
+		case 4:
+			ImGui::Bullet();
 			ImGui::TextWrapped("This window will block input from PoE. If needed, you may press the 'E' key to collapse and move the window out of the way. Pressing the 'E' key again will expand the window back to normal");
 			ImGui::Bullet();
 			ImGui::TextWrapped("In the Settings menu, you may change the text size and width of the window. To minimize space, the window will change it's height based on it's contents.");
@@ -262,6 +275,7 @@ void Application::RenderTutorial()
 			ImGui::TextWrapped("You may also move the window by toggling the 'Movable' checkbox and dragging the window with your mouse.");
 			ImGui::Bullet();
 			ImGui::TextWrapped("You may reread this tutorial by clicking on the tutorial button in the settings menu at any time.");
+
 	}
 
 	if (ImGui::ArrowButton("Left", ImGuiDir_Left) && tutorial_page_ > 1) {
@@ -379,6 +393,38 @@ void Application::Save()
 	std::ofstream file("assets/save-info.json");
 	file << std::setw(4) << json << std::endl;
 	file.close();
+}
+
+void Application::SetKeyCallbacks()
+{
+	glfwSetKeyCallback(window_.glfw_window_, [](GLFWwindow* window, int key, int scancode, int action, int mods) {
+
+		auto* app = (Application*)glfwGetWindowUserPointer(Window::glfw_window_);
+		if (key == GLFW_KEY_E && action == GLFW_PRESS) {
+			if (!app->window_.collapsed_) {
+				app->window_.collapsed_ = true;
+			}
+			else {
+				app->window_.collapsed_ = false;
+			}
+		}
+		if (app->all_ears_enabled_) {
+			if (key == GLFW_KEY_Q && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+				app->all_ears_manager_.DecrementStep();
+			}
+			if (key == GLFW_KEY_W && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+				app->all_ears_manager_.IncrementStep();
+			}
+		}
+		if (app->no_stone_unturned_enabled_) {
+			if (key == GLFW_KEY_A && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+				app->no_stone_manager_.Decrement();
+			}
+			if (key == GLFW_KEY_S && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+				app->no_stone_manager_.Increment();
+			}
+		}
+	});
 }
 
 

@@ -184,7 +184,11 @@
         "The Allflame",
         "Merveil",
         "Merveil's Necklace"
-     ]
+     ],
+     "note" : "Located in The Ship Graveyard"
+  },
+  {
+     "event" : "Obtain 'The Siren's Cadence' quest from Nessa"
   },
   { 
      "NPC":"Bestel",
@@ -199,7 +203,8 @@
   },
   { 
      "NPC":"Captain Fairgraves",
-     "subjects":"The Real Fairgraves"
+     "subjects":"The Real Fairgraves",
+     "note" : "Located in The Ship Graveyard"
   },
   { 
      "destination":"The Ship Graveyard Cave"
@@ -229,7 +234,11 @@
   },
   { 
      "NPC":"Tarkleigh",
-     "subjects":"Merveil"
+     "subjects":"Merveil",
+     "note" : "You should have 45/509 completed for 'All Ears' in the Achievements tab."
+  },
+  { 
+     "destination":"The Southern Forest"
   },
   { 
      "destination":"The Forest Encampment"
@@ -351,15 +360,18 @@
   },
   { 
      "NPC":"Nessa",
-     "subjects":"Reopened Passage"
+     "subjects":"Reopened Passage",
+     "note" : "Located in Lioneye's Watch"
   },
   { 
      "NPC":"Bestel",
-     "subjects":"Inspirational Poem"
+     "subjects":"Inspirational Poem",
+     "note" : "Located in Lioneye's Watch"
   },
   { 
      "NPC":"Tarkleigh",
-     "subjects":"Reopened Passage"
+     "subjects":"Reopened Passage",
+     "note" : "Located in Lioneye's Watch"
   },
   { 
      "destination":"The Crossroads"
@@ -511,7 +523,8 @@
   },
   { 
      "NPC":"Alira",
-     "subjects":"The Darkness"
+     "subjects":"The Darkness",
+     "note" : "Located in The Western Forest"
   },
   { 
      "event":"Kill Alira"
@@ -525,7 +538,8 @@
   },
   { 
      "NPC":"Oak",
-     "subjects":"The Darkness"
+     "subjects":"The Darkness",
+     "note" : "Located in The Wetlands"
   },
   { 
      "event":"Kill Oak"
@@ -572,7 +586,8 @@
   },
   { 
      "NPC":"Greust",
-     "subjects":"The Light"
+     "subjects":"The Light",
+     "note" : "You should have 115/509 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The City of Sarn"
@@ -700,7 +715,7 @@
         "Resurrection",
         "The Undying"
      ],
-     "note":"DO NOT HAVE DECANTER SPIRITUS OR CHITUS' PLUM IN INVENTORY"
+     "note":"Located in The Docks. DO NOT HAVE DECANTER SPIRITUS OR CHITUS' PLUM IN INVENTORY"
   },
   { 
      "destination":"The Solaris Temple Level 1"
@@ -715,7 +730,7 @@
   { 
      "NPC":"Dialla",
      "subjects":"Introduction",
-     "note":"DO NOT HAVE THAUMETIC SULPHITE OR RIBBON SPOOL IN INVENTORY"
+     "note":"Located in The Solaris Temple Level 2. DO NOT HAVE THAUMETIC SULPHITE OR RIBBON SPOOL IN INVENTORY"
   },
   { 
      "NPC":"Grigor",
@@ -738,7 +753,7 @@
   { 
      "NPC":"Dialla",
      "subjects":"Thaumetic Sulphite",
-     "note":"DO NOT HAVE RIBBON SPOOL IN INVENTORY"
+     "note":"Located in The Solaris Temple Level 2. DO NOT HAVE RIBBON SPOOL IN INVENTORY"
   },
   { 
      "event":"Get Ribbon Spool"
@@ -750,7 +765,8 @@
         "Infernal Talc",
         "Malachai",
         "Chitus"
-     ]
+     ],
+     "note" : "Located in The Solaris Temple Level 2"
   },
   { 
      "destination":"The Ebony Barracks"
@@ -765,7 +781,8 @@
   },
   { 
      "NPC":"Dialla",
-     "subjects":"General Gravicius"
+     "subjects":"General Gravicius",
+     "note" : "Located in The Solaris Temple Level 2"
   },
   { 
      "NPC":"Grigor",
@@ -823,7 +840,8 @@
         "Introduction",
         "Archives",
         "The Painting"
-     ]
+     ],
+     "note" : "Located in The Library"
   },
   { 
      "destination":"The Archives"
@@ -842,7 +860,8 @@
         "Malachai",
         "Queen Atziri",
         "Cataclysm"
-     ]
+     ],
+     "note" : "Located in The Library"
   },
   { 
      "destination":"The Sceptre of God"
@@ -858,7 +877,8 @@
      "subjects":[ 
         "Dominus",
         "Piety and Dominus"
-     ]
+     ],
+     "note" : "You should have 187/509 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Aqueduct"
@@ -1097,7 +1117,8 @@
   },
   { 
      "NPC":"Piety",
-     "subjects":"The Godless Three"
+     "subjects":"The Godless Three",
+     "note" : "Located in The Belly of the Beast Level 2"
   },
   { 
      "NPC":"Petarus and Vanja",
@@ -1121,7 +1142,8 @@
   },
   { 
      "NPC":"Piety",
-     "subjects":"Malachai"
+     "subjects":"Malachai",
+     "note" : "Located in The Harvest"
   },
   { 
      "event":[ 
@@ -1154,7 +1176,8 @@
      "subjects":[ 
         "Malachai",
         "Malachai's Apprentices"
-     ]
+     ],
+     "note" : "You should have 260/509 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Ascent"
@@ -1309,7 +1332,8 @@
   },
   { 
      "NPC":"Vilenta",
-     "subjects":"Kitava"
+     "subjects":"Kitava",
+     "note" : "You should have 305/509 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"Lioneye's Watch"
@@ -1507,7 +1531,8 @@
      "subjects":[ 
         "The Brine King's Reef",
         "The Brine King"
-     ]
+     ],
+     "note" : "Located in The Brine King's Reef"
   },
   { 
      "event":"Kill the Brine King"
@@ -1518,7 +1543,8 @@
   },
   { 
      "NPC":"Bestel",
-     "subjects":"The Brine King"
+     "subjects":"The Brine King",
+     "note" : "You should have 349/509 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Bridge Encampment"
@@ -1617,7 +1643,8 @@
      "subjects":[ 
         "Black Death",
         "Silk's Journey "
-     ]
+     ],
+     "note" : "Located in The Chamber of Sins Level 1"
   },
   { 
      "destination":"Maligaro's Sanctum"
@@ -1735,7 +1762,8 @@
   },
   { 
      "NPC":"Yeena",
-     "subjects":"Silk"
+     "subjects":"Silk",
+     "note" : "You should have 394/509 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Sarn Ramparts"
@@ -1903,7 +1931,8 @@
   },
   { 
      "NPC":"Hargan",
-     "subjects":"Solaris and Lunaris"
+     "subjects":"Solaris and Lunaris",
+     "note" : "You should have 424/509 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Blood Aqueduct"
@@ -2041,7 +2070,7 @@
         "The Black Core",
         "Cataclysm"
      ],
-     "note":"DO NOT ENTER THE BELLY OF THE BEAST"
+     "note":"Located at the Quarry. DO NOT ENTER THE BELLY OF THE BEAST"
   },
   { 
      "destination":"The Belly of the Beast"
@@ -2075,7 +2104,8 @@
   },
   { 
      "NPC":"Tasuni",
-     "subjects":"The Beast"
+     "subjects":"The Beast",
+     "note" : "You should have 426/509 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Oriath Docks"
@@ -2163,7 +2193,8 @@
   },
   { 
      "NPC":"Lilly Roth",
-     "subjects":"Innocence"
+     "subjects":"Innocence",
+     "note" : "You should have 489/509 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Canals"
@@ -2200,7 +2231,8 @@
   },
   { 
      "NPC":"Weylam Roth",
-     "subjects":"Kitava"
+     "subjects":"Kitava",
+     "note" : "You should have 497/509 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "NPC":"Navali",
