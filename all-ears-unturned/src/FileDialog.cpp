@@ -11,8 +11,8 @@ FileDialog::FileDialog(int width)
 	: width_(width)
 {
 	//get list of physical drives
-	DWORD bufferlength = 100;
-	char drive_buffer[100];
+	constexpr DWORD bufferlength = 100;
+	char drive_buffer[bufferlength];
 	DWORD string_length = GetLogicalDriveStrings(bufferlength, drive_buffer);
 	if (string_length > 0 && string_length <= 100) {
 		char* drive = drive_buffer;

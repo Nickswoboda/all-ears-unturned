@@ -235,7 +235,7 @@
   { 
      "NPC":"Tarkleigh",
      "subjects":"Merveil",
-     "note" : "You should have 45/509 completed for 'All Ears' in the Achievements tab."
+     "note" : "You should have 45/505 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Southern Forest"
@@ -548,6 +548,9 @@
      "NPC":"Eramir",
      "subjects":"Bandit Lords"
   },
+  {
+     "event" : "Talk to Yeena"
+  },
   { 
      "NPC":"Helena",
      "subjects":"Yeena's Vision"
@@ -587,7 +590,7 @@
   { 
      "NPC":"Greust",
      "subjects":"The Light",
-     "note" : "You should have 115/509 completed for 'All Ears' in the Achievements tab."
+     "note" : "You should have 115/505 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The City of Sarn"
@@ -878,7 +881,7 @@
         "Dominus",
         "Piety and Dominus"
      ],
-     "note" : "You should have 187/509 completed for 'All Ears' in the Achievements tab."
+     "note" : "You should have 187/505 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Aqueduct"
@@ -1025,7 +1028,8 @@
      "subjects":[ 
         "Kaom",
         "Daresso"
-     ]
+     ],
+     "note" : "Located in the Crystal Veins"
   },
   { 
      "NPC":"Petarus and Vanja",
@@ -1177,7 +1181,7 @@
         "Malachai",
         "Malachai's Apprentices"
      ],
-     "note" : "You should have 260/509 completed for 'All Ears' in the Achievements tab."
+     "note" : "You should have 260/505 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Ascent"
@@ -1333,7 +1337,7 @@
   { 
      "NPC":"Vilenta",
      "subjects":"Kitava",
-     "note" : "You should have 305/509 completed for 'All Ears' in the Achievements tab."
+     "note" : "You should have 305/505 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"Lioneye's Watch"
@@ -1544,7 +1548,7 @@
   { 
      "NPC":"Bestel",
      "subjects":"The Brine King",
-     "note" : "You should have 349/509 completed for 'All Ears' in the Achievements tab."
+     "note" : "You should have 349/505 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Bridge Encampment"
@@ -1763,7 +1767,7 @@
   { 
      "NPC":"Yeena",
      "subjects":"Silk",
-     "note" : "You should have 394/509 completed for 'All Ears' in the Achievements tab."
+     "note" : "You should have 394/505 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Sarn Ramparts"
@@ -1822,6 +1826,11 @@
   { 
      "event":"Defeat Doedre",
      "note":"DO NOT LEAVE DOEDRE'S CESSPOOL"
+  },
+  {
+     "NPC": "Sin",
+     "subjects":"Doedre",
+     "note" : "Located in Doedre's Cesspool"
   },
   { 
      "destination":"Sewer Outlet"
@@ -1932,7 +1941,7 @@
   { 
      "NPC":"Hargan",
      "subjects":"Solaris and Lunaris",
-     "note" : "You should have 424/509 completed for 'All Ears' in the Achievements tab."
+     "note" : "You should have 424/505 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Blood Aqueduct"
@@ -2022,7 +2031,8 @@
   },
   { 
      "NPC":"Sin",
-     "subjects":"The Dark Ember"
+     "subjects":"The Dark Ember",
+     "note" : "Located in the Quarry"
   },
   { 
      "event":[ 
@@ -2033,7 +2043,8 @@
   },
   { 
      "NPC":"Sin",
-     "subjects":"Garukhan"
+     "subjects":"Garukhan",
+     "note" : "Located in the Quarry"
   },
   { 
      "NPC":"Petarus and Vanja",
@@ -2105,10 +2116,10 @@
   { 
      "NPC":"Tasuni",
      "subjects":"The Beast",
-     "note" : "You should have 460/509 completed for 'All Ears' in the Achievements tab."
+     "note" : "You should have 460/505 completed for 'All Ears' in the Achievements tab."
   },
   { 
-     "destination":"The Oriath Docks"
+     "destination":"Oriath Docks"
   },
   { 
      "NPC":"Sin",
@@ -2189,12 +2200,15 @@
      "destination":"The Desecrated Chambers"
   },
   { 
-     "event":"Obtain the Staff of Purity"
+     "event":[
+        "Obtain the Staff of Purity",
+        "Give the Staff of Purity to Bannon"
+     ]
   },
   { 
      "NPC":"Lilly Roth",
      "subjects":"Innocence",
-     "note" : "You should have 489/509 completed for 'All Ears' in the Achievements tab."
+     "note" : "You should have 489/505 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "destination":"The Canals"
@@ -2217,22 +2231,13 @@
      "subjects":"Innocence"
   },
   { 
-     "NPC":"Zana",
-     "subjects":[ 
-        "Exile",
-        "Kitava",
-        "Oriath",
-        "Rebuilding"
-     ]
-  },
-  { 
      "NPC":"Lilly Roth",
      "subjects":"Kitava"
   },
   { 
      "NPC":"Weylam Roth",
      "subjects":"Kitava",
-     "note" : "You should have 497/509 completed for 'All Ears' in the Achievements tab."
+     "note" : "You should have 493/505 completed for 'All Ears' in the Achievements tab."
   },
   { 
      "NPC":"Navali",
