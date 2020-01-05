@@ -25,10 +25,7 @@ Window::Window(int width, int height)
 
 bool Window::IsFocused()
 {
-	if (glfwGetWindowAttrib(glfw_window_, GLFW_FOCUSED)) {
-		return true;
-	}
-	return false;
+	return glfwGetWindowAttrib(glfw_window_, GLFW_FOCUSED);
 }
 
 void Window::Move(int x, int y)

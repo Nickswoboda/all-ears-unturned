@@ -25,7 +25,7 @@ public:
 	~Application();
 
 	void Load();
-	bool AssetsExist();
+	bool AssetsExist() const;
 	void SetImGuiStyle();
 
 	void Run();

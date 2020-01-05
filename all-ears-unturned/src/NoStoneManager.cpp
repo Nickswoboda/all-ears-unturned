@@ -9,10 +9,6 @@
 
 #include <iostream>
 
-NoStoneManager::NoStoneManager()
-{
-}
-
 void NoStoneManager::Render()
 {
 
@@ -87,12 +83,18 @@ void NoStoneManager::Render()
 			if (CheckAreaCompletion()) {
 				Increment();
 				current_page = 1;
-				CheckAchievementCompletion();
+				complete_ = CheckAchievementCompletion();
 				break;
 			}
 		}
 		ImGui::SameLine();
 		ImGui::TextWrapped(current_lore.name_.c_str());
+	}
+
+	if (!current_location_->note_.empty()) {
+		ImGui::PushStyleColor(ImGuiCol_Text, { 1.0, 0.0, 0.0, 1.0 });
+		ImGui::TextWrapped(current_location_->note_.c_str());
+		ImGui::PopStyleColor();
 	}
 	
 	if (num_pages > 1) {
@@ -162,7 +164,7 @@ void NoStoneManager::Decrement()
 	}
 }
 
-bool NoStoneManager::CheckAreaCompletion()
+bool NoStoneManager::CheckAreaCompletion() const
 {
 	for (const auto& lore_item : current_location_->lore_) {
 		if (!lore_item.completed_) {
@@ -172,19 +174,19 @@ bool NoStoneManager::CheckAreaCompletion()
 	return true;
 }
 
-void NoStoneManager::CheckAchievementCompletion()
+bool NoStoneManager::CheckAchievementCompletion() const
 {
 	for (const auto& act : acts_) {
 		for (const auto& location : act.locations_) {
 			for (const auto& lore : location.lore_) {
 				if (!lore.completed_) {
-					return;
+					return false;
 				}
 			}
 		}
 	}
 
-	complete_ = true;
+	return true;
 }
 
 void NoStoneManager::Save(nlohmann::json& json)
@@ -247,6 +249,10 @@ void NoStoneManager::LoadData(const nlohmann::json& save_json)
 				}
 				new_location.lore_.push_back(Lore{ lore, completed });
 				++id;
+			}
+
+			if (location.count("note")) {
+				new_location.note_ = location["note"];
 			}
 			new_act.locations_.push_back(new_location);
 		}

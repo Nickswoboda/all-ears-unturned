@@ -18,7 +18,8 @@
           "Letters of Exile - Cafar of Beecham",
           "Letters of Exile - Maramoa of Ngamakanui",
           "Letters of Exile - Hadrey of Dayton"
-        ]
+        ],
+        "note": "You must interact with the 'Letters of Exile' pillar multiple times"
       },
       {
         "The Coast": "Weathered Carving"
@@ -42,11 +43,13 @@
         "The Lower Prison": "Bronze Monograph"
       },
       {
-        "The Upper Prison": [
+        "The Warden's Quarters": [
           "Shavronne's Journal",
-          "Order of Protection",
-          "Letter of Instruction"
+          "Order of Protection"
         ]
+      },
+      {
+        "The Warden's Chambers": "Letter of Instruction"
       },
       {
         "The Ship Graveyard": [
@@ -58,7 +61,8 @@
         "The Cavern of Wrath": "Sailor's Skin"
       },
       {
-        "The Cavern of Anger": "Damp Diary"
+        "Merveil's Lair": "Damp Diary",
+        "note" : "Available after killing Merveil"
       }
     ]
   },
@@ -122,8 +126,10 @@
         "The Docks": "Ancient Graffiti"
       },
       {
-        "The Solaris Temple Level 2": [
-          "Journal Entry",
+        "The Solaris Temple Level 2": "Journal Entry"
+      },      
+      {
+        "Eternal Laboratory": [
           "Reverie Device",
           "Malachai's Journal"
         ]
@@ -159,7 +165,8 @@
           "The Purity Chronicles - The Red Sekhema's Saddle",
           "The Purity Chronicles - The Emperor is dead",
           "The Purity Chronicles - The Rapture Device"
-        ]
+        ],
+        "note" : "3 books are loaded each instance. Multiple instances are required to complete them all"
       }
     ]
   },
@@ -234,7 +241,8 @@
         "The Tidal Island": "Leatherbound Logbook"
       },
       {
-        "Shavronne's Tower": "Shavronne's Manifesto"
+        "Prison Rooftop": "Shavronne's Manifesto",
+        "note" : "Available after killing Shavronne"
       },
       {
         "The Beacon": [

@@ -369,13 +369,9 @@ void Application::Load()
 	}
 }
 
-bool Application::AssetsExist()
+bool Application::AssetsExist() const
 {
-	if (std::filesystem::exists("assets/fonts/Roboto-Medium.ttf") && std::filesystem::exists("assets/steps.json") && std::filesystem::exists("assets/no-stone-unturned.json")) {
-		return true;
-	}
-
-	return false;
+	return std::filesystem::exists("assets/fonts/Roboto-Medium.ttf") && std::filesystem::exists("assets/steps.json") && std::filesystem::exists("assets/no-stone-unturned.json");
 }
 
 void Application::Save()

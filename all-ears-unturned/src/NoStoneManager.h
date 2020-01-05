@@ -9,8 +9,6 @@ class NoStoneManager
 {
 public:
 
-	NoStoneManager();
-
 	void LoadData(const nlohmann::json& save_json = nlohmann::json());
 	void Render();
 
@@ -19,8 +17,8 @@ public:
 	void Increment();
 	void Decrement();
 
-	bool CheckAreaCompletion();
-	void CheckAchievementCompletion();
+	bool CheckAreaCompletion() const;
+	bool CheckAchievementCompletion() const;
 
 	void Save(nlohmann::json& json);
 

@@ -13,6 +13,7 @@ struct LoreLocation
 {
 	std::string name_;
 	std::vector<Lore> lore_;
+	std::string note_;
 };
 
 struct LoreAct

@@ -71,6 +71,13 @@ void AllEarsManager::IncrementStep()
 				dialog.completed_ = false;
 			}
 		}
+		//reset dialog checkboxes
+		auto event_step = dynamic_cast<EventStep*>(steps_[current_step_].get());
+		if (event_step != nullptr) {
+			for (auto& event : event_step->events_) {
+				event.completed_ = false;
+			}
+		}
 
 		++current_step_;
 	}
