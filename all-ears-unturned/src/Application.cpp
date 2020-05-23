@@ -217,6 +217,7 @@ void Application::RenderSettingsMenu()
 	ImGui::Checkbox("Movable", &window_.movable_);
 	ImGui::Checkbox("All Ears", &all_ears_enabled_);
 	ImGui::Checkbox("No Stone Unturned", &no_stone_unturned_enabled_);
+	ImGui::Checkbox("Enable hotkeys", &hotkeys_enabled_);
 
 	ImGui::TextWrapped("Current Log Folder:");
 	ImGui::TextWrapped(log_parser_.folder_path_.c_str());
@@ -405,6 +406,9 @@ void Application::SetKeyCallbacks()
 			else {
 				app->window_.collapsed_ = false;
 			}
+		}
+		if (!app->hotkeys_enabled_) {
+			return;
 		}
 		if (app->all_ears_enabled_) {
 			if (key == GLFW_KEY_Q && (action == GLFW_PRESS || action == GLFW_REPEAT)) {

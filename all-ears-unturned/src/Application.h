@@ -52,6 +52,7 @@ private:
 
 	bool all_ears_enabled_ = true;
 	bool no_stone_unturned_enabled_ = true;
+	bool hotkeys_enabled_ = true;
 	int tutorial_page_ = 1;
 
 	Window window_;

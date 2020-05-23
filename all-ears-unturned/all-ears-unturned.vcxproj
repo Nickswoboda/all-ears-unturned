@@ -115,6 +115,7 @@
       <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)dependencies\nlohmann;$(ProjectDir)dependencies\imgui;$(ProjectDir)dependencies\GLAD\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
