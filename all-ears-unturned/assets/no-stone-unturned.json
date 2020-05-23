@@ -5,7 +5,7 @@
         "Lioneye's Watch": [
           "Letters of Exile - Carling of Mirfield",
           "Letters of Exile - Hillock of Slaugh",
-          "Letters of Exile - Karityn of Theopolis",
+          "Letters of Exile - Kraityn of Theopolis",
           "Letters of Exile - Ender of Romsey",
           "Letters of Exile - Brylla of Cinderford",
           "Letters of Exile - Missy of Nashe",
@@ -77,10 +77,10 @@
         ]
       },
       {
-        "The Fellshrine Ruins": "Plaque"
-      },
-      {
-        "The Crypt Level 1": "Bronze Monograph"
+        "The Western Forest": [
+          "Proclamation",
+          "Arteri's Letter"
+        ]
       },
       {
         "The Chamber of Sins Level 1": "Ancient Reverie Device"
@@ -92,10 +92,10 @@
         ]
       },
       {
-        "The Western Forest": [
-          "Proclamation",
-          "Arteri's Letter"
-        ]
+        "The Fellshrine Ruins": "Plaque"
+      },
+      {
+        "The Crypt Level 1": "Bronze Monograph"
       }
     ]
   },
@@ -141,12 +141,6 @@
         "The Imperial Gardens": "Bronze Monograph"
       },
       {
-        "The Sceptre of God": [
-          "Letter to Chitus",
-          "Plaque"
-        ]
-      },
-      {
         "The Library": [
           "The Ancients - Last of the Vaal Queens",
           "The Ancients - Zerphi the Murderer",
@@ -167,6 +161,12 @@
           "The Purity Chronicles - The Rapture Device"
         ],
         "note" : "3 books are loaded each instance. Multiple instances are required to complete them all"
+      },
+      {
+        "The Sceptre of God": [
+          "Letter to Chitus",
+          "Plaque"
+        ]
       }
     ]
   },
