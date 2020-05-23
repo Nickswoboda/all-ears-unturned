@@ -16,6 +16,7 @@ void NoStoneManager::Render()
 	ImGui::Separator();
 	ImGui::Separator();
 	ImGui::Text("NO STONE UNTURNED");
+
 	ImGui::Separator();
 
 	if (complete_) {
@@ -60,8 +61,22 @@ void NoStoneManager::Render()
 	
 	ImGui::Separator();
 
-	int num_pages = 1;
 	static int current_page = 1;
+
+	if (ImGui::ArrowButton("##nsleft", ImGuiDir_Left)) {
+		Decrement();
+		current_page = 1;
+	}
+
+	ImGui::SameLine();
+	if (ImGui::ArrowButton("##nsright", ImGuiDir_Right)) {
+		Increment();
+		current_page = 1;
+	}
+
+	ImGui::Separator();
+
+	int num_pages = 1;
 	int num_items = current_location_->lore_.size();
 	if (num_items > max_items_per_page_) {
 		if (num_items % max_items_per_page_ == 0) {
@@ -113,18 +128,6 @@ void NoStoneManager::Render()
 				++current_page;
 			}
 		}
-	}
-	ImGui::Separator();
-
-	if (ImGui::ArrowButton("##nsleft", ImGuiDir_Left)) {
-		Decrement();
-		current_page = 1;
-	}
-
-	ImGui::SameLine();
-	if (ImGui::ArrowButton("##nsright", ImGuiDir_Right)) {
-		Increment();
-		current_page = 1;
 	}
 }
 

@@ -35,15 +35,6 @@ void AllEarsManager::Render()
 {
 	ImGui::Text("ALL EARS");
 	ImGui::Separator();
-	if (achievement_complete_) {
-		ImGui::TextWrapped("You have completed the All Ears Achievement!");
-	}
-
-	else {
-		steps_[current_step_]->Render();
-	}
-
-	ImGui::Separator();
 
 	if (ImGui::ArrowButton("##left", ImGuiDir_Left)) {
 		DecrementStep();
@@ -58,6 +49,15 @@ void AllEarsManager::Render()
 			IncrementStep();
 		}
 	}
+	ImGui::Separator();
+	if (achievement_complete_) {
+		ImGui::TextWrapped("You have completed the All Ears Achievement!");
+	}
+
+	else {
+		steps_[current_step_]->Render();
+	}
+
 }
 
 void AllEarsManager::IncrementStep()
