@@ -225,8 +225,7 @@
   },
   { 
      "NPC":"Tarkleigh",
-     "subjects":"Merveil",
-     "note" : "You should have 45/505 completed for 'All Ears' in the Achievements tab."
+     "subjects":"Merveil"
   },
   { 
      "destination":"The Southern Forest"
@@ -578,8 +577,7 @@
   },
   { 
      "NPC":"Greust",
-     "subjects":"The Light",
-     "note" : "You should have 115/505 completed for 'All Ears' in the Achievements tab."
+     "subjects":"The Light"
   },
   { 
      "destination":"The City of Sarn"
@@ -761,12 +759,12 @@
      "note" : "Located in The Solaris Temple Level 2"
   },
   { 
-     "destination":"The Ebony Barracks"
+     "destination":"The Ebony Barracks",
+	 "note":"DO NOT KILL GENERAL GRAVICIUS"
   },
   { 
      "NPC":"Maramoa",
-     "subjects":"Crossing the River",
-     "note":"DO NOT KILL GENERAL GRAVICIUS"
+     "subjects":"Crossing the River"
   },
   { 
      "event":"Kill General Gravicius"
@@ -869,8 +867,7 @@
      "subjects":[ 
         "Dominus",
         "Piety and Dominus"
-     ],
-     "note" : "You should have 187/505 completed for 'All Ears' in the Achievements tab."
+     ]
   },
   { 
      "destination":"The Aqueduct"
@@ -1169,8 +1166,7 @@
      "subjects":[ 
         "Malachai",
         "Malachai's Apprentices"
-     ],
-     "note" : "You should have 260/505 completed for 'All Ears' in the Achievements tab."
+     ]
   },
   { 
      "destination":"The Ascent"
@@ -1251,12 +1247,13 @@
      "destination":"The Chamber of Innocence"
   },
   { 
-     "event":"Defeat Innocence"
+     "event":"Defeat Innocence",
+	 "note":"DO NOT LEAVE THE CHAMBER OF INNOCENCE"
   },
   { 
      "NPC":"Sin",
      "subjects":"Innocence",
-     "note":"DO NOT LEAVE THE CHAMBER OF INNOCENCE"
+	 "note":"Located in the Chamber of Innocence"
   },
   { 
      "event":"Talk to Bannon in The Chamber of Innocence",
@@ -1307,12 +1304,13 @@
      "destination":"The Ossuary"
   },
   { 
-     "event":"Obtain the Sign of Purity"
+     "event":"Obtain the Sign of Purity",
+	 "note":"DO NOT LEAVE THE OSSUARY"
   },
   { 
      "NPC":"Sin",
      "subjects":"The Sign of Purity",
-     "note":"DO NOT LEAVE THE OSSUARY"
+	 "note":"Located in the Ossuary"
   },
   { 
      "destination":"The Cathedral Rooftop"
@@ -1326,8 +1324,7 @@
   },
   { 
      "NPC":"Vilenta",
-     "subjects":"Kitava",
-     "note" : "You should have 305/505 completed for 'All Ears' in the Achievements tab."
+     "subjects":"Kitava"
   },
   { 
      "destination":"Lioneye's Watch"
@@ -1446,12 +1443,13 @@
      "destination":"Shavronne's Tower"
   },
   { 
-     "event":"Defeat Shavronne"
+     "event":"Defeat Shavronne",
+	 "note":"DO NOT LEAVE SHAVRONNE'S TOWER"
   },
   { 
      "NPC":"Sin",
      "subjects":"Shavronne",
-     "note":"DO NOT LEAVE SHAVRONNE'S TOWER"
+	 "note":"Located in Shavronne's Tower"
   },
   { 
      "event":"Obtain 'The Cloven One' quest from Bestel"
@@ -1536,8 +1534,7 @@
   },
   { 
      "NPC":"Bestel",
-     "subjects":"The Brine King",
-     "note" : "You should have 349/505 completed for 'All Ears' in the Achievements tab."
+     "subjects":"The Brine King"
   },
   { 
      "destination":"The Bridge Encampment"
@@ -1571,7 +1568,7 @@
         "The Origins of the Gods",
         "The Master of a Million Faces"
      ],
-	 "note":"'Ralakesh' dialog required to make the 'Million' dialog available"
+	 "note":"'Ralakesh' dialog required to make the 'Million Faces' dialog available"
   },
   { 
      "NPC":"Weylam Roth",
@@ -1643,12 +1640,13 @@
      "destination":"Maligaro's Sanctum"
   },
   { 
-     "event":"Defeat Maligaro"
+     "event":"Defeat Maligaro",
+	 "note":"DO NOT LEAVE MALIGARO'S SANCTUM"
   },
   { 
      "NPC":"Sin",
      "subjects":"Maligaro",
-     "note":"DO NOT LEAVE MALIGARO'S SANCTUM"
+	 "note":"Located in Maligaro's Sanctum"
   },
   { 
      "event":"Give the Black Venom to Silk"
@@ -1740,12 +1738,13 @@
      "destination":"The Temple of Decay Level 2"
   },
   { 
-     "event":"Kill Arakaali"
+     "event":"Kill Arakaali",
+	 "note":"DO NOT LEAVE THE TEMPLE OF DECAY LEVEL 2"
   },
   { 
      "NPC":"Yeena",
      "subjects":"Arakaali",
-     "note":"DO NOT LEAVE THE TEMPLE OF DECAY LEVEL 2"
+	 "note":"Located in the Temple of Decay Level 2"
   },
   { 
      "NPC":"Eramir",
@@ -1753,8 +1752,7 @@
   },
   { 
      "NPC":"Yeena",
-     "subjects":"Silk",
-     "note" : "You should have 394/505 completed for 'All Ears' in the Achievements tab."
+     "subjects":"Silk"
   },
   { 
      "destination":"The Sarn Ramparts"
@@ -1880,12 +1878,13 @@
         "Find the Ankh of Eternity",
         "Find Clarissa at the Resurrection Site",
         "Kill Tolmann"
-     ]
+     ],
+	 "note":"DO NOT LEAVE THE QUAY"
   },
   { 
      "NPC":"Clarissa",
      "subjects":"The Ankh of Eternity",
-     "note":"DO NOT LEAVE THE QUAY"
+	 "note":"Located in the Quay"
   },
   { 
      "NPC":"Clarissa",
@@ -1927,8 +1926,7 @@
   },
   { 
      "NPC":"Hargan",
-     "subjects":"Solaris and Lunaris",
-     "note" : "You should have 424/505 completed for 'All Ears' in the Achievements tab."
+     "subjects":"Solaris and Lunaris"
   },
   { 
      "destination":"The Blood Aqueduct"
@@ -2102,8 +2100,7 @@
   },
   { 
      "NPC":"Tasuni",
-     "subjects":"The Beast",
-     "note" : "You should have 460/505 completed for 'All Ears' in the Achievements tab."
+     "subjects":"The Beast"
   },
   { 
      "destination":"Oriath Docks"
@@ -2194,8 +2191,7 @@
   },
   { 
      "NPC":"Lilly Roth",
-     "subjects":"Innocence",
-     "note" : "You should have 489/505 completed for 'All Ears' in the Achievements tab."
+     "subjects":"Innocence"
   },
   { 
      "destination":"The Canals"
@@ -2223,8 +2219,7 @@
   },
   { 
      "NPC":"Weylam Roth",
-     "subjects":"Kitava",
-     "note" : "You should have 493/505 completed for 'All Ears' in the Achievements tab."
+     "subjects":"Kitava"
   },
   { 
      "NPC":"Navali",

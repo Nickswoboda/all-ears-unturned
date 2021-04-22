@@ -21,6 +21,12 @@ NpcStep::NpcStep(const nlohmann::json& json)
 
 void NpcStep::Render()
 {
+	if (!note_.empty()) {
+		ImGui::PushStyleColor(ImGuiCol_Text, { 1.0f, 0.0f, 0.0f, 1.0f });
+		ImGui::TextWrapped(note_.c_str());
+		ImGui::PopStyleColor();
+	}
+
 	ImGui::TextWrapped(display_text_.c_str());
 
 	for (auto& dialog : dialogs_) {
@@ -28,13 +34,6 @@ void NpcStep::Render()
 		ImGui::SameLine();
 		ImGui::TextWrapped(dialog.name_.c_str());
 	}
-
-	if (!note_.empty()) {
-		ImGui::PushStyleColor(ImGuiCol_Text, { 1.0f, 0.0f, 0.0f, 1.0f });
-		ImGui::TextWrapped(note_.c_str());
-		ImGui::PopStyleColor();
-	}
-	
 }
 
 TravelStep::TravelStep(const nlohmann::json& json)
