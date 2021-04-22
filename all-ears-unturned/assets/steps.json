@@ -135,10 +135,6 @@
      "destination":"The Lower Prison"
   },
   { 
-     "NPC":"Tarkleigh",
-     "subjects":"Brutus"
-  },
-  { 
      "NPC":"Bestel",
      "subjects":"Brutus"
   },
@@ -151,7 +147,11 @@
   },
   { 
      "NPC":"Nessa",
-     "subjects":"Piety"
+     "subjects":[
+		 "Piety",
+		 "Brutus"
+	 ],
+	 "note": "'Brutus' dialog automatically completed when talking to her"
   },
   { 
      "NPC":"Bestel",
@@ -205,15 +205,6 @@
      "NPC":"Captain Fairgraves",
      "subjects":"The Real Fairgraves",
      "note" : "Located in The Ship Graveyard"
-  },
-  { 
-     "destination":"The Ship Graveyard Cave"
-  },
-  { 
-     "event":[ 
-        "Obtain the Allflame",
-        "Kill Fairgrave's"
-     ]
   },
   { 
      "destination":"The Cavern of Wrath"
@@ -345,10 +336,8 @@
   },
   { 
      "NPC":"Eramir",
-     "subjects":[ 
-        "Blackguards",
-        "The Chamber of Sins"
-     ]
+     "subjects":"Blackguards"
+     
   },
   { 
      "NPC":"Yeena",
@@ -1197,6 +1186,7 @@
      "NPC":"Utula",
      "subjects":[ 
         "Introduction",
+		"Justicar Casticus",
         "Slave Pens",
         "Overseer's Tower",
         "Kitava",
@@ -1366,7 +1356,6 @@
         "Introduction",
         "Nessa",
         "Lilly",
-        "The Old Gods",
         "The Brine King",
         "Weylam Roth"
      ]
@@ -1580,9 +1569,9 @@
      "NPC":"Sin",
      "subjects":[ 
         "The Origins of the Gods",
-        "Ralakesh",
         "The Master of a Million Faces"
-     ]
+     ],
+	 "note":"'Ralakesh' dialog required to make the 'Million' dialog available"
   },
   { 
      "NPC":"Weylam Roth",
@@ -1681,10 +1670,8 @@
   },
   { 
      "NPC":"Sin",
-     "subjects":[ 
-        "Arakaali",
-        "The Spinner of Shadows"
-     ]
+     "subjects": "The Spinner of Shadows",
+	 "note": "'Arakaali' dialog required to make this dialog availble" 
   },
   { 
      "destination":"The Chamber of Sins Level 2"
