@@ -36,6 +36,14 @@ void AllEarsManager::Render()
 	ImGui::Text("ALL EARS");
 	ImGui::Separator();
 
+	auto npc_step = dynamic_cast<NpcStep*>(steps_[current_step_].get());
+	if (npc_step){
+		ImGui::Text("Progress: %d / %d", num_dialogs_completed_ + npc_step->dialogs_completed_, 505);
+	} else {
+		ImGui::Text("Progress: %d / %d", num_dialogs_completed_, 505);
+	}
+	ImGui::Separator();
+
 	if (ImGui::ArrowButton("##left", ImGuiDir_Left)) {
 		DecrementStep();
 	}
@@ -62,42 +70,46 @@ void AllEarsManager::Render()
 
 void AllEarsManager::IncrementStep()
 {
+	if (achievement_complete_) return;
+	//reset dialog checkboxes
+	auto npc_step = dynamic_cast<NpcStep*>(steps_[current_step_].get());
+	if (npc_step != nullptr) {
+		for (auto& dialog : npc_step->dialogs_) {
+			dialog.completed_ = false;
+		}
+
+		num_dialogs_completed_ += npc_step->dialogs_.size();
+		npc_step->dialogs_completed_ = 0;
+	}
+	//reset dialog checkboxes
+	auto event_step = dynamic_cast<EventStep*>(steps_[current_step_].get());
+	if (event_step != nullptr) {
+		for (auto& event : event_step->events_) {
+			event.completed_ = false;
+		}
+	}
+
 	if ((current_step_ + 1) < steps_.size()) {
-
-		//reset dialog checkboxes
-		auto npc_step = dynamic_cast<NpcStep*>(steps_[current_step_].get());
-		if (npc_step != nullptr) {
-			for (auto& dialog : npc_step->dialogs_) {
-				dialog.completed_ = false;
-			}
-		}
-		//reset dialog checkboxes
-		auto event_step = dynamic_cast<EventStep*>(steps_[current_step_].get());
-		if (event_step != nullptr) {
-			for (auto& event : event_step->events_) {
-				event.completed_ = false;
-			}
-		}
-
 		++current_step_;
 	}
 	else {
 		achievement_complete_ = true;
-		std::cout << "AT END OF STEPS";
 	}
 }
 
 void AllEarsManager::DecrementStep()
 {
+	if (current_step_ == 0) return;
+
 	if (achievement_complete_) {
 		achievement_complete_ = false;
-		return;
-	}
-	if (current_step_ > 0) {
-		--current_step_;
 	}
 	else {
-		std::cout << "AT THE BEGINNING OF STEPS";
+		--current_step_;
+	}
+	auto npc_step = dynamic_cast<NpcStep*>(steps_[current_step_].get());
+	if (npc_step) {
+		num_dialogs_completed_ -= npc_step->dialogs_.size();
 	}
 }
 
@@ -140,4 +152,17 @@ bool AllEarsManager::StepIsComplete(const std::string& location)
 		}
 	}
 	return false;
+}
+
+void AllEarsManager::SetCurrentStep(int step)
+{
+	current_step_ = step;
+
+	num_dialogs_completed_ = 0;
+	for (int i = 0; i < current_step_; ++i) {
+		auto npc_step = dynamic_cast<NpcStep*>(steps_[i].get());
+		if (npc_step) {
+			num_dialogs_completed_ += npc_step->dialogs_.size();
+		}
+	}
 }

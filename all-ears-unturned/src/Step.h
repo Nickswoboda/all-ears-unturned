@@ -28,6 +28,7 @@ public:
 	std::string npc_;
 	std::vector<Objective> dialogs_;
 	std::string display_text_;
+	int dialogs_completed_ = 0;
 };
 
 class TravelStep : public Step

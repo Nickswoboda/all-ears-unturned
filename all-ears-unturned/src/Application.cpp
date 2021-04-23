@@ -91,10 +91,6 @@ void Application::Update()
 		all_ears_manager_.IncrementStep();
 	}
 
-	//if (no_stone_unturned_enabled_ && location != "") {
-	//	no_stone_manager_.ChangeLocation(location);
-	//}
-
 	if (!Window::IsFocused()) {
 		Render();
 	}
@@ -209,7 +205,7 @@ void Application::RenderSettingsMenu()
 	int step = all_ears_manager_.current_step_ + 1;
 	if (ImGui::InputInt("##step", &step)) {
 		if (step > 0 && step < all_ears_manager_.steps_.size()) {
-			all_ears_manager_.current_step_ = step - 1;
+			all_ears_manager_.SetCurrentStep(step - 1);
 		}
 	}
 	ImGui::PopButtonRepeat();
@@ -356,7 +352,7 @@ void Application::Load()
 		json.count("no stone unturned enabled") && json.count("all ears enabled")) {
 
 		log_parser_.SetFolderPath(json["log folder path"]);
-		all_ears_manager_.current_step_ = json["current step"];
+		all_ears_manager_.SetCurrentStep(json["current step"]);
 		window_.Move(json["window x"], json["window y"]);
 		window_.width_ = (json["window width"]);
 		font_size_ = json["font size"];

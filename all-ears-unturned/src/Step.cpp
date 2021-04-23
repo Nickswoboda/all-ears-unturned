@@ -30,7 +30,13 @@ void NpcStep::Render()
 	ImGui::TextWrapped(display_text_.c_str());
 
 	for (auto& dialog : dialogs_) {
-		ImGui::Checkbox(dialog.id_.c_str(), &dialog.completed_);
+		if (ImGui::Checkbox(dialog.id_.c_str(), &dialog.completed_)){
+			if (dialog.completed_){
+				++dialogs_completed_;
+			} else {
+				--dialogs_completed_;
+			}
+		}
 		ImGui::SameLine();
 		ImGui::TextWrapped(dialog.name_.c_str());
 	}
