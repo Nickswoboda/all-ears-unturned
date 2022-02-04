@@ -38,9 +38,9 @@ void AllEarsManager::Render()
 
 	auto npc_step = dynamic_cast<NpcStep*>(steps_[current_step_].get());
 	if (npc_step){
-		ImGui::Text("Progress: %d / %d", num_dialogs_completed_ + npc_step->dialogs_completed_, 505);
+		ImGui::Text("Progress: %d / %d", num_dialogs_completed_ + npc_step->dialogs_completed_, num_dialogs_total_);
 	} else {
-		ImGui::Text("Progress: %d / %d", num_dialogs_completed_, 505);
+		ImGui::Text("Progress: %d / %d", num_dialogs_completed_, num_dialogs_total_);
 	}
 	ImGui::Separator();
 

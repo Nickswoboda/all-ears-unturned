@@ -120,18 +120,6 @@
      "destination":"The Climb"
   },
   { 
-     "event":"Rescue Navali"
-  },
-  { 
-     "NPC":"Navali",
-     "subjects":[ 
-        "Introduction",
-        "Wraeclast",
-        "Yama the White",
-        "Karui Gods"
-     ]
-  },
-  { 
      "destination":"The Lower Prison"
   },
   { 
@@ -287,10 +275,6 @@
   { 
      "NPC":"Silk",
      "subjects":"Greust"
-  },
-  { 
-     "NPC":"Navali",
-     "subjects":"Introduction"
   },
   { 
      "destination":"The Old Fields"
@@ -604,10 +588,6 @@
      "subjects":"The Ebony Legion"
   },
   { 
-     "NPC":"Navali",
-     "subjects":"Introduction"
-  },
-  { 
      "destination":"The Slums"
   },
   { 
@@ -891,10 +871,6 @@
         "Trading",
         "The Beast"
      ]
-  },
-  { 
-     "NPC":"Navali",
-     "subjects":"Introduction"
   },
   { 
      "NPC":"Oyun",
@@ -1221,10 +1197,6 @@
   { 
      "NPC":"Lani",
      "subjects":"Vilenta"
-  },
-  { 
-     "NPC":"Navali",
-     "subjects":"Introduction"
   },
   { 
      "event":"Kill Justicar Casticus"
@@ -2203,7 +2175,7 @@
      "event":"Kill Kitava"
   },
   { 
-     "destination":"Oriath"
+     "destination":"Oriath Docks"
   },
   { 
      "NPC":"Innocence",
@@ -2220,34 +2192,5 @@
   { 
      "NPC":"Weylam Roth",
      "subjects":"Kitava"
-  },
-  { 
-     "NPC":"Navali",
-     "subjects":[ 
-        "Anarchy's End",
-        "Day of Sacrifice",
-        "Beyond Sight",
-        "The Warmongers",
-        "Deadly Rivalry",
-        "The Plaguemaw",
-        "The Feral Lord",
-        "Unbearable Whispers",
-        "The Unbreathing Queen",
-        "Thaumaturgical History",
-        "The Ambitious Bandit"
-     ],
-     "note":"You must complete the first step of the named prophecy chain first"
-  },
-  { 
-     "event":[ 
-        "Complete 'The Plaguemaw V' Prophecy",
-        "Complete 'The Feral Lord V' Prophecy",
-        "Complete 'Unbearable Whispers V' Prophecy",
-        "Complete 'The Unbreathing Queen V' Prophecy"
-     ]
-  },
-  { 
-     "NPC":"Navali",
-     "subjects":"The Pale Court"
   }
 ]
