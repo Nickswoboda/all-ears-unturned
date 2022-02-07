@@ -246,6 +246,8 @@ void Application::RenderTutorial()
 			ImGui::Bullet();
 			ImGui::TextWrapped("Follow the All Ears steps exactly as given. Do not enter new areas or complete quests. Doing so may cause you to miss certain dialog options.");
 			ImGui::Bullet();
+			ImGui::TextWrapped("Some dialog options are gated behind receiving quest rewards. Make sure to accept any rewards that are given during quests before progressing.");
+			ImGui::Bullet();
 			ImGui::TextWrapped("NOTE: You MUST kill all Bandits in order to complete the acheivement.");
 			break;
 		case 2:
@@ -258,11 +260,11 @@ void Application::RenderTutorial()
 			break;
 		case 3:
 			ImGui::Bullet();
-			ImGui::TextWrapped("After each Act there will be a note stating how many dialogs out of the 509 you should have completed up to that point. You may check the Achievements tab in-game to see if they match up.");
+			ImGui::TextWrapped("After each Act there will be a note stating how many dialogs out of the 484 you should have completed up to that point. You may check the Achievements tab in-game to see if they match up.");
 			ImGui::Bullet();
-			ImGui::TextWrapped("If not, that means you have missed one or more of the required dialogue options. You must make a new character and try again if you would like to complete the achievement");
+			ImGui::TextWrapped("If not, that means you have missed one or more of the required dialogue options. You must make a new character and try again if you would like to complete the achievement.");
 			ImGui::Bullet();
-			ImGui::TextWrapped("If you believe that you followed the steps exactly as given, please post a message on GitHub or the Reddit threads, so any errors may be found and fixed. Thank you.");
+			ImGui::TextWrapped("If you believe that you followed the steps exactly as given, please post a message on GitHub or the Reddit threads so any errors may be found and fixed. Thank you.");
 			break;
 		case 4:
 			ImGui::Bullet();
