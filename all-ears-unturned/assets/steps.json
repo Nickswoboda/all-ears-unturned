@@ -123,8 +123,14 @@
      "destination":"The Lower Prison"
   },
   { 
+     "NPC":"Nessa",
+     "subjects":"Brutus",
+     "note": "'Brutus' dialog automatically completed when talking to her"
+  },
+  { 
      "NPC":"Bestel",
-     "subjects":"Brutus"
+     "subjects":"Brutus",
+     "note":"You must talk to Tarkleigh first"
   },
   { 
      "destination":"The Upper Prison"
@@ -135,11 +141,7 @@
   },
   { 
      "NPC":"Nessa",
-     "subjects":[
-		 "Piety",
-		 "Brutus"
-	 ],
-	 "note": "'Brutus' dialog automatically completed when talking to her"
+     "subjects":"Piety"
   },
   { 
      "NPC":"Bestel",
@@ -213,7 +215,8 @@
   },
   { 
      "NPC":"Tarkleigh",
-     "subjects":"Merveil"
+     "subjects":"Merveil",
+     "note":"You may now complete Act 1 sidequests"
   },
   { 
      "destination":"The Southern Forest"
@@ -561,7 +564,8 @@
   },
   { 
      "NPC":"Greust",
-     "subjects":"The Light"
+     "subjects":"The Light",
+     "note":"You may now complete Act 2 sidequests"
   },
   { 
      "destination":"The City of Sarn"
@@ -847,7 +851,8 @@
      "subjects":[ 
         "Dominus",
         "Piety and Dominus"
-     ]
+     ],
+     "note":"You may now complete Act 3 sidequests"
   },
   { 
      "destination":"The Aqueduct"
@@ -1142,7 +1147,8 @@
      "subjects":[ 
         "Malachai",
         "Malachai's Apprentices"
-     ]
+     ],
+     "note":"You may now complete Act 4 sidequests"
   },
   { 
      "destination":"The Ascent"
@@ -1197,6 +1203,9 @@
   { 
      "NPC":"Lani",
      "subjects":"Vilenta"
+  },
+  {
+     "destination":"The Control Blocks"
   },
   { 
      "event":"Kill Justicar Casticus"
@@ -1296,7 +1305,8 @@
   },
   { 
      "NPC":"Vilenta",
-     "subjects":"Kitava"
+     "subjects":"Kitava",
+     "note":"You may now complete Act 5 sidequests"
   },
   { 
      "destination":"Lioneye's Watch"
@@ -1443,7 +1453,8 @@
      "destination":"Prisoner's Gate"
   },
   { 
-     "event":"Find Nessa"
+     "event":"Find Nessa",
+     "note":"Located in the Prisoner's Gate's canyons"
   },
   { 
      "NPC":"Bestel",
@@ -1506,7 +1517,8 @@
   },
   { 
      "NPC":"Bestel",
-     "subjects":"The Brine King"
+     "subjects":"The Brine King",
+     "note":"You may now complete Act 6 sidequests"
   },
   { 
      "destination":"The Bridge Encampment"
@@ -1724,7 +1736,8 @@
   },
   { 
      "NPC":"Yeena",
-     "subjects":"Silk"
+     "subjects":"Silk",
+     "note":"You may now complete Act 7 sidequests"
   },
   { 
      "destination":"The Sarn Ramparts"
@@ -1898,7 +1911,8 @@
   },
   { 
      "NPC":"Hargan",
-     "subjects":"Solaris and Lunaris"
+     "subjects":"Solaris and Lunaris",
+     "note":"You may now complete Act 8 sidequests"
   },
   { 
      "destination":"The Blood Aqueduct"
@@ -2072,7 +2086,8 @@
   },
   { 
      "NPC":"Tasuni",
-     "subjects":"The Beast"
+     "subjects":"The Beast",
+     "note":"You may now complete Act 9 sidequests"
   },
   { 
      "destination":"Oriath Docks"
@@ -2175,22 +2190,18 @@
      "event":"Kill Kitava"
   },
   { 
-     "destination":"Oriath Docks"
+     "destination":"Oriath"
   },
   { 
      "NPC":"Innocence",
-     "subjects":"Exile"
-  },
-  { 
-     "NPC":"Sin",
-     "subjects":"Innocence"
-  },
-  { 
-     "NPC":"Lilly Roth",
-     "subjects":"Kitava"
+     "subjects":[
+	"Kitava",
+	"Exile"
+	]
   },
   { 
      "NPC":"Weylam Roth",
-     "subjects":"Kitava"
+     "subjects":"Kitava",
+     "note":"You may now complete Act 10 sidequests"
   }
 ]
